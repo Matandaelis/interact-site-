@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { MotionSection, StaggerContainer, StaggerItem } from "@/components/MotionSection";
 import { 
   BarChart3, 
@@ -219,11 +220,15 @@ export default function ServicesSection({ onSelectServiceForStudio, onOpenConsul
           
           {/* Active Practice Area Stock Banner */}
           <div className="relative h-48 sm:h-56 w-full rounded-xl overflow-hidden mb-8 border border-slate-200 group">
-            <img 
+            <Image 
               src={activeServiceObj.image}
               alt={activeServiceObj.imageAlt}
               referrerPolicy="no-referrer"
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+              sizes="(max-width: 1200px) 100vw, 1024px"
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMzAwIDIwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2YxZjVmOSIvPjwvc3ZnPg=="
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
             <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs font-semibold text-white">

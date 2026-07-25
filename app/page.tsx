@@ -55,11 +55,62 @@ export default function Home() {
     ]
   };
 
+  const jsonLdFaq = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I submit a Request for Proposal (RFP) or Terms of Reference (ToR)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can submit your RFP, EOI (Expression of Interest), or ToR directly through our secure online consultation form on this page, or send documentation via email to interactresearchassociates@gmail.com. Our Executive Director, Kennedy S. Okumu, and the senior technical bid team acknowledge all submissions within 12–24 business hours and provide detailed technical and financial proposals promptly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which geographical areas and countries in East Africa does IARA cover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We operate across all 47 counties of Kenya (including remote Arid and Semi-Arid Lands like Garissa, Turkana, Mandera, and Wajir), as well as regional hubs in Uganda (Kampala, Gulu, Arua), Tanzania (Dar es Salaam, Arusha, Dodoma), and Rwanda (Kigali). Our network includes over 420 certified, multi-lingual field enumerators fluent in Swahili, Somali, Oromo, Dinka, Luganda, French, and English, allowing for culturally respectful and rapid field data collection."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the typical turnaround timeline for a baseline survey or impact evaluation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Comprehensive research assignments (baseline, mid-term, endline, or strategy development) typically span 3 to 8 weeks from inception to final report presentation. This includes 3–7 business days for Inception & Tool Design, 7–14 business days for Field Enumerator Training & Data Collection, and 7–10 business days for Data Cleaning, Analysis & Draft Report."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does IARA ensure data ethics, participant consent, and data protection?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All IARA research studies strictly comply with national and international data privacy protocols, including the Kenya Data Protection Act (2019) and UN CRPD ethics frameworks. We mandate informed consent forms (available in local languages, Braille, and plain language format), implement anonymized data encryption on ODK/KoboToolbox servers, and enforce strict child safeguarding and gender-sensitive protocols."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Inter-Act Research Associates formally registered and compliant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Inter-Act Research Associates is fully incorporated in Kenya under the Company's Act (Cap 499 Section 4) (Registration No. 210365). We hold valid tax compliance certificates, regional operational licenses, and adhere strictly to statutory governance standards required by international development donors."
+        }
+      }
+    ]
+  };
+
   return (
     <div className="flex-1 flex flex-col min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-blue-500 selection:text-slate-950">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdHome) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
       />
       <Navbar />
 

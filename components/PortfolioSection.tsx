@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { MotionSection, StaggerContainer, StaggerItem } from "@/components/MotionSection";
 import { 
   FileText, 
@@ -288,11 +289,15 @@ export default function PortfolioSection() {
               >
                 {/* Assignment Stock Thumbnail */}
                 <div className="relative h-40 w-full overflow-hidden bg-slate-100">
-                  <img 
+                  <Image 
                     src={imgObj.url}
                     alt={imgObj.alt}
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    placeholder="blur"
+                    blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMzAwIDIwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2YxZjVmOSIvPjwvc3ZnPg=="
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
                   <span className="absolute top-3 left-3 px-2.5 py-1 rounded bg-blue-900 text-white text-xs font-bold shadow-xs">
