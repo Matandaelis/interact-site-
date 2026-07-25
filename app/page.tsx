@@ -173,7 +173,7 @@ export default function Home() {
                   <BarChart3 className="w-4 h-4" />
                 </div>
                 <h3 className="font-bold text-white text-sm group-hover:text-blue-400 transition-colors flex items-center justify-between">
-                  Past Assignments (17)
+                  Past Assignments (18)
                   <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </h3>
                 <p className="text-slate-400 text-xs">USAID, UN Women, DRF, VSO, Government Ministry consulting track record.</p>
@@ -254,7 +254,7 @@ export default function Home() {
 
               <h3 className="text-lg sm:text-xl font-bold text-white pt-2 border-b border-slate-800 pb-2">4. A Trusted Partner for Global Development Donors</h3>
               <p>
-                Over our history, IARA has served as a trusted consulting partner for regional government ministries, prominent non-governmental organizations (NGOs), and major international donor agencies. Our past performance portfolio includes 17+ high-level advisory assignments with organizations such as <strong>USAID, UN Women, the Disability Rights Fund (DRF), Voluntary Service Overseas (VSO), and Light for the World</strong>. Our commitment remains firm: to provide the empirical evidence and strategic insights that allow development partners to maximize their impact, build local institutional capacity, and foster inclusive, sustainable societies across East Africa.
+                Over our history, IARA has served as a trusted consulting partner for regional government ministries, prominent non-governmental organizations (NGOs), and major international donor agencies. Our past performance portfolio includes 18+ high-level advisory assignments with organizations such as <strong>USAID, UN Women, the Disability Rights Fund (DRF), Voluntary Service Overseas (VSO), and Light for the World</strong>. Our commitment remains firm: to provide the empirical evidence and strategic insights that allow development partners to maximize their impact, build local institutional capacity, and foster inclusive, sustainable societies across East Africa.
               </p>
             </div>
           </div>

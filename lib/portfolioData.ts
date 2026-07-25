@@ -918,5 +918,55 @@ export const portfolioAssignments: PortfolioAssignment[] = [
     ],
     teamComposition: "Lead Health SBCC Researcher, Anthropologist, SRHR Specialist, 6 Pastoral Field Facilitators.",
     toolsUsed: ["SBCC Pre-Testing Matrix", "NVivo 12", "Likert Attitude Scale", "SPSS"]
+  },
+  {
+    id: "a18",
+    organization: "Call Africa Kenya",
+    title: "Accessibility Audits for Edu-WISE Project",
+    category: "audit",
+    categoryLabel: "Accessibility Audit",
+    date: "Jan – Apr 2026",
+    location: "Multi-County, Kenya 🇰🇪",
+    country: "Kenya",
+    scopeScale: "Multi-County • Technical Accessibility Audits • Youth Inclusion",
+    description: "Executed physical, structural, and operational accessibility audits to support the Edu-WISE project's goal of creating an inclusive society where all young people, regardless of ability, can acquire relevant skills, access the labor market, and participate fully in economic and social life.",
+    backgroundContext: "Inter-Acts Research Associates (IARA) was engaged to execute comprehensive accessibility audits for the Edu-WISE project. Through this work, IARA aims to support the Edu-WISE project's broader goal of creating an inclusive society where all young people, regardless of ability, can acquire relevant skills, access the labor market, and participate fully in economic and social life. At IARA, we combine our over 18 years of technical competencies with a deep commitment to the inclusive goals of the Edu-WISE project, ensuring that our infrastructure recommendations are not only data-driven and technically sound but also effectively aligned with the operational requirements of Call Africa Kenya and its partners.",
+    objectives: [
+      "Assess educational, training, and workplace infrastructure to ensure full accessibility for young people with physical, sensory, and cognitive impairments.",
+      "Deliver actionable data-driven recommendations on architectural and operational upgrades aligned with Universal Design principles.",
+      "Align architectural findings and technical recommendations with the operational requirements of Call Africa Kenya and its development partners."
+    ],
+    methodologyUsed: [
+      {
+        title: "Advanced Research & Evaluation Methodology",
+        detail: "Our team utilized sophisticated research tools, including mixed-methods design and Outcome Harvesting, to conduct thorough situational analyses and infrastructure evaluations."
+      },
+      {
+        title: "Digital Data Collection Proficiency",
+        detail: "Possessing specialized technical proficiency in digitalizing monitoring systems, we utilized platforms such as Ona.io and KoBoToolbox, as well as XLSForm scripting, to ensure precise, transparent, and high-integrity data capture."
+      },
+      {
+        title: "Institutional & Strategic Review",
+        detail: "Extensive experience in conducting institutional reviews and developing strategic plans for community-based and non-governmental organizations, including preparing comprehensive financial requirements and technical frameworks."
+      }
+    ],
+    keyFindings: [
+      "Detailed physical and architectural accessibility bottlenecks identified across targeted training facilities, highlighting hurdles in transit pathways, doorways, and washrooms.",
+      "Lack of digital learning aids and tailored instructional tools for trainees with diverse cognitive and sensory profiles.",
+      "Strong demand among local administrators for integrated monitoring dashboards to track long-term infrastructural improvements."
+    ],
+    recommendationsAndImpact: [
+      "Implement costed retrofitting plans to resolve identified physical barriers in training centers, schools, and workplaces.",
+      "Leverage Ona.io and KoBoToolbox digitalized monitoring systems to ensure continuous reporting, high data transparency, and precision.",
+      "Build long-term collaborative frameworks with Call Africa Kenya to sustain youth skill development and inclusive labor market entry."
+    ],
+    deliverables: [
+      "Comprehensive Accessibility Audit Report for Edu-WISE targeted institutions",
+      "Digitalized Monitoring & Evaluation System Schema (Ona.io & KoBoToolbox integration)",
+      "Costed Bill of Quantities (BoQ) for recommended architectural modifications",
+      "Strategic Institutional Roadmap for disability-inclusive skill acquisition"
+    ],
+    teamComposition: "Team Leader (18+ years development experience), Associate Accessibility Architects, Digital M&E Specialist, Multi-Stakeholder Coordinator.",
+    toolsUsed: ["Ona.io", "KoBoToolbox", "XLSForm Scripting", "Outcome Harvesting Matrix", "KS ISO 21542 Checklist"]
   }
 ];

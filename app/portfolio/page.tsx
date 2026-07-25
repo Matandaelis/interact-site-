@@ -25,7 +25,7 @@ export default function PortfolioPage() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "IARA Project Portfolio and Past Assignments Track Record",
-    "description": "Comprehensive catalog of 17 successful development consulting, disability mainstreaming, and Monitoring & Evaluation (M&E) assignments conducted by Inter-Act Research Associates across East Africa.",
+    "description": "Comprehensive catalog of 18 successful development consulting, disability mainstreaming, and Monitoring & Evaluation (M&E) assignments conducted by Inter-Act Research Associates across East Africa.",
     "publisher": {
       "@type": "Organization",
       "name": "Inter-Act Research Associates",
@@ -54,11 +54,11 @@ export default function PortfolioPage() {
             </div>
 
             <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-              Past Assignments & Case Studies (17)
+              Past Assignments & Case Studies (18)
             </h1>
 
             <p className="text-slate-300 text-base sm:text-xl max-w-3xl leading-relaxed">
-              Explore our proven track record of 17 major consulting assignments executed for international NGOs, Government Ministries, UN agencies, and Disability Rights networks across East Africa.
+              Explore our proven track record of 18 major consulting assignments executed for international NGOs, Government Ministries, UN agencies, and Disability Rights networks across East Africa.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">

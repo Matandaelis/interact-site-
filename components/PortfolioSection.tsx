@@ -26,7 +26,7 @@ export default function PortfolioSection() {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [activeModalProject, setActiveModalProject] = useState<any>(null);
 
-  // All 17 Real Past Similar Assignments from IARA Profile Pages 5-7
+  // All 18 Real Past Similar Assignments from IARA Profile Pages 5-7 and Edu-WISE project
   const assignments = [
     {
       id: "a1",
@@ -197,6 +197,16 @@ export default function PortfolioSection() {
       date: "Aug – Sep 2018",
       location: "Kenya 🇰🇪",
       description: "Development of Social and Behavior Change Communication (SBCC) messages and evidence-based policy briefs on Sexual Reproductive Health Rights (SRHR) and Nutrition under the Koota Injena Project."
+    },
+    {
+      id: "a18",
+      organization: "Call Africa Kenya",
+      title: "Accessibility Audits for Edu-WISE Project",
+      category: "audit",
+      categoryLabel: "Accessibility Audit",
+      date: "Jan – Apr 2026",
+      location: "Multi-County, Kenya 🇰🇪",
+      description: "Executed physical, structural, and operational accessibility audits to support the Edu-WISE project's goal of creating an inclusive society where all young people, regardless of ability, can acquire relevant skills, access the labor market, and participate fully in economic and social life."
     }
   ];
 
@@ -220,7 +230,7 @@ export default function PortfolioSection() {
             <FileText className="w-3.5 h-3.5" /> Company Track Record
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Past Similar Assignments & Client Portfolio (17)
+            Past Similar Assignments & Client Portfolio (18)
           </h2>
           <p className="text-slate-300 text-base sm:text-lg">
             Complete record of key evaluations, accessibility audits, research studies, and strategic management assignments undertaken by Inter-Act Research Associates.
@@ -233,7 +243,7 @@ export default function PortfolioSection() {
           {/* Category Pills */}
           <div className="flex flex-wrap gap-2">
             {[
-              { id: "all", label: "All 17 Assignments" },
+              { id: "all", label: "All 18 Assignments" },
               { id: "evaluation", label: "Evaluations & M&E" },
               { id: "disability", label: "Disability & Inclusion" },
               { id: "audit", label: "Accessibility Audits" },
@@ -268,7 +278,7 @@ export default function PortfolioSection() {
 
         </MotionSection>
 
-        {/* Grid of 17 Assignments */}
+        {/* Grid of 18 Assignments */}
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredAssignments.map((assignment, idx) => {
             const stockImages = [

@@ -524,14 +524,14 @@ export default function Navbar() {
                   <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
                     <div>
                       <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest block">Proven History</span>
-                      <h3 className="text-base font-bold text-white">17 Major Development & Research Assignments</h3>
+                      <h3 className="text-base font-bold text-white">18 Major Development & Research Assignments</h3>
                     </div>
                     <Link 
                       href="/portfolio" 
                       onClick={() => setActiveMegaMenu(null)}
                       className="text-xs text-blue-400 hover:underline flex items-center gap-1 font-semibold"
                     >
-                      Explore All 17 Case Studies <ArrowRight className="w-3.5 h-3.5" />
+                      Explore All 18 Case Studies <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
 
@@ -824,7 +824,7 @@ export default function Navbar() {
                         <span>Track Record</span>
                       </div>
                       <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-900 border border-blue-200">
-                        17 Studies
+                        18 Studies
                       </span>
                     </Link>
                     <button 
