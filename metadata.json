@@ -1,0 +1,6 @@
+{
+  "name": "Inter-Act Research Associates",
+  "description": "Company profile and interactive services portal for Inter-Act Research Associates (IARA), providing research, M&E, capacity building, and organizational development across East Africa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
