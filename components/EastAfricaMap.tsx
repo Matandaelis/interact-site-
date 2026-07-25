@@ -2,11 +2,16 @@
 
 import React, { useState } from "react";
 import {
-  ComposableMap,
-  Geographies,
-  Geography,
-  Marker
+  ComposableMap as ComposableMapOrig,
+  Geographies as GeographiesOrig,
+  Geography as GeographyOrig,
+  Marker as MarkerOrig
 } from "react-simple-maps";
+
+const ComposableMap = ComposableMapOrig as any;
+const Geographies = GeographiesOrig as any;
+const Geography = GeographyOrig as any;
+const Marker = MarkerOrig as any;
 import { MapPin, Navigation, Building2, Users } from "lucide-react";
 
 // Standard reliable world topojson

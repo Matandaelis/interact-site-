@@ -12,9 +12,6 @@ import {
   Users2, 
   Globe2,
   Sparkles,
-  MapPin,
-  PhoneCall,
-  Mail,
   ShieldCheck,
   Building2
 } from "lucide-react";
@@ -73,21 +70,6 @@ export default function Hero({ onExploreServices, onOpenStudio, onOpenConsultati
             <p className="text-base sm:text-lg text-slate-700 max-w-2xl font-normal leading-relaxed">
               Delivering technical consulting, monitoring, evaluation, and research expertise across <strong className="text-slate-900 font-semibold">Kenya, Uganda, Tanzania, and Rwanda</strong>. Guided by our corporate mission: <em className="text-blue-900 font-medium">&ldquo;Doing good through practical solutions to transform lives.&rdquo;</em>
             </p>
-
-            {/* Official Contact Box */}
-            <div className="p-4 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-2 text-xs sm:text-sm">
-              <div className="flex items-center gap-2 text-blue-900 font-bold">
-                <MapPin className="w-4 h-4 text-blue-800 shrink-0" />
-                <span>Headquarters: Argwings Kodhek Road, Unipen Plaza, 1st Floor Room No. 4, Nairobi</span>
-              </div>
-              <div className="flex flex-wrap items-center justify-between gap-2 text-slate-700 pt-2 border-t border-slate-100">
-                <span>Executive Director: <strong className="text-slate-900">Kennedy S. Okumu</strong></span>
-                <span className="font-bold text-blue-950 bg-slate-100 px-2.5 py-1 rounded border border-slate-200">
-                  Cell: 0702103653
-                </span>
-                <span className="text-blue-800 font-semibold">interactresearchassociates@gmail.com</span>
-              </div>
-            </div>
 
             {/* Practice Highlights */}
             <div className="flex flex-wrap gap-2 pt-1">

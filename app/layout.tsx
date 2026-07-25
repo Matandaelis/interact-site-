@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <head>
+      <body className="antialiased bg-slate-50 text-slate-900 min-h-screen flex flex-col" suppressHydrationWarning>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -42,8 +42,6 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
-      <body className="antialiased bg-slate-50 text-slate-900 min-h-screen flex flex-col" suppressHydrationWarning>
         <ThemeProvider>
           {children}
           <WhatsAppButton />
