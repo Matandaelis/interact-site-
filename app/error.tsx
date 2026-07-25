@@ -1,37 +1,31 @@
 "use client";
+import React from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-import { useEffect } from "react";
-import Link from "next/link";
-
-export default function ErrorPage({
+export default function GlobalError({
   error,
   reset,
 }: {
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  useEffect(() => {
-    console.error("App error:", error);
-  }, [error]);
-
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center p-6 text-center space-y-4">
-      <h2 className="text-2xl font-bold text-emerald-400">Something went wrong</h2>
-      <p className="text-xs text-slate-400 max-w-md">{error.message || "An unexpected error occurred."}</p>
-      <div className="flex gap-3">
+    <div className="flex flex-col min-h-screen bg-slate-950 text-slate-100">
+      <Navbar />
+      <main className="flex-1 flex flex-col items-center justify-center p-8 text-center space-y-6">
+        <h1 className="text-5xl font-extrabold text-red-400">Something went wrong!</h1>
+        <p className="text-slate-300 text-base max-w-md">
+          A critical error occurred while loading this page.
+        </p>
         <button
           onClick={() => reset()}
-          className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs px-4 py-2 rounded-xl"
+          className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-red-500 hover:bg-red-400 text-slate-950 font-bold transition-all"
         >
-          Try Again
+          Try again
         </button>
-        <Link
-          href="/"
-          className="bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs px-4 py-2 rounded-xl border border-slate-700"
-        >
-          Go Home
-        </Link>
-      </div>
+      </main>
+      <Footer />
     </div>
   );
 }

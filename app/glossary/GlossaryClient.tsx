@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import { 
   GLOSSARY_TERMS, 
   GLOSSARY_CATEGORIES, 
@@ -14,8 +15,6 @@ import {
   BookOpen, 
   Search, 
   X, 
-  ChevronDown, 
-  ChevronUp, 
   Copy, 
   Check, 
   Sparkles, 
@@ -31,8 +30,9 @@ export default function GlossaryClient() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("All Categories");
   const [selectedLetter, setSelectedLetter] = useState<string>("ALL");
-  const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [selectedTerm, setSelectedTerm] = useState<GlossaryTerm | null>(null);
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [copiedTermId, setCopiedTermId] = useState<string | null>(null);
 
   // Alphabetical list derived from available terms
   const alphabet = useMemo(() => {
@@ -78,8 +78,35 @@ export default function GlossaryClient() {
     setTimeout(() => setCopiedId(null), 2000);
   };
 
-  const toggleExpand = (id: string) => {
-    setExpandedId((prev) => (prev === id ? null : id));
+  const handleCopyInDrawer = (term: GlossaryTerm) => {
+    const textToCopy = `${term.term}${term.acronym ? ` (${term.acronym})` : ""}: ${term.shortDefinition}\n\nTechnical Context: ${term.detailedDefinition}\n\nExample: ${term.practicalExample}\nSource: Inter-Act Research Associates Glossary (https://interactresearch.org/glossary)`;
+    navigator.clipboard.writeText(textToCopy);
+    setCopiedTermId(term.id);
+    setTimeout(() => setCopiedTermId(null), 2000);
+  };
+
+  const handleOpenTerm = (term: GlossaryTerm) => {
+    setSelectedTerm(term);
+  };
+
+  const handleSelectRelatedTerm = (termName: string) => {
+    const found = GLOSSARY_TERMS.find(
+      (t) =>
+        t.term.toLowerCase() === termName.toLowerCase() ||
+        (t.acronym && t.acronym.toLowerCase() === termName.toLowerCase()) ||
+        t.id.toLowerCase() === termName.toLowerCase().replace(/\s+/g, "-")
+    );
+    if (found) {
+      setSelectedTerm(found);
+    } else {
+      setSearchQuery(termName);
+      setSelectedTerm(null);
+      const searchInput = document.getElementById("glossary-search-input");
+      if (searchInput) {
+        searchInput.scrollIntoView({ behavior: "smooth" });
+        searchInput.focus();
+      }
+    }
   };
 
   const resetFilters = () => {
@@ -87,6 +114,16 @@ export default function GlossaryClient() {
     setSelectedCategory("All Categories");
     setSelectedLetter("ALL");
   };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedTerm(null);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <div className="flex-1 flex flex-col min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-emerald-500 selection:text-slate-950">
@@ -266,14 +303,14 @@ export default function GlossaryClient() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {filteredTerms.map((item) => {
-                const isExpanded = expandedId === item.id;
                 const isCopied = copiedId === item.id;
 
                 return (
                   <div
                     key={item.id}
                     id={`term-card-${item.id}`}
-                    className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 shadow-xl transition-all hover:border-slate-700/80 flex flex-col justify-between group"
+                    onClick={() => handleOpenTerm(item)}
+                    className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 shadow-xl transition-all hover:border-emerald-500/30 hover:bg-slate-900/100 hover:scale-[1.01] active:scale-[0.99] cursor-pointer flex flex-col justify-between group duration-200"
                   >
                     <div className="space-y-3">
                       {/* Top Header & Badges */}
@@ -297,7 +334,10 @@ export default function GlossaryClient() {
                         {/* Copy button */}
                         <button
                           id={`copy-term-${item.id}`}
-                          onClick={() => handleCopy(item)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleCopy(item);
+                          }}
                           title="Copy definition to clipboard"
                           className="p-2 rounded-lg bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white transition-all shrink-0"
                           aria-label={`Copy definition for ${item.term}`}
@@ -314,60 +354,25 @@ export default function GlossaryClient() {
                       <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-normal">
                         {item.shortDefinition}
                       </p>
-
-                      {/* Expandable Detailed Context */}
-                      {isExpanded && (
-                        <div className="pt-3 border-t border-slate-800/80 space-y-3 text-xs animate-in fade-in slide-in-from-top-2 duration-150">
-                          <div>
-                            <span className="font-extrabold text-slate-300 uppercase text-[10px] tracking-wider block mb-1">
-                              Detailed Technical Context
-                            </span>
-                            <p className="text-slate-300 leading-relaxed bg-slate-950/60 p-3 rounded-xl border border-slate-800/80">
-                              {item.detailedDefinition}
-                            </p>
-                          </div>
-
-                          <div>
-                            <span className="font-extrabold text-emerald-400 uppercase text-[10px] tracking-wider flex items-center gap-1 mb-1">
-                              <BookmarkCheck className="w-3.5 h-3.5" /> Practical Field Case Study Example (East Africa)
-                            </span>
-                            <p className="text-slate-200 leading-relaxed bg-emerald-950/20 p-3 rounded-xl border border-emerald-500/20 font-medium">
-                              {item.practicalExample}
-                            </p>
-                          </div>
-
-                          {item.relatedTerms && item.relatedTerms.length > 0 && (
-                            <div className="pt-1 flex items-center gap-2 flex-wrap">
-                              <span className="text-[10px] text-slate-500 font-bold uppercase">Related:</span>
-                              {item.relatedTerms.map((rt) => (
-                                <button
-                                  key={rt}
-                                  id={`related-term-${rt.toLowerCase().replace(/\s+/g, '-')}`}
-                                  onClick={() => setSearchQuery(rt)}
-                                  className="text-[11px] text-blue-400 hover:underline font-medium"
-                                >
-                                  {rt}
-                                </button>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      )}
                     </div>
 
                     {/* Bottom Action Footer */}
                     <div className="pt-4 mt-4 border-t border-slate-800/60 flex items-center justify-between">
                       <button
                         id={`expand-term-${item.id}`}
-                        onClick={() => toggleExpand(item.id)}
-                        className="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1 transition-all"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleOpenTerm(item);
+                        }}
+                        className="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5 transition-all group/btn"
                       >
-                        <span>{isExpanded ? "Hide Field Context" : "Read Field Context & Example"}</span>
-                        {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                        <span>Read Field Context & Example</span>
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
                       </button>
 
                       <Link
                         href="/contact"
+                        onClick={(e) => e.stopPropagation()}
                         className="text-[11px] text-slate-400 hover:text-white font-medium flex items-center gap-1"
                       >
                         <span>Consult IARA</span>
@@ -416,6 +421,156 @@ export default function GlossaryClient() {
       </main>
 
       <Footer />
+
+      {/* Detail Drawer */}
+      <AnimatePresence>
+        {selectedTerm && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedTerm(null)}
+              className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 cursor-pointer"
+              id="glossary-drawer-backdrop"
+              aria-label="Close glossary detail drawer"
+            />
+
+            {/* Drawer Container */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="fixed right-0 top-0 h-full w-full sm:max-w-xl bg-slate-900 border-l border-slate-800 shadow-2xl z-50 flex flex-col focus:outline-none"
+              id="glossary-drawer-container"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="glossary-drawer-title"
+            >
+              {/* Drawer Header */}
+              <div className="p-6 border-b border-slate-800 flex items-center justify-between bg-slate-900/50 sticky top-0 backdrop-blur-md z-10">
+                <div className="space-y-1">
+                  <span className="text-xs font-bold text-slate-400 uppercase tracking-wider text-[10px]">
+                    {selectedTerm.category}
+                  </span>
+                  <h2 
+                    id="glossary-drawer-title" 
+                    className="text-xl sm:text-2xl font-black text-white tracking-tight flex items-center gap-2 flex-wrap"
+                  >
+                    <span>{selectedTerm.term}</span>
+                    {selectedTerm.acronym && (
+                      <span className="px-2.5 py-0.5 rounded bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-mono font-extrabold">
+                        {selectedTerm.acronym}
+                      </span>
+                    )}
+                  </h2>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  {/* Copy button */}
+                  <button
+                    id="drawer-copy-btn"
+                    onClick={() => handleCopyInDrawer(selectedTerm)}
+                    title="Copy full definition and example"
+                    className="p-2.5 rounded-xl bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white transition-all flex items-center justify-center shrink-0"
+                    aria-label={`Copy definition for ${selectedTerm.term}`}
+                  >
+                    {copiedTermId === selectedTerm.id ? (
+                      <Check className="w-4 h-4 text-emerald-400" />
+                    ) : (
+                      <Copy className="w-4 h-4" />
+                    )}
+                  </button>
+
+                  {/* Close button */}
+                  <button
+                    id="drawer-close-btn"
+                    onClick={() => setSelectedTerm(null)}
+                    className="p-2.5 rounded-xl bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white transition-all flex items-center justify-center shrink-0"
+                    aria-label="Close drawer"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Drawer Body - Scrollable */}
+              <div className="flex-1 overflow-y-auto p-6 sm:p-8 space-y-8 no-scrollbar">
+                {/* Short Definition */}
+                <div className="space-y-2">
+                  <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest block">
+                    Core Definition
+                  </span>
+                  <p className="text-slate-100 text-base sm:text-lg leading-relaxed font-semibold">
+                    {selectedTerm.shortDefinition}
+                  </p>
+                </div>
+
+                {/* Detailed Context */}
+                <div className="space-y-3">
+                  <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest block">
+                    Detailed Technical Context
+                  </span>
+                  <div className="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 text-slate-300 text-sm leading-relaxed space-y-3">
+                    <p>{selectedTerm.detailedDefinition}</p>
+                  </div>
+                </div>
+
+                {/* Practical Example */}
+                <div className="space-y-3">
+                  <span className="text-[10px] font-black text-emerald-500 uppercase tracking-widest flex items-center gap-1.5">
+                    <BookmarkCheck className="w-4 h-4" /> Practical Field Case Study Example (East Africa)
+                  </span>
+                  <div className="bg-emerald-950/25 p-5 rounded-2xl border border-emerald-500/20 text-slate-200 text-sm leading-relaxed font-medium">
+                    {selectedTerm.practicalExample}
+                  </div>
+                </div>
+
+                {/* Related Terms */}
+                {selectedTerm.relatedTerms && selectedTerm.relatedTerms.length > 0 && (
+                  <div className="space-y-3">
+                    <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest block">
+                      Related Terminology
+                    </span>
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      {selectedTerm.relatedTerms.map((rt) => (
+                        <button
+                          key={rt}
+                          id={`drawer-related-${rt.toLowerCase().replace(/\s+/g, '-')}`}
+                          onClick={() => handleSelectRelatedTerm(rt)}
+                          className="px-3.5 py-2 rounded-xl bg-slate-950 hover:bg-slate-800 border border-slate-800 text-blue-400 hover:text-blue-300 text-xs font-bold transition-all flex items-center gap-1.5"
+                          aria-label={`View related term ${rt}`}
+                        >
+                          <span>{rt}</span>
+                          <ArrowRight className="w-3.5 h-3.5 opacity-60" />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Drawer Footer */}
+              <div className="p-6 border-t border-slate-800 bg-slate-950/80 backdrop-blur-md flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+                <span className="text-xs text-slate-400">
+                  Ref: IARA-MEAL-EAC-{selectedTerm.id.toUpperCase().substring(0, 4)}
+                </span>
+                <Link
+                  href="/contact"
+                  id="drawer-consult-iara-btn"
+                  onClick={() => setSelectedTerm(null)}
+                  className="px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs transition-all flex items-center justify-center gap-2 shadow-lg"
+                >
+                  <span>Consult IARA on this Term</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

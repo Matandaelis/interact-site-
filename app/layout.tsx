@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Inter-Act Research Associates | Business Management, M&E & Strategic Advisory",
@@ -26,6 +26,7 @@ export default function RootLayout({
                   if (saved === 'light') {
                     document.documentElement.classList.add('light-mode');
                   }
+                  
                   var _fetch = window.fetch;
                   Object.defineProperty(window, 'fetch', {
                     get: function() {
@@ -44,8 +45,8 @@ export default function RootLayout({
         />
         <ThemeProvider>
           {children}
-          <WhatsAppButton />
         </ThemeProvider>
+        <WhatsAppButton />
       </body>
     </html>
   );
