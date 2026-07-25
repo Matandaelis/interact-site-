@@ -44,6 +44,13 @@ export default function ResourcesPage() {
                 <Sparkles className="w-4 h-4" />
                 Generate Custom Framework in Studio
               </Link>
+              <Link
+                href="/glossary"
+                className="bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs px-5 py-3 rounded-xl border border-slate-700 transition-all flex items-center gap-2"
+              >
+                <BookOpenCheck className="w-4 h-4 text-emerald-400" />
+                Explore M&E Terminology Glossary
+              </Link>
             </div>
           </div>
         </section>

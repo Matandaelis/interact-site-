@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: "Inter-Act Research Associates | Business Management, M&E & Strategic Advisory",
@@ -42,9 +43,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="antialiased bg-slate-950 text-slate-100 min-h-screen flex flex-col" suppressHydrationWarning>
+      <body className="antialiased bg-slate-50 text-slate-900 min-h-screen flex flex-col" suppressHydrationWarning>
         <ThemeProvider>
           {children}
+          <WhatsAppButton />
         </ThemeProvider>
       </body>
     </html>

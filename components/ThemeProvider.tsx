@@ -13,30 +13,19 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("dark");
+  const [theme, setThemeState] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    const savedTheme = localStorage.getItem("iara_theme") as Theme | null;
-    if (savedTheme === "light" || savedTheme === "dark") {
-      setThemeState(savedTheme);
-      applyTheme(savedTheme);
-    } else {
-      // Default is dark
-      applyTheme("dark");
-    }
+    // Light theme is required by default corporate standards
+    applyTheme("light");
   }, []);
 
   const applyTheme = (newTheme: Theme) => {
     const root = document.documentElement;
-    if (newTheme === "light") {
-      root.classList.add("light-mode");
-      root.classList.remove("dark-mode");
-    } else {
-      root.classList.remove("light-mode");
-      root.classList.add("dark-mode");
-    }
+    root.classList.add("light-mode");
+    root.classList.remove("dark-mode");
   };
 
   const setTheme = (newTheme: Theme) => {

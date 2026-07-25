@@ -27,6 +27,7 @@ import {
   Sprout,
   ShieldCheck,
   BookOpen,
+  BookOpenCheck,
   Calculator,
   Users2,
   FolderKanban,
@@ -39,6 +40,7 @@ export default function Navbar() {
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
+  const [mobilePortfolioOpen, setMobilePortfolioOpen] = useState(false);
   const pathname = usePathname();
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -132,42 +134,41 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-slate-950/95 backdrop-blur-md border-b border-slate-800 text-white transition-colors">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 text-slate-900 transition-colors shadow-xs">
       {/* Top Direct Contact Bar */}
-      <div className="bg-slate-900/90 border-b border-slate-800/80 text-[11px] sm:text-xs py-1.5 px-3 sm:px-6 lg:px-8">
+      <div className="bg-[#0f2942] text-slate-200 border-b border-slate-800 text-[11px] sm:text-xs py-1.5 px-3 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
           
-          <div className="flex items-center gap-2 sm:gap-4 text-slate-300 min-w-0">
+          <div className="flex items-center gap-2 sm:gap-4 text-slate-200 min-w-0">
             <span className="flex items-center gap-1.5 font-medium truncate">
-              <MapPin className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+              <MapPin className="w-3.5 h-3.5 text-blue-300 shrink-0" />
               <span className="hidden sm:inline truncate">Unipen Plaza, Argwings Kodhek Rd, Nairobi, Kenya</span>
               <span className="sm:hidden truncate">Nairobi, KE</span>
             </span>
-            <span className="hidden lg:inline text-slate-700">|</span>
-            <span className="hidden lg:flex items-center gap-1.5 text-emerald-400 font-semibold shrink-0">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-              <span>Est. 2013</span>
+            <span className="hidden lg:inline text-slate-500">|</span>
+            <span className="hidden lg:flex items-center gap-1.5 text-blue-300 font-semibold shrink-0">
+              <ShieldCheck className="w-3.5 h-3.5 text-blue-300 shrink-0" />
+              <span>Est. 2013 • Cap 499 Sec 4 Reg.</span>
             </span>
           </div>
 
-          <div className="flex items-center gap-2 sm:gap-3 text-slate-300 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 text-slate-200 shrink-0">
             <AccessibilityModal />
-            <ThemeToggle className="text-xs" />
             <a 
               href="mailto:interactresearchassociates@gmail.com" 
-              className="hidden md:flex items-center gap-1 hover:text-emerald-400 transition-colors"
+              className="hidden md:flex items-center gap-1 hover:text-blue-300 transition-colors"
               title="Email Inter-Act Research Associates"
             >
-              <Mail className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+              <Mail className="w-3.5 h-3.5 text-blue-300 shrink-0" />
               <span className="hidden xl:inline">interactresearchassociates@gmail.com</span>
               <span className="xl:hidden">Email</span>
             </a>
             <a 
               href="tel:0702103653" 
-              className="flex items-center gap-1 hover:text-emerald-400 transition-colors font-bold text-white bg-emerald-950/70 hover:bg-emerald-900/80 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg border border-emerald-500/30"
+              className="flex items-center gap-1 hover:bg-blue-800 transition-colors font-bold text-white bg-blue-900 px-2.5 py-1 rounded-lg border border-blue-700"
               title="Call Direct Office Hotline"
             >
-              <Phone className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+              <Phone className="w-3.5 h-3.5 text-blue-200 shrink-0" />
               <span>0702103653</span>
             </a>
           </div>
@@ -185,16 +186,14 @@ export default function Navbar() {
             className="flex items-center gap-2.5 sm:gap-3 group shrink-0 min-w-0"
             onClick={() => setActiveMegaMenu(null)}
           >
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-emerald-500 via-teal-500 to-cyan-500 p-0.5 shadow-md shadow-emerald-950/50 shrink-0">
-              <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-black text-emerald-400 text-xs sm:text-sm tracking-wider">
-                IARA
-              </div>
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-900 flex items-center justify-center font-black text-white text-xs sm:text-sm tracking-wider shadow-sm shrink-0">
+              IARA
             </div>
             <div className="min-w-0">
-              <span className="font-extrabold text-sm sm:text-base lg:text-lg text-white block tracking-tight group-hover:text-emerald-400 transition-colors truncate">
-                INTER-ACT <span className="text-emerald-400">RESEARCH</span>
+              <span className="font-extrabold text-sm sm:text-base lg:text-lg text-slate-900 block tracking-tight group-hover:text-blue-900 transition-colors truncate">
+                INTER-ACT <span className="text-blue-900">RESEARCH</span>
               </span>
-              <span className="text-[9px] sm:text-[10px] font-semibold text-slate-400 uppercase tracking-widest block -mt-0.5 truncate">
+              <span className="text-[9px] sm:text-[10px] font-bold text-slate-600 uppercase tracking-widest block -mt-0.5 truncate">
                 Associates • Nairobi, KE
               </span>
             </div>
@@ -204,10 +203,10 @@ export default function Navbar() {
           <nav className="hidden xl:flex items-center gap-1">
             <Link
               href="/"
-              className={`px-2.5 py-2 rounded-lg text-xs font-semibold transition-all ${
+              className={`px-3 py-2 rounded-lg text-xs font-bold transition-all ${
                 pathname === "/" 
-                  ? "bg-slate-900 text-emerald-400 border border-slate-800" 
-                  : "text-slate-300 hover:text-white hover:bg-slate-900/60"
+                  ? "bg-blue-50 text-blue-900 border border-blue-200" 
+                  : "text-slate-700 hover:text-blue-900 hover:bg-slate-100"
               }`}
             >
               Overview
@@ -221,14 +220,14 @@ export default function Navbar() {
             >
               <Link
                 href="/services"
-                className={`px-2.5 py-2 rounded-lg text-xs font-semibold transition-all flex items-center gap-1 ${
+                className={`px-3 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1 ${
                   pathname.startsWith("/services") || activeMegaMenu === "services"
-                    ? "bg-slate-900 text-emerald-400 border border-slate-800" 
-                    : "text-slate-300 hover:text-white hover:bg-slate-900/60"
+                    ? "bg-blue-50 text-blue-900 border border-blue-200" 
+                    : "text-slate-700 hover:text-blue-900 hover:bg-slate-100"
                 }`}
               >
                 <span>Services & Expertise</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMegaMenu === "services" ? "rotate-180 text-emerald-400" : "text-slate-400"}`} />
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMegaMenu === "services" ? "rotate-180 text-blue-900" : "text-slate-400"}`} />
               </Link>
             </div>
 
@@ -240,14 +239,14 @@ export default function Navbar() {
             >
               <Link
                 href="/about"
-                className={`px-2.5 py-2 rounded-lg text-xs font-semibold transition-all flex items-center gap-1 ${
+                className={`px-3 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1 ${
                   pathname === "/about" || activeMegaMenu === "about"
-                    ? "bg-slate-900 text-emerald-400 border border-slate-800" 
-                    : "text-slate-300 hover:text-white hover:bg-slate-900/60"
+                    ? "bg-blue-50 text-blue-900 border border-blue-200" 
+                    : "text-slate-700 hover:text-blue-900 hover:bg-slate-100"
                 }`}
               >
                 <span>Who We Are</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMegaMenu === "about" ? "rotate-180 text-emerald-400" : "text-slate-400"}`} />
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMegaMenu === "about" ? "rotate-180 text-blue-900" : "text-slate-400"}`} />
               </Link>
             </div>
 
@@ -259,57 +258,48 @@ export default function Navbar() {
             >
               <Link
                 href="/portfolio"
-                className={`px-2.5 py-2 rounded-lg text-xs font-semibold transition-all flex items-center gap-1 ${
+                className={`px-3 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1 ${
                   pathname === "/portfolio" || activeMegaMenu === "portfolio"
-                    ? "bg-slate-900 text-emerald-400 border border-slate-800" 
-                    : "text-slate-300 hover:text-white hover:bg-slate-900/60"
+                    ? "bg-blue-50 text-blue-900 border border-blue-200" 
+                    : "text-slate-700 hover:text-blue-900 hover:bg-slate-100"
                 }`}
               >
                 <span>Track Record</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMegaMenu === "portfolio" ? "rotate-180 text-emerald-400" : "text-slate-400"}`} />
-              </Link>
-            </div>
-
-            {/* M&E Studio (Mega Menu 4) */}
-            <div 
-              className="relative"
-              onMouseEnter={() => handleMouseEnter("studio")}
-              onMouseLeave={handleMouseLeave}
-            >
-              <Link
-                href="/studio"
-                className={`px-2.5 py-2 rounded-lg text-xs font-semibold transition-all flex items-center gap-1 ${
-                  pathname === "/studio" || activeMegaMenu === "studio"
-                    ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 font-bold" 
-                    : "text-emerald-400/90 hover:text-emerald-400 hover:bg-emerald-500/10"
-                }`}
-              >
-                <Sparkles className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                <span>M&E Studio AI</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMegaMenu === "studio" ? "rotate-180 text-emerald-400" : "text-slate-400"}`} />
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMegaMenu === "portfolio" ? "rotate-180 text-blue-900" : "text-slate-400"}`} />
               </Link>
             </div>
 
             <Link
               href="/regional"
-              className={`px-2.5 py-2 rounded-lg text-xs font-semibold transition-all ${
+              className={`px-3 py-2 rounded-lg text-xs font-bold transition-all ${
                 pathname === "/regional" 
-                  ? "bg-slate-900 text-emerald-400 border border-slate-800" 
-                  : "text-slate-300 hover:text-white hover:bg-slate-900/60"
+                  ? "bg-blue-50 text-blue-900 border border-blue-200" 
+                  : "text-slate-700 hover:text-blue-900 hover:bg-slate-100"
               }`}
             >
-              Regional
+              Regional Footprint
             </Link>
 
             <Link
               href="/resources"
-              className={`px-2.5 py-2 rounded-lg text-xs font-semibold transition-all ${
+              className={`px-3 py-2 rounded-lg text-xs font-bold transition-all ${
                 pathname === "/resources" 
-                  ? "bg-slate-900 text-emerald-400 border border-slate-800" 
-                  : "text-slate-300 hover:text-white hover:bg-slate-900/60"
+                  ? "bg-blue-50 text-blue-900 border border-blue-200" 
+                  : "text-slate-700 hover:text-blue-900 hover:bg-slate-100"
               }`}
             >
               Toolkits
+            </Link>
+
+            <Link
+              href="/glossary"
+              className={`px-3 py-2 rounded-lg text-xs font-bold transition-all ${
+                pathname === "/glossary" 
+                  ? "bg-blue-50 text-blue-900 border border-blue-200" 
+                  : "text-slate-700 hover:text-blue-900 hover:bg-slate-100"
+              }`}
+            >
+              Glossary
             </Link>
           </nav>
 
@@ -317,9 +307,9 @@ export default function Navbar() {
           <div className="hidden xl:flex items-center gap-2">
             <Link
               href="/contact"
-              className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-slate-950 font-extrabold text-xs px-3.5 py-2.5 rounded-xl shadow-lg transition-all flex items-center gap-1.5 shrink-0"
+              className="bg-blue-900 hover:bg-blue-950 text-white font-extrabold text-xs px-4 py-2.5 rounded-xl shadow-xs transition-all flex items-center gap-1.5 shrink-0"
             >
-              <FileText className="w-4 h-4 shrink-0" />
+              <FileText className="w-4 h-4 shrink-0 text-blue-200" />
               <span>Request RFP</span>
             </Link>
           </div>
@@ -328,19 +318,21 @@ export default function Navbar() {
           <div className="xl:hidden flex items-center gap-2">
             <Link
               href="/contact"
-              className="hidden sm:flex items-center gap-1 bg-emerald-500 text-slate-950 font-extrabold text-xs px-3 py-2 rounded-xl transition-all shadow-sm"
+              className="hidden sm:flex items-center gap-1 bg-blue-900 text-white font-extrabold text-xs px-3 py-2 rounded-xl transition-all shadow-xs"
             >
               <FileText className="w-3.5 h-3.5" />
               <span>Request RFP</span>
             </Link>
 
             <button
+              id="mobile-hamburger-btn"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-xl bg-slate-900 text-slate-200 hover:text-white border border-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 min-w-[44px] min-h-[44px] flex items-center justify-center transition-colors"
-              aria-label={mobileMenuOpen ? "Close menu" : "Open navigation menu"}
+              className="p-2.5 rounded-xl bg-slate-100 text-slate-800 hover:bg-slate-200 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-900/50 min-w-[44px] min-h-[44px] flex items-center justify-center transition-colors shadow-xs"
+              aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation-drawer"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6 text-emerald-400" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-6 h-6 text-blue-900" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
 
@@ -661,86 +653,107 @@ export default function Navbar() {
       {/* ========================================================= */}
       {mobileMenuOpen && (
         <>
-          {/* Dark Backdrop Overlay */}
+          {/* Backdrop Overlay */}
           <div 
-            className="xl:hidden fixed inset-0 top-[90px] sm:top-[100px] bg-slate-950/80 backdrop-blur-sm z-40 transition-opacity"
+            id="mobile-menu-backdrop"
+            className="xl:hidden fixed inset-0 top-0 bg-slate-900/40 backdrop-blur-xs z-40 transition-opacity"
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
 
-          {/* Drawer Body */}
-          <div className="xl:hidden fixed inset-x-0 top-[90px] sm:top-[100px] bottom-0 z-50 bg-slate-950/98 border-t border-slate-800 shadow-2xl flex flex-col overflow-y-auto animate-in fade-in slide-in-from-top-2 duration-200">
-            <div className="p-4 sm:p-6 space-y-4 max-w-lg mx-auto w-full flex-1">
+          {/* Drawer Body Anchored Directly Under Sticky Header */}
+          <div 
+            id="mobile-navigation-drawer"
+            className="xl:hidden absolute top-full left-0 right-0 z-50 bg-white border-t border-slate-200 shadow-xl overflow-y-auto max-h-[calc(100vh-80px)] animate-in fade-in slide-in-from-top-2 duration-200 text-slate-900"
+          >
+            <div className="p-4 sm:p-6 space-y-4 max-w-lg mx-auto w-full">
               
               {/* Highlight AI Studio Banner */}
               <Link
+                id="mobile-link-studio-banner"
                 href="/studio"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full p-3.5 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-teal-950/60 to-slate-900 border border-emerald-500/40 text-emerald-300 flex items-center justify-between shadow-lg group"
+                className="w-full p-3.5 rounded-2xl bg-blue-50 border border-blue-200 text-blue-900 flex items-center justify-between shadow-xs group"
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                    <Sparkles className="w-5 h-5" />
+                  <div className="p-2 rounded-xl bg-blue-900 text-white">
+                    <Sparkles className="w-5 h-5 text-blue-200" />
                   </div>
                   <div>
-                    <span className="text-xs font-extrabold text-white block group-hover:text-emerald-300 transition-colors">
+                    <span className="text-xs font-extrabold text-blue-900 block group-hover:text-blue-950 transition-colors">
                       M&E Studio AI Builder
                     </span>
-                    <span className="text-[11px] text-emerald-400/80 block">
+                    <span className="text-[11px] text-blue-800 font-bold block">
                       Auto-generate LogFrames & TOCs
                     </span>
                   </div>
                 </div>
-                <ArrowRight className="w-4 h-4 text-emerald-400 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-blue-800 group-hover:translate-x-1 transition-transform" />
               </Link>
 
               {/* Mobile Navigation Links */}
-              <nav className="space-y-1 text-sm font-semibold">
+              <nav className="space-y-1.5 text-sm font-bold">
+                
+                {/* 1. Overview */}
                 <Link
+                  id="mobile-link-overview"
                   href="/"
                   onClick={() => setMobileMenuOpen(false)}
                   className={`flex items-center justify-between px-4 py-3 rounded-xl transition-all ${
                     pathname === "/" 
-                      ? "bg-slate-900 text-emerald-400 border border-slate-800" 
-                      : "text-slate-200 hover:bg-slate-900/60"
+                      ? "bg-blue-900 text-white shadow-xs font-bold" 
+                      : "text-slate-800 hover:bg-slate-100"
                   }`}
                 >
-                  <span>Overview & Home</span>
-                  <ChevronRight className="w-4 h-4 text-slate-500" />
+                  <div className="flex items-center gap-2.5">
+                    <Globe2 className="w-4 h-4 text-blue-800" />
+                    <span>Overview & Home</span>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-slate-400" />
                 </Link>
 
-                {/* Collapsible Services Section */}
-                <div className="rounded-xl border border-slate-800/80 bg-slate-900/40 overflow-hidden">
-                  <div className="flex items-center justify-between px-4 py-3 text-slate-200 hover:bg-slate-900/80 transition-colors">
+                {/* 2. Collapsible Services Section */}
+                <div className="rounded-xl border border-slate-200 bg-slate-50 overflow-hidden">
+                  <div className="flex items-center justify-between px-4 py-3 text-slate-900 hover:bg-slate-100 transition-colors">
                     <Link 
+                      id="mobile-link-services-root"
                       href="/services"
                       onClick={() => setMobileMenuOpen(false)}
-                      className="flex-1 font-semibold hover:text-emerald-400 transition-colors"
+                      className="flex-1 font-extrabold hover:text-blue-900 transition-colors flex items-center gap-2.5"
                     >
-                      Services & Practice Areas
+                      <BarChart3 className="w-4 h-4 text-blue-800" />
+                      <span>Services & Practice Areas</span>
                     </Link>
                     <button 
+                      id="mobile-toggle-services-accordion"
                       onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                      className="p-1 rounded-lg hover:bg-slate-800 text-slate-400"
-                      aria-label="Toggle services list"
+                      className="p-1.5 rounded-lg hover:bg-slate-200 text-slate-600 transition-colors"
+                      aria-label="Toggle practice areas list"
+                      aria-expanded={mobileServicesOpen}
                     >
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180 text-emerald-400" : ""}`} />
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180 text-blue-900" : ""}`} />
                     </button>
                   </div>
 
                   {mobileServicesOpen && (
-                    <div className="px-3 pb-3 pt-1 space-y-1.5 border-t border-slate-800/60 bg-slate-950/60">
+                    <div className="px-3 pb-3 pt-1 space-y-1.5 border-t border-slate-200 bg-white">
                       {practiceAreas.map((pa) => {
                         const IconComp = pa.icon;
                         return (
                           <Link
+                            id={`mobile-link-service-${pa.id}`}
                             key={pa.id}
                             href={pa.href}
                             onClick={() => setMobileMenuOpen(false)}
-                            className="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800/60 text-xs font-medium text-slate-300 hover:text-white hover:border-emerald-500/40 flex items-center gap-2.5 transition-all"
+                            className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-xs font-bold text-slate-800 hover:text-blue-900 hover:border-blue-300 flex items-center justify-between gap-2 transition-all"
                           >
-                            <IconComp className="w-4 h-4 text-emerald-400 shrink-0" />
-                            <span className="truncate">{pa.short}</span>
+                            <div className="flex items-center gap-2.5 min-w-0">
+                              <IconComp className="w-4 h-4 text-blue-800 shrink-0" />
+                              <span className="truncate">{pa.short}</span>
+                            </div>
+                            <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-blue-50 text-blue-900 border border-blue-200 shrink-0">
+                              {pa.badge}
+                            </span>
                           </Link>
                         );
                       })}
@@ -748,101 +761,207 @@ export default function Navbar() {
                   )}
                 </div>
 
-                <Link
-                  href="/about"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center justify-between px-4 py-3 rounded-xl transition-all ${
-                    pathname === "/about" 
-                      ? "bg-slate-900 text-emerald-400 border border-slate-800" 
-                      : "text-slate-200 hover:bg-slate-900/60"
-                  }`}
-                >
-                  <span>Who We Are</span>
-                  <ChevronRight className="w-4 h-4 text-slate-500" />
-                </Link>
-
-                <Link
-                  href="/portfolio"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center justify-between px-4 py-3 rounded-xl transition-all ${
-                    pathname === "/portfolio" 
-                      ? "bg-slate-900 text-emerald-400 border border-slate-800" 
-                      : "text-slate-200 hover:bg-slate-900/60"
-                  }`}
-                >
-                  <div className="flex items-center gap-2">
-                    <span>Track Record & Case Studies</span>
-                    <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-                      17
-                    </span>
+                {/* 3. Collapsible Who We Are Section */}
+                <div className="rounded-xl border border-slate-200 bg-slate-50 overflow-hidden">
+                  <div className="flex items-center justify-between px-4 py-3 text-slate-900 hover:bg-slate-100 transition-colors">
+                    <Link 
+                      id="mobile-link-about-root"
+                      href="/about"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex-1 font-extrabold hover:text-blue-900 transition-colors flex items-center gap-2.5"
+                    >
+                      <Building2 className="w-4 h-4 text-blue-800" />
+                      <span>Who We Are (Cap 499)</span>
+                    </Link>
+                    <button 
+                      id="mobile-toggle-about-accordion"
+                      onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+                      className="p-1.5 rounded-lg hover:bg-slate-200 text-slate-600 transition-colors"
+                      aria-label="Toggle institutional details"
+                      aria-expanded={mobileAboutOpen}
+                    >
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileAboutOpen ? "rotate-180 text-blue-900" : ""}`} />
+                    </button>
                   </div>
-                  <ChevronRight className="w-4 h-4 text-slate-500" />
-                </Link>
 
+                  {mobileAboutOpen && (
+                    <div className="px-3 pb-3 pt-1 space-y-1.5 border-t border-slate-200 bg-white">
+                      <Link
+                        id="mobile-link-about-governance"
+                        href="/about#profile"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-xs font-bold text-slate-800 hover:text-blue-900 flex items-center justify-between gap-2"
+                      >
+                        <span className="truncate">Governance & Executive Leadership</span>
+                        <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+                      </Link>
+
+                      <Link
+                        id="mobile-link-about-ethics"
+                        href="/about#ethics"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-xs font-bold text-slate-800 hover:text-blue-900 flex items-center justify-between gap-2"
+                      >
+                        <span className="truncate">Research Ethics & Safeguards</span>
+                        <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+                      </Link>
+                    </div>
+                  )}
+                </div>
+
+                {/* 4. Collapsible Track Record Section */}
+                <div className="rounded-xl border border-slate-200 bg-slate-50 overflow-hidden">
+                  <div className="flex items-center justify-between px-4 py-3 text-slate-900 hover:bg-slate-100 transition-colors">
+                    <Link 
+                      id="mobile-link-portfolio-root"
+                      href="/portfolio"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex-1 font-extrabold hover:text-blue-900 transition-colors flex items-center justify-between pr-2"
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <FolderKanban className="w-4 h-4 text-blue-800" />
+                        <span>Track Record</span>
+                      </div>
+                      <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-900 border border-blue-200">
+                        17 Studies
+                      </span>
+                    </Link>
+                    <button 
+                      id="mobile-toggle-portfolio-accordion"
+                      onClick={() => setMobilePortfolioOpen(!mobilePortfolioOpen)}
+                      className="p-1.5 rounded-lg hover:bg-slate-200 text-slate-600 transition-colors"
+                      aria-label="Toggle track record list"
+                      aria-expanded={mobilePortfolioOpen}
+                    >
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobilePortfolioOpen ? "rotate-180 text-blue-900" : ""}`} />
+                    </button>
+                  </div>
+
+                  {mobilePortfolioOpen && (
+                    <div className="px-3 pb-3 pt-1 space-y-1.5 border-t border-slate-200 bg-white">
+                      <Link
+                        id="mobile-link-portfolio-usaid"
+                        href="/portfolio"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-xs font-bold text-slate-800 hover:text-blue-900 flex items-center justify-between"
+                      >
+                        <span className="truncate">USAID & Civil Accountability</span>
+                        <span className="text-[10px] text-blue-900 font-mono font-bold">2025</span>
+                      </Link>
+                      <Link
+                        id="mobile-link-portfolio-drf"
+                        href="/portfolio"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-xs font-bold text-slate-800 hover:text-blue-900 flex items-center justify-between"
+                      >
+                        <span className="truncate">Disability Rights Fund (DRF)</span>
+                        <span className="text-[10px] text-blue-900 font-mono font-bold">2024</span>
+                      </Link>
+                    </div>
+                  )}
+                </div>
+
+                {/* 5. Regional Footprint */}
                 <Link
+                  id="mobile-link-regional"
                   href="/regional"
                   onClick={() => setMobileMenuOpen(false)}
                   className={`flex items-center justify-between px-4 py-3 rounded-xl transition-all ${
                     pathname === "/regional" 
-                      ? "bg-slate-900 text-emerald-400 border border-slate-800" 
-                      : "text-slate-200 hover:bg-slate-900/60"
+                      ? "bg-blue-900 text-white font-bold" 
+                      : "text-slate-800 hover:bg-slate-100"
                   }`}
                 >
-                  <span>Regional Footprint (East Africa)</span>
-                  <ChevronRight className="w-4 h-4 text-slate-500" />
+                  <div className="flex items-center gap-2.5">
+                    <MapPin className="w-4 h-4 text-blue-800" />
+                    <span>Regional Footprint (EAC)</span>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-slate-400" />
                 </Link>
 
+                {/* 6. Toolkits & Publications */}
                 <Link
+                  id="mobile-link-resources"
                   href="/resources"
                   onClick={() => setMobileMenuOpen(false)}
                   className={`flex items-center justify-between px-4 py-3 rounded-xl transition-all ${
                     pathname === "/resources" 
-                      ? "bg-slate-900 text-emerald-400 border border-slate-800" 
-                      : "text-slate-200 hover:bg-slate-900/60"
+                      ? "bg-blue-900 text-white font-bold" 
+                      : "text-slate-800 hover:bg-slate-100"
                   }`}
                 >
-                  <span>Knowledge Hub & Toolkits</span>
-                  <ChevronRight className="w-4 h-4 text-slate-500" />
+                  <div className="flex items-center gap-2.5">
+                    <BookOpen className="w-4 h-4 text-blue-800" />
+                    <span>Knowledge Hub & Toolkits</span>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-slate-400" />
                 </Link>
 
+                {/* 6b. M&E Glossary */}
                 <Link
+                  id="mobile-link-glossary"
+                  href="/glossary"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`flex items-center justify-between px-4 py-3 rounded-xl transition-all ${
+                    pathname === "/glossary" 
+                      ? "bg-blue-900 text-white font-bold" 
+                      : "text-slate-800 hover:bg-slate-100"
+                  }`}
+                >
+                  <div className="flex items-center gap-2.5">
+                    <BookOpenCheck className="w-4 h-4 text-blue-800" />
+                    <span>M&E & Advisory Glossary</span>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-slate-400" />
+                </Link>
+
+                {/* 7. Contact */}
+                <Link
+                  id="mobile-link-contact"
                   href="/contact"
                   onClick={() => setMobileMenuOpen(false)}
                   className={`flex items-center justify-between px-4 py-3 rounded-xl transition-all ${
                     pathname === "/contact" 
-                      ? "bg-slate-900 text-emerald-400 border border-slate-800" 
-                      : "text-slate-200 hover:bg-slate-900/60"
+                      ? "bg-blue-900 text-white font-bold" 
+                      : "text-slate-800 hover:bg-slate-100"
                   }`}
                 >
-                  <span>Contact & Office Location</span>
-                  <ChevronRight className="w-4 h-4 text-slate-500" />
+                  <div className="flex items-center gap-2.5">
+                    <Phone className="w-4 h-4 text-blue-800" />
+                    <span>Contact & Office Location</span>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-slate-400" />
                 </Link>
+
               </nav>
 
               {/* Direct Quick Action Buttons in Drawer */}
-              <div className="pt-4 border-t border-slate-800/80 space-y-3 pb-8">
+              <div className="pt-4 border-t border-slate-200 space-y-3 pb-6">
                 <Link
+                  id="mobile-btn-request-rfp"
                   href="/contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-slate-950 font-extrabold text-sm py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-xl transition-all"
+                  className="w-full bg-blue-900 hover:bg-blue-950 text-white font-extrabold text-sm py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-xs transition-all"
                 >
-                  <FileText className="w-4 h-4" />
+                  <FileText className="w-4 h-4 text-blue-200" />
                   <span>Request Technical Proposal (RFP)</span>
                 </Link>
 
-                <div className="grid grid-cols-2 gap-2 text-xs font-semibold pt-1">
+                <div className="grid grid-cols-2 gap-2 text-xs font-bold pt-1">
                   <a
+                    id="mobile-link-phone-call"
                     href="tel:0702103653"
-                    className="p-3 rounded-xl bg-slate-900 border border-slate-800 text-white flex items-center justify-center gap-2 hover:bg-slate-800 transition-colors"
+                    className="p-3 rounded-xl bg-slate-100 border border-slate-200 text-slate-900 flex items-center justify-center gap-2 hover:bg-slate-200 transition-colors"
                   >
-                    <Phone className="w-4 h-4 text-emerald-400" />
+                    <Phone className="w-4 h-4 text-blue-800" />
                     <span>0702103653</span>
                   </a>
                   <a
+                    id="mobile-link-email-send"
                     href="mailto:interactresearchassociates@gmail.com"
-                    className="p-3 rounded-xl bg-slate-900 border border-slate-800 text-white flex items-center justify-center gap-2 hover:bg-slate-800 transition-colors truncate"
+                    className="p-3 rounded-xl bg-slate-100 border border-slate-200 text-slate-900 flex items-center justify-center gap-2 hover:bg-slate-200 transition-colors truncate"
                   >
-                    <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <Mail className="w-4 h-4 text-blue-800 shrink-0" />
                     <span className="truncate">Email Us</span>
                   </a>
                 </div>

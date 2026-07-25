@@ -9,6 +9,7 @@ import ServicesSection from "@/components/ServicesSection";
 import FrameworkStudio from "@/components/FrameworkStudio";
 import RegionalPresence from "@/components/RegionalPresence";
 import PortfolioSection from "@/components/PortfolioSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import ResourcesSection from "@/components/ResourcesSection";
 import ConsultationForm from "@/components/ConsultationForm";
 import Link from "next/link";
@@ -136,6 +137,9 @@ export default function Home() {
 
         {/* Section Snippet: Portfolio Case Studies */}
         <PortfolioSection />
+
+        {/* Section Snippet: Client Testimonials & Endorsements */}
+        <TestimonialsSection onOpenConsultation={() => setConsultationModalOpen(true)} />
 
         {/* Section Snippet: Toolkits & Publications */}
         <ResourcesSection />

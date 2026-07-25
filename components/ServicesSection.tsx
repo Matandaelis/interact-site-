@@ -151,25 +151,25 @@ export default function ServicesSection({ onSelectServiceForStudio, onOpenConsul
         
         {/* Header */}
         <MotionSection className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
-            <Layers className="w-3.5 h-3.5" /> Technical Expertise & Services
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-900 text-xs font-bold">
+            <Layers className="w-3.5 h-3.5 text-blue-800" /> Technical Expertise & Services
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Consultancy Practice Areas & Specialized Capabilities
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Consultancy Practice Areas & Technical Capabilities
           </h2>
-          <p className="text-slate-300 text-base sm:text-lg">
-            Inter-Act Research Associates offers end-to-end technical assistance for public institutions, development partners, civil society organizations, and private enterprises.
+          <p className="text-slate-700 text-base sm:text-lg">
+            Inter-Act Research Associates offers end-to-end technical assistance for development partners, civil society organizations, government entities, and private enterprises.
           </p>
         </MotionSection>
 
         {/* 12 Key Areas Grid Overview */}
-        <MotionSection delay={0.1} className="mb-16 bg-slate-950 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
-          <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2 pb-4 border-b border-slate-800">
+        <MotionSection delay={0.1} className="mb-16 bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
+          <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2 pb-4 border-b border-slate-100">
             <div>
-              <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest">Key Areas of Expertise</span>
-              <h3 className="text-xl font-bold text-white">12 Specialization Domains</h3>
+              <span className="text-xs font-bold text-blue-900 uppercase tracking-widest">Key Areas of Expertise</span>
+              <h3 className="text-xl font-bold text-slate-900">12 Specialization Domains</h3>
             </div>
-            <span className="text-xs text-slate-400 bg-slate-900 px-3 py-1 rounded-full border border-slate-800">
+            <span className="text-xs font-bold text-slate-700 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
               Verified IARA Capacity Statement
             </span>
           </div>
@@ -180,12 +180,12 @@ export default function ServicesSection({ onSelectServiceForStudio, onOpenConsul
               return (
                 <StaggerItem 
                   key={area.id}
-                  className="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 flex items-center gap-3 hover:border-emerald-500/40 transition-colors"
+                  className="bg-slate-50 p-3.5 rounded-xl border border-slate-200 flex items-center gap-3 hover:border-blue-300 transition-colors shadow-xs"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 shrink-0 font-bold">
+                  <div className="w-8 h-8 rounded-lg bg-blue-900 flex items-center justify-center text-white shrink-0 font-bold text-xs">
                     {area.id}
                   </div>
-                  <span className="font-semibold text-slate-200">{area.title}</span>
+                  <span className="font-bold text-slate-900">{area.title}</span>
                 </StaggerItem>
               );
             })}
@@ -201,13 +201,13 @@ export default function ServicesSection({ onSelectServiceForStudio, onOpenConsul
               <button
                 key={service.id}
                 onClick={() => setSelectedService(service.id)}
-                className={`px-4 py-3 rounded-xl font-semibold text-xs sm:text-sm transition-all flex items-center gap-2.5 ${
+                className={`px-4 py-3 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center gap-2.5 ${
                   isSelected
-                    ? "bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-950/50"
-                    : "bg-slate-950 hover:bg-slate-800 text-slate-300 border border-slate-800"
+                    ? "bg-blue-900 text-white shadow-md shadow-blue-900/20"
+                    : "bg-white hover:bg-slate-100 text-slate-800 border border-slate-200"
                 }`}
               >
-                <Icon className={`w-4 h-4 ${isSelected ? "text-slate-950" : "text-emerald-400"}`} />
+                <Icon className={`w-4 h-4 ${isSelected ? "text-white" : "text-blue-800"}`} />
                 <span>{service.title.split("&")[0]}</span>
               </button>
             );
@@ -215,23 +215,23 @@ export default function ServicesSection({ onSelectServiceForStudio, onOpenConsul
         </div>
 
         {/* Detailed Active Service Card */}
-        <div className="bg-slate-950 border border-slate-800 rounded-2xl p-6 sm:p-10 shadow-2xl relative overflow-hidden mb-16">
+        <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-lg relative overflow-hidden mb-16">
           
           {/* Active Practice Area Stock Banner */}
-          <div className="relative h-48 sm:h-56 w-full rounded-xl overflow-hidden mb-8 border border-slate-800 group">
+          <div className="relative h-48 sm:h-56 w-full rounded-xl overflow-hidden mb-8 border border-slate-200 group">
             <img 
               src={activeServiceObj.image}
               alt={activeServiceObj.imageAlt}
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
             <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs font-semibold text-white">
-              <span className="bg-slate-950/85 px-3 py-1 rounded-lg border border-emerald-500/40 text-emerald-300 backdrop-blur-sm flex items-center gap-2">
-                <Users2 className="w-3.5 h-3.5 text-emerald-400" />
+              <span className="bg-slate-900/90 px-3 py-1 rounded-lg border border-slate-700 text-white backdrop-blur-sm flex items-center gap-2">
+                <Users2 className="w-3.5 h-3.5 text-blue-300" />
                 {activeServiceObj.imageAlt}
               </span>
-              <span className="hidden sm:inline bg-slate-950/80 px-2.5 py-1 rounded text-slate-300 text-xs">
+              <span className="hidden sm:inline bg-slate-900/90 px-2.5 py-1 rounded text-slate-200 text-xs">
                 IARA Practice Area • East Africa
               </span>
             </div>
@@ -242,28 +242,28 @@ export default function ServicesSection({ onSelectServiceForStudio, onOpenConsul
             {/* Left overview */}
             <div className="lg:col-span-7 space-y-6">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-900">
                   <activeServiceObj.icon className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+                  <span className="text-xs font-bold uppercase tracking-wider text-blue-900 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
                     {activeServiceObj.badge}
                   </span>
-                  <h3 className="text-2xl font-bold text-white">
+                  <h3 className="text-2xl font-bold text-slate-900 mt-1">
                     {activeServiceObj.title}
                   </h3>
                 </div>
               </div>
 
-              <p className="text-slate-300 text-base font-normal leading-relaxed">
+              <p className="text-slate-700 text-base font-normal leading-relaxed">
                 {activeServiceObj.description}
               </p>
 
-              <div className="bg-slate-900/90 border border-slate-800 p-4 rounded-xl space-y-2">
-                <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+              <div className="bg-slate-50 border border-slate-200 p-4 rounded-xl space-y-2">
+                <div className="text-xs font-bold text-blue-900 uppercase tracking-wider">
                   Methodological Rigor & Tools
                 </div>
-                <div className="text-sm text-slate-200">
+                <div className="text-sm font-medium text-slate-800">
                   {activeServiceObj.methodology}
                 </div>
               </div>
@@ -272,52 +272,44 @@ export default function ServicesSection({ onSelectServiceForStudio, onOpenConsul
               <div className="pt-2 flex flex-wrap gap-3">
                 <Link
                   href={`/services/${activeServiceObj.id}`}
-                  className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs sm:text-sm px-5 py-3 rounded-xl transition-all shadow-lg flex items-center gap-2"
+                  className="bg-blue-900 hover:bg-blue-950 text-white font-extrabold text-xs sm:text-sm px-5 py-3 rounded-xl transition-all shadow-md flex items-center gap-2"
                 >
                   <BookOpen className="w-4 h-4" />
-                  Read Full 1000-Word Practice Guide
+                  Read Full Technical Practice Guide
                   <ArrowRight className="w-4 h-4" />
                 </Link>
 
                 <button
-                  onClick={() => onSelectServiceForStudio(activeServiceObj.id)}
-                  className="bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-emerald-500/40 font-bold text-xs sm:text-sm px-5 py-3 rounded-xl transition-colors flex items-center gap-2"
-                >
-                  <Sparkles className="w-4 h-4" />
-                  Studio Generator
-                </button>
-
-                <button
                   onClick={onOpenConsultation}
-                  className="bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 text-xs sm:text-sm font-semibold px-5 py-3 rounded-xl transition-colors flex items-center gap-2"
+                  className="bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-300 text-xs sm:text-sm font-bold px-5 py-3 rounded-xl transition-colors flex items-center gap-2"
                 >
-                  <FileText className="w-4 h-4" />
-                  Request RFP
+                  <FileText className="w-4 h-4 text-blue-800" />
+                  Request Proposal
                 </button>
               </div>
             </div>
 
             {/* Right Capabilities list */}
-            <div className="lg:col-span-5 bg-slate-900/80 border border-slate-800 rounded-xl p-6 space-y-4">
-              <h4 className="text-base font-bold text-white flex items-center gap-2">
-                <Check className="w-5 h-5 text-emerald-400" />
+            <div className="lg:col-span-5 bg-slate-50 border border-slate-200 rounded-xl p-6 space-y-4">
+              <h4 className="text-base font-bold text-slate-900 flex items-center gap-2">
+                <Check className="w-5 h-5 text-blue-800" />
                 Key Deliverables & Technical Services
               </h4>
 
               <div className="space-y-3">
                 {activeServiceObj.capabilities.map((cap, idx) => (
-                  <div key={idx} className="flex items-start gap-3 text-sm text-slate-300">
-                    <span className="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">
+                  <div key={idx} className="flex items-start gap-3 text-sm text-slate-800">
+                    <span className="w-5 h-5 rounded-full bg-blue-100 text-blue-900 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">
                       ✓
                     </span>
-                    <span>{cap}</span>
+                    <span className="font-medium">{cap}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+              <div className="pt-4 border-t border-slate-200 flex items-center justify-between text-xs text-slate-600">
                 <span>Coverage: Kenya, Uganda, Tanzania, Rwanda</span>
-                <Link href={`/services/${activeServiceObj.id}`} className="text-emerald-400 font-semibold hover:underline flex items-center gap-1">
+                <Link href={`/services/${activeServiceObj.id}`} className="text-blue-900 font-bold hover:underline flex items-center gap-1">
                   Read Full Detail <ChevronRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -326,13 +318,13 @@ export default function ServicesSection({ onSelectServiceForStudio, onOpenConsul
           </div>
         </div>
 
-        {/* All 5 Services Grid Cards with Direct 1000-Word Detail Links */}
+        {/* All 5 Services Grid Cards */}
         <div className="space-y-6">
           <div className="text-center space-y-2">
-            <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest">Complete Practice Catalog</span>
-            <h3 className="text-2xl font-bold text-white">Explore All 5 Detailed Technical Practice Guides</h3>
-            <p className="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto">
-              Each practice area contains comprehensive ~1000-word documentation detailing research methodologies, operational standards, toolstacks, case studies, and deliverables.
+            <span className="text-xs font-bold text-blue-900 uppercase tracking-widest">Complete Practice Catalog</span>
+            <h3 className="text-2xl font-bold text-slate-900">Explore All 5 Detailed Technical Practice Guides</h3>
+            <p className="text-slate-600 text-xs sm:text-sm max-w-2xl mx-auto">
+              Each practice area contains comprehensive documentation detailing research methodologies, operational standards, toolstacks, case studies, and deliverables.
             </p>
           </div>
 
@@ -340,31 +332,31 @@ export default function ServicesSection({ onSelectServiceForStudio, onOpenConsul
             {services.map((srv) => {
               const SrvIcon = srv.icon;
               return (
-                <div key={srv.id} className="bg-slate-950 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/50 transition-all group space-y-4 shadow-xl">
+                <div key={srv.id} className="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:border-blue-400 transition-all group space-y-4 shadow-sm">
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                      <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-900">
                         <SrvIcon className="w-5 h-5" />
                       </div>
-                      <span className="text-[10px] uppercase font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
+                      <span className="text-[10px] uppercase font-mono font-bold text-blue-900 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">
                         {srv.badge}
                       </span>
                     </div>
 
-                    <h4 className="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">
+                    <h4 className="text-lg font-bold text-slate-900 group-hover:text-blue-900 transition-colors">
                       {srv.title}
                     </h4>
 
-                    <p className="text-xs text-slate-300 leading-relaxed">
+                    <p className="text-xs text-slate-600 leading-relaxed">
                       {srv.tagline}
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-slate-800 flex items-center justify-between">
-                    <span className="text-xs text-slate-400 font-mono">1,000+ Words</span>
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <span className="text-xs text-slate-500 font-mono">1,000+ Words</span>
                     <Link 
                       href={`/services/${srv.id}`}
-                      className="bg-slate-900 hover:bg-emerald-500 text-slate-200 hover:text-slate-950 font-bold text-xs px-3.5 py-2 rounded-xl border border-slate-800 transition-all flex items-center gap-1.5"
+                      className="bg-slate-100 hover:bg-blue-900 text-slate-900 hover:text-white font-bold text-xs px-3.5 py-2 rounded-xl border border-slate-200 transition-all flex items-center gap-1.5"
                     >
                       Read Full Guide
                       <ArrowRight className="w-3.5 h-3.5" />
