@@ -9,7 +9,7 @@ interface ScrollProgressBarProps {
 }
 
 export default function ScrollProgressBar({
-  colorClassName = "bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400",
+  colorClassName = "bg-gradient-to-r from-blue-600 via-sky-500 to-blue-400",
   height = "h-1",
   showPercentage = true,
 }: ScrollProgressBarProps) {
@@ -55,7 +55,7 @@ export default function ScrollProgressBar({
       {/* Background track */}
       <div className={`w-full bg-slate-900/40 backdrop-blur-xs ${height}`}>
         <div
-          className={`${height} ${colorClassName} transition-all duration-75 ease-out shadow-[0_0_12px_rgba(16,185,129,0.7)]`}
+          className={`${height} ${colorClassName} transition-all duration-75 ease-out shadow-[0_0_12px_rgba(37,99,235,0.7)]`}
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
@@ -63,9 +63,9 @@ export default function ScrollProgressBar({
       {/* Floating percentage badge when scrolling long content */}
       {showPercentage && scrollProgress > 2 && (
         <div 
-          className="absolute right-4 top-2.5 px-2.5 py-0.5 rounded-full bg-slate-900/90 border border-emerald-500/40 text-[10px] font-mono font-bold text-emerald-400 shadow-xl backdrop-blur-md transition-opacity duration-300 flex items-center gap-1.5"
+          className="absolute right-4 top-2.5 px-2.5 py-0.5 rounded-full bg-slate-900/90 border border-blue-500/40 text-[10px] font-mono font-bold text-blue-400 shadow-xl backdrop-blur-md transition-opacity duration-300 flex items-center gap-1.5"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
           <span>{Math.round(scrollProgress)}% read</span>
         </div>
       )}

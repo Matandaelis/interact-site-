@@ -22,7 +22,7 @@ export default function PortfolioPage() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="flex-1 flex flex-col min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-emerald-500 selection:text-slate-950">
+    <div className="flex-1 flex flex-col min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-blue-500 selection:text-slate-950">
       <Navbar />
 
       <Breadcrumb items={[{ label: "Past Assignments & Track Record" }]} />
@@ -30,10 +30,10 @@ export default function PortfolioPage() {
       <main className="flex-1">
         {/* Page Hero Header */}
         <section className="bg-slate-900/80 border-b border-slate-800 py-16 sm:py-20 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/20 via-slate-950/80 to-cyan-950/20 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-950/20 via-slate-950/80 to-blue-950/20 pointer-events-none" />
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold">
               <BarChart3 className="w-4 h-4" /> Track Record & Institutional Experience
             </div>
 
@@ -48,7 +48,7 @@ export default function PortfolioPage() {
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
                 onClick={() => setModalOpen(true)}
-                className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs px-5 py-3 rounded-xl transition-all shadow-lg flex items-center gap-2"
+                className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs px-5 py-3 rounded-xl transition-all shadow-lg flex items-center gap-2"
               >
                 <FileText className="w-4 h-4" />
                 Request Specific Case Study or Reference

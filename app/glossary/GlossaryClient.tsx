@@ -126,7 +126,7 @@ export default function GlossaryClient() {
   }, []);
 
   return (
-    <div className="flex-1 flex flex-col min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-emerald-500 selection:text-slate-950">
+    <div className="flex-1 flex flex-col min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-blue-500 selection:text-slate-950">
       <Navbar />
 
       <Breadcrumb items={[{ label: "Glossary & Terminology Handbook" }]} />
@@ -134,10 +134,10 @@ export default function GlossaryClient() {
       <main className="flex-1">
         {/* Page Hero Section */}
         <section className="bg-slate-900 border-b border-slate-800 py-12 sm:py-16 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/20 via-slate-950/80 to-blue-950/20 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-950/20 via-slate-950/80 to-blue-950/20 pointer-events-none" />
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold">
               <BookOpen className="w-4 h-4" /> M&E & Development Lexicon
             </div>
 
@@ -152,7 +152,7 @@ export default function GlossaryClient() {
             {/* Quick Stats Bar */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl pt-2 text-xs">
               <div className="p-3 bg-slate-950/80 border border-slate-800 rounded-xl">
-                <span className="block font-black text-emerald-400 text-lg">{GLOSSARY_TERMS.length}</span>
+                <span className="block font-black text-blue-400 text-lg">{GLOSSARY_TERMS.length}</span>
                 <span className="text-slate-400 font-medium">Curated Terms</span>
               </div>
               <div className="p-3 bg-slate-950/80 border border-slate-800 rounded-xl">
@@ -164,9 +164,57 @@ export default function GlossaryClient() {
                 <span className="text-slate-400 font-medium">Standard Aligned</span>
               </div>
               <div className="p-3 bg-slate-950/80 border border-slate-800 rounded-xl">
-                <span className="block font-black text-cyan-400 text-lg">EAC</span>
+                <span className="block font-black text-blue-400 text-lg">EAC</span>
                 <span className="text-slate-400 font-medium">Field Context</span>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Comprehensive AEO & SEO Lexical Guide Section */}
+        <section className="py-12 bg-slate-950 border-b border-slate-800">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div className="border-l-4 border-blue-500 pl-4 space-y-2">
+              <span className="text-xs font-bold text-blue-400 uppercase tracking-widest block font-mono">Lexicon Standards</span>
+              <h2 className="text-2xl sm:text-3xl font-black text-white">Methodological Reference Guidelines &amp; Lexicon Standards</h2>
+            </div>
+
+            <div className="prose prose-invert max-w-none text-slate-300 text-sm sm:text-base space-y-6 leading-relaxed">
+              <p>
+                In international development consultancy, Monitoring, Evaluation, Accountability, and Learning (MEAL) represent the core diagnostic mechanisms that ensure projects are executed with fidelity, transparency, and high performance. Established in <strong>2013</strong> under the <strong>Kenyan Company&apos;s Act (Cap 499 Section 4)</strong> and led by <strong>Executive Director Kennedy S. Okumu</strong>, Inter-Act Research Associates (IARA) publishes this authoritative terminology handbook to standardize development vocabularies across the East African Community (EAC).
+              </p>
+
+              <h3 className="text-lg sm:text-xl font-bold text-white pt-2 border-b border-slate-800 pb-2">1. Why Terminology Standardization Matters in Development</h3>
+              <p>
+                A primary reason for programmatic failures in donor-funded interventions is the lack of common alignment on operational definitions. Concepts like <em>Outputs</em> versus <em>Outcomes</em>, or <em>Impact</em> versus <em>Effectiveness</em>, are frequently conflated, leading to misaligned indicators, flawed logframes, and faulty reporting structures. By establishing clear, standardized definitions, IARA seeks to align sub-national, national, and international stakeholders—including civil society organizations (CSOs), Organizations of Persons with Disabilities (OPDs), national government ministries, and multilateral donor bodies (USAID, EU, World Bank, UN).
+              </p>
+
+              <h3 className="text-lg sm:text-xl font-bold text-white pt-2 border-b border-slate-800 pb-2">2. Structure of This Terminology Handbook</h3>
+              <p>
+                Our lexicon is structured around five core categories to reflect the comprehensive advisory landscape of East Africa:
+              </p>
+              <ul className="list-disc pl-5 space-y-2 text-slate-400 text-xs sm:text-sm">
+                <li>
+                  <strong>Monitoring &amp; Evaluation (M&amp;E):</strong> Focusing on indicators, Logical Frameworks (LogFrames), Theory of Change, baseline methodologies, and verification frameworks.
+                </li>
+                <li>
+                  <strong>Disability Mainstreaming:</strong> Outlining accessibility metrics, UN CRPD compliance, disability audits, and reasonable accommodation indicators.
+                </li>
+                <li>
+                  <strong>Proposal Development:</strong> Defining logic models, resource mobilization, project risk frameworks, and feasibility criteria.
+                </li>
+                <li>
+                  <strong>Socio-Economic Surveys:</strong> Terminology regarding statistical sampling (probability vs. non-probability), household survey methodology, and CAPI tools (ODK, KoboToolbox).
+                </li>
+                <li>
+                  <strong>Strategic Planning:</strong> Key terms regarding organizational diagnostic indices, governance, policy formulating, and capacity indicators.
+                </li>
+              </ul>
+
+              <h3 className="text-lg sm:text-xl font-bold text-white pt-2 border-b border-slate-800 pb-2">3. Integrating Terminology Into Project Lifecycles</h3>
+              <p>
+                This glossary is designed as an interactive, functional workspace. We encourage practitioners to utilize these terms during the initial program design phase—specifically when building a Theory of Change or Logical Framework. Aligning your indicators with the exact definitions and practical field examples detailed in this lexicon will improve your technical writing and help your projects meet standard international evaluation metrics, including the OECD-DAC evaluation guidelines.
+              </p>
             </div>
           </div>
         </section>
@@ -185,7 +233,7 @@ export default function GlossaryClient() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search by term, acronym (e.g., LogFrame, GESI), or keyword..."
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-10 pr-10 py-2.5 text-sm text-white placeholder-slate-500 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
+                  className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-10 pr-10 py-2.5 text-sm text-white placeholder-slate-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
                 />
                 {searchQuery && (
                   <button
@@ -223,7 +271,7 @@ export default function GlossaryClient() {
                     onClick={() => setSelectedCategory(cat)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-bold shrink-0 transition-all ${
                       isActive
-                        ? "bg-emerald-500 text-slate-950 shadow-md"
+                        ? "bg-blue-600 text-white shadow-md"
                         : "bg-slate-950/70 border border-slate-800 text-slate-300 hover:bg-slate-800 hover:text-white"
                     }`}
                   >
@@ -276,7 +324,7 @@ export default function GlossaryClient() {
           <div className="flex items-center justify-between pb-6 border-b border-slate-800/80 mb-8 text-xs text-slate-400">
             <p>
               Showing <span className="font-extrabold text-white">{filteredTerms.length}</span> terms 
-              {selectedCategory !== "All Categories" && <span> in <span className="text-emerald-400 font-bold">{selectedCategory}</span></span>}
+              {selectedCategory !== "All Categories" && <span> in <span className="text-blue-400 font-bold">{selectedCategory}</span></span>}
               {selectedLetter !== "ALL" && <span> starting with <span className="text-blue-400 font-bold">{selectedLetter}</span></span>}
             </p>
             {searchQuery && (
@@ -295,7 +343,7 @@ export default function GlossaryClient() {
               <button
                 id="glossary-empty-reset"
                 onClick={resetFilters}
-                className="px-4 py-2 bg-emerald-500 text-slate-950 font-bold text-xs rounded-xl hover:bg-emerald-400 transition-all inline-flex items-center gap-2"
+                className="px-4 py-2 bg-blue-600 text-white font-bold text-xs rounded-xl hover:bg-blue-500 transition-all inline-flex items-center gap-2"
               >
                 Clear All Filters
               </button>
@@ -310,7 +358,7 @@ export default function GlossaryClient() {
                     key={item.id}
                     id={`term-card-${item.id}`}
                     onClick={() => handleOpenTerm(item)}
-                    className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 shadow-xl transition-all hover:border-emerald-500/30 hover:bg-slate-900/100 hover:scale-[1.01] active:scale-[0.99] cursor-pointer flex flex-col justify-between group duration-200"
+                    className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 shadow-xl transition-all hover:border-blue-500/30 hover:bg-slate-900/100 hover:scale-[1.01] active:scale-[0.99] cursor-pointer flex flex-col justify-between group duration-200"
                   >
                     <div className="space-y-3">
                       {/* Top Header & Badges */}
@@ -326,7 +374,7 @@ export default function GlossaryClient() {
                               </span>
                             )}
                           </div>
-                          <h2 className="text-lg sm:text-xl font-extrabold text-white group-hover:text-emerald-400 transition-colors">
+                          <h2 className="text-lg sm:text-xl font-extrabold text-white group-hover:text-blue-400 transition-colors">
                             {item.term}
                           </h2>
                         </div>
@@ -343,7 +391,7 @@ export default function GlossaryClient() {
                           aria-label={`Copy definition for ${item.term}`}
                         >
                           {isCopied ? (
-                            <Check className="w-4 h-4 text-emerald-400" />
+                            <Check className="w-4 h-4 text-blue-400" />
                           ) : (
                             <Copy className="w-4 h-4" />
                           )}
@@ -364,7 +412,7 @@ export default function GlossaryClient() {
                           e.stopPropagation();
                           handleOpenTerm(item);
                         }}
-                        className="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5 transition-all group/btn"
+                        className="text-xs font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1.5 transition-all group/btn"
                       >
                         <span>Read Field Context & Example</span>
                         <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
@@ -404,7 +452,7 @@ export default function GlossaryClient() {
             <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
               <Link
                 href="/contact"
-                className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs px-6 py-3.5 rounded-xl transition-all shadow-xl flex items-center gap-2"
+                className="bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs px-6 py-3.5 rounded-xl transition-all shadow-xl flex items-center gap-2"
               >
                 Request Proposal / Terminology Consultation
                 <ArrowRight className="w-4 h-4" />
@@ -478,7 +526,7 @@ export default function GlossaryClient() {
                     aria-label={`Copy definition for ${selectedTerm.term}`}
                   >
                     {copiedTermId === selectedTerm.id ? (
-                      <Check className="w-4 h-4 text-emerald-400" />
+                      <Check className="w-4 h-4 text-blue-400" />
                     ) : (
                       <Copy className="w-4 h-4" />
                     )}
@@ -520,10 +568,10 @@ export default function GlossaryClient() {
 
                 {/* Practical Example */}
                 <div className="space-y-3">
-                  <span className="text-[10px] font-black text-emerald-500 uppercase tracking-widest flex items-center gap-1.5">
+                  <span className="text-[10px] font-black text-blue-400 uppercase tracking-widest flex items-center gap-1.5">
                     <BookmarkCheck className="w-4 h-4" /> Practical Field Case Study Example (East Africa)
                   </span>
-                  <div className="bg-emerald-950/25 p-5 rounded-2xl border border-emerald-500/20 text-slate-200 text-sm leading-relaxed font-medium">
+                  <div className="bg-blue-950/25 p-5 rounded-2xl border border-blue-500/20 text-slate-200 text-sm leading-relaxed font-medium">
                     {selectedTerm.practicalExample}
                   </div>
                 </div>
@@ -561,7 +609,7 @@ export default function GlossaryClient() {
                   href="/contact"
                   id="drawer-consult-iara-btn"
                   onClick={() => setSelectedTerm(null)}
-                  className="px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs transition-all flex items-center justify-center gap-2 shadow-lg"
+                  className="px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-black text-xs transition-all flex items-center justify-center gap-2 shadow-lg"
                 >
                   <span>Consult IARA on this Term</span>
                   <ArrowRight className="w-4 h-4" />

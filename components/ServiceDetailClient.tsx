@@ -43,7 +43,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
   const IconComponent = iconMap[service.id] || Layers;
 
   return (
-    <div className="flex-1 flex flex-col min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-emerald-500 selection:text-slate-950">
+    <div className="flex-1 flex flex-col min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-blue-500 selection:text-slate-950">
       <ScrollProgressBar />
       <Navbar />
 
@@ -58,11 +58,11 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
 
         {/* Hero Header */}
         <section className="bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 border-b border-slate-800 py-16 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/20 via-transparent to-cyan-950/20 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-950/20 via-transparent to-blue-950/20 pointer-events-none" />
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold">
                 <IconComponent className="w-4 h-4" /> {service.badge}
               </div>
 
@@ -86,7 +86,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
                 onClick={() => setModalOpen(true)}
-                className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs px-6 py-3.5 rounded-xl transition-all shadow-lg flex items-center gap-2"
+                className="bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs px-6 py-3.5 rounded-xl transition-all shadow-lg flex items-center gap-2"
               >
                 <FileText className="w-4 h-4" />
                 Request RFP / Proposal for {service.shortTitle}
@@ -94,7 +94,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
 
               <Link
                 href="/studio"
-                className="bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-emerald-500/40 font-bold text-xs px-6 py-3.5 rounded-xl transition-all flex items-center gap-2"
+                className="bg-slate-900 hover:bg-slate-800 text-blue-400 border border-blue-500/40 font-bold text-xs px-6 py-3.5 rounded-xl transition-all flex items-center gap-2"
               >
                 <Sparkles className="w-4 h-4" />
                 Generate Framework in Studio
@@ -114,7 +114,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                 {/* 1. Practice Overview */}
                 <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6 shadow-xl">
                   <div className="border-b border-slate-800 pb-4">
-                    <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest block">Detailed Scope & Practice Overview</span>
+                    <span className="text-xs font-bold text-blue-400 uppercase tracking-widest block">Detailed Scope & Practice Overview</span>
                     <h2 className="text-2xl font-bold text-white mt-1">Institutional Capacity & Purpose</h2>
                   </div>
 
@@ -128,7 +128,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                 {/* 2. Methodological Architecture */}
                 <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6 shadow-xl">
                   <div className="border-b border-slate-800 pb-4">
-                    <span className="text-xs font-bold text-teal-400 uppercase tracking-widest block">Scientific Standards & Design</span>
+                    <span className="text-xs font-bold text-blue-400 uppercase tracking-widest block">Scientific Standards & Design</span>
                     <h2 className="text-2xl font-bold text-white mt-1">Methodological Framework</h2>
                   </div>
 
@@ -142,15 +142,15 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                 {/* 3. Core Capabilities & Technical Deliverables */}
                 <div className="space-y-6">
                   <div className="border-b border-slate-800 pb-4">
-                    <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest block">Technical Operations</span>
+                    <span className="text-xs font-bold text-blue-400 uppercase tracking-widest block">Technical Operations</span>
                     <h2 className="text-2xl font-bold text-white mt-1">Core Technical Capabilities & Deliverables</h2>
                   </div>
 
                   <div className="grid grid-cols-1 gap-6">
                     {service.coreCapabilities.map((cap, idx) => (
-                      <div key={idx} className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 hover:border-emerald-500/40 transition-all">
+                      <div key={idx} className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 hover:border-blue-500/40 transition-all">
                         <div className="flex items-start gap-3">
-                          <span className="w-7 h-7 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                          <span className="w-7 h-7 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-400 font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
                             0{idx + 1}
                           </span>
                           <div>
@@ -164,7 +164,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
                             {cap.deliverables.map((deliv, dIdx) => (
                               <li key={dIdx} className="flex items-start gap-2">
-                                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                                <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" />
                                 <span>{deliv}</span>
                               </li>
                             ))}
@@ -179,7 +179,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                 {service.detailedSections.map((sec, idx) => (
                   <div key={idx} className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6 shadow-xl">
                     <div className="border-b border-slate-800 pb-4">
-                      <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest block">In-Depth Practice Domain</span>
+                      <span className="text-xs font-bold text-blue-400 uppercase tracking-widest block">In-Depth Practice Domain</span>
                       <h2 className="text-xl sm:text-2xl font-bold text-white mt-1">{sec.heading}</h2>
                     </div>
 
@@ -194,7 +194,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                 {/* 5. Applied Field Case Studies */}
                 <div className="space-y-6">
                   <div className="border-b border-slate-800 pb-4">
-                    <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest block">Demonstrated Track Record</span>
+                    <span className="text-xs font-bold text-blue-400 uppercase tracking-widest block">Demonstrated Track Record</span>
                     <h2 className="text-2xl font-bold text-white mt-1">Select Case Studies & Applied Field Assignments</h2>
                   </div>
 
@@ -202,7 +202,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                     {service.caseStudies.map((cs, idx) => (
                       <div key={idx} className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-3 flex flex-col justify-between">
                         <div className="space-y-2">
-                          <div className="flex items-center justify-between text-xs text-emerald-400 font-semibold">
+                          <div className="flex items-center justify-between text-xs text-blue-400 font-semibold">
                             <span>{cs.client}</span>
                             <span className="bg-slate-950 px-2.5 py-0.5 rounded border border-slate-800">{cs.year}</span>
                           </div>
@@ -212,7 +212,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                             {cs.summary}
                           </p>
                         </div>
-                        <div className="bg-slate-950 p-3 rounded-xl border border-slate-800 text-xs text-emerald-300 font-medium">
+                        <div className="bg-slate-950 p-3 rounded-xl border border-slate-800 text-xs text-blue-300 font-medium">
                           <strong>Impact:</strong> {cs.outcomes}
                         </div>
                       </div>
@@ -228,7 +228,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                 {/* Tech & Tools Stack Box */}
                 <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-6 shadow-xl sticky top-24">
                   <div className="border-b border-slate-800 pb-3">
-                    <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest block">Instrument Stack</span>
+                    <span className="text-xs font-bold text-blue-400 uppercase tracking-widest block">Instrument Stack</span>
                     <h3 className="text-lg font-bold text-white">Tools & Software Ecosystem</h3>
                   </div>
 
@@ -249,11 +249,11 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
 
                   {/* Quality Assurance Standards */}
                   <div className="pt-4 border-t border-slate-800 space-y-3">
-                    <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest block">Institutional Standards</span>
+                    <span className="text-xs font-bold text-blue-400 uppercase tracking-widest block">Institutional Standards</span>
                     <ul className="space-y-2 text-xs text-slate-300">
                       {service.qualityStandards.map((std, sIdx) => (
                         <li key={sIdx} className="flex items-start gap-2">
-                          <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                          <ShieldCheck className="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" />
                           <span>{std}</span>
                         </li>
                       ))}
@@ -261,14 +261,14 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                   </div>
 
                   {/* RFP CTA Sidebar Box */}
-                  <div className="bg-gradient-to-br from-emerald-950 to-slate-950 border border-emerald-500/40 rounded-xl p-5 text-center space-y-3 pt-4">
+                  <div className="bg-gradient-to-br from-blue-950 to-slate-950 border border-blue-500/40 rounded-xl p-5 text-center space-y-3 pt-4">
                     <h4 className="text-white font-bold text-sm">Need a Technical Proposal?</h4>
                     <p className="text-xs text-slate-300">
                       Our Executive Director & Technical Desk respond to RFPs within 24 hours.
                     </p>
                     <button
                       onClick={() => setModalOpen(true)}
-                      className="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs py-2.5 rounded-xl transition-all shadow-md flex items-center justify-center gap-2"
+                      className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs py-2.5 rounded-xl transition-all shadow-md flex items-center justify-center gap-2"
                     >
                       <FileText className="w-4 h-4" />
                       Submit RFP Request
@@ -281,7 +281,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                     <ul className="space-y-1 text-xs">
                       {detailedServices.filter(s => s.id !== service.id).map((s) => (
                         <li key={s.id}>
-                          <Link href={`/services/${s.id}`} className="text-slate-300 hover:text-emerald-400 flex items-center justify-between py-1 transition-colors">
+                          <Link href={`/services/${s.id}`} className="text-slate-300 hover:text-blue-400 flex items-center justify-between py-1 transition-colors">
                             <span className="truncate">{s.shortTitle}</span>
                             <ArrowRight className="w-3 h-3 text-slate-500" />
                           </Link>

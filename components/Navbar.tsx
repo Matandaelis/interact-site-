@@ -360,13 +360,13 @@ export default function Navbar() {
                 <div className="col-span-8 space-y-4">
                   <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
                     <div>
-                      <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest block">Technical Capabilities</span>
+                      <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest block">Technical Capabilities</span>
                       <h3 className="text-base font-bold text-white">5 Specialized Consulting Practices</h3>
                     </div>
                     <Link 
                       href="/services" 
                       onClick={() => setActiveMegaMenu(null)}
-                      className="text-xs text-emerald-400 hover:underline flex items-center gap-1 font-semibold"
+                      className="text-xs text-blue-400 hover:underline flex items-center gap-1 font-semibold"
                     >
                       View All Practice Catalog <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
@@ -380,17 +380,17 @@ export default function Navbar() {
                           key={pa.id}
                           href={pa.href}
                           onClick={() => setActiveMegaMenu(null)}
-                          className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-emerald-500/50 hover:bg-slate-900 transition-all group flex items-start gap-3"
+                          className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-blue-500/50 hover:bg-slate-900 transition-all group flex items-start gap-3"
                         >
-                          <div className="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-105 transition-transform shrink-0 mt-0.5">
+                          <div className="w-9 h-9 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 group-hover:scale-105 transition-transform shrink-0 mt-0.5">
                             <IconComp className="w-4 h-4" />
                           </div>
                           <div className="space-y-1 min-w-0">
                             <div className="flex items-center gap-2">
-                              <h4 className="text-xs font-bold text-white group-hover:text-emerald-400 transition-colors truncate">
+                              <h4 className="text-xs font-bold text-white group-hover:text-blue-400 transition-colors truncate">
                                 {pa.short}
                               </h4>
-                              <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shrink-0">
+                              <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20 shrink-0">
                                 {pa.badge}
                               </span>
                             </div>
@@ -405,9 +405,9 @@ export default function Navbar() {
                 </div>
 
                 {/* Right Callout Card (4 cols) */}
-                <div className="col-span-4 bg-gradient-to-br from-slate-900 via-slate-900 to-emerald-950/40 border border-slate-800 rounded-2xl p-5 space-y-4 shadow-xl">
+                <div className="col-span-4 bg-gradient-to-br from-slate-900 via-slate-900 to-blue-950/40 border border-slate-800 rounded-2xl p-5 space-y-4 shadow-xl">
                   <div className="space-y-2">
-                    <span className="inline-flex items-center gap-1.5 text-[10px] font-bold text-emerald-400 uppercase tracking-widest bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
+                    <span className="inline-flex items-center gap-1.5 text-[10px] font-bold text-blue-400 uppercase tracking-widest bg-blue-500/10 px-2.5 py-1 rounded-full border border-blue-500/20">
                       <Sparkles className="w-3 h-3" /> Practice Studio Generator
                     </span>
                     <h4 className="text-sm font-bold text-white">Generate M&E Frameworks Instantly</h4>
@@ -420,7 +420,7 @@ export default function Navbar() {
                     <Link
                       href="/studio"
                       onClick={() => setActiveMegaMenu(null)}
-                      className="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs py-2.5 rounded-xl transition-all shadow flex items-center justify-center gap-2 block text-center"
+                      className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs py-2.5 rounded-xl transition-all shadow flex items-center justify-center gap-2 block text-center"
                     >
                       <Sparkles className="w-3.5 h-3.5" />
                       Open Studio AI Builder
@@ -446,38 +446,38 @@ export default function Navbar() {
                 
                 <div className="col-span-8 grid grid-cols-2 gap-4">
                   <div className="space-y-3">
-                    <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest block">Institutional Profile</span>
+                    <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest block">Institutional Profile</span>
                     <h3 className="text-sm font-bold text-white">About Inter-Act Research Associates</h3>
                     <p className="text-xs text-slate-300 leading-relaxed">
                       Registered under Cap 499 Section 4 of Kenya Companies Act (Established 2013). We specialize in policy evaluation, social inclusion, and field-based research across East and Horn of Africa.
                     </p>
                     <ul className="space-y-2 text-xs text-slate-300 pt-1">
                       <li className="flex items-center gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
                         <span>Registered Corporate Entity since 2013</span>
                       </li>
                       <li className="flex items-center gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
                         <span>OECD-DAC Evaluation Standards Compliant</span>
                       </li>
                       <li className="flex items-center gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
                         <span>Institutional Review Board (IRB) Protocols</span>
                       </li>
                     </ul>
                   </div>
 
                   <div className="space-y-2">
-                    <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest block">Key Information</span>
+                    <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest block">Key Information</span>
                     <div className="space-y-2">
                       <Link 
                         href="/about#profile" 
                         onClick={() => setActiveMegaMenu(null)}
-                        className="p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-500/40 block transition-all group"
+                        className="p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-blue-500/40 block transition-all group"
                       >
-                        <h4 className="text-xs font-bold text-white group-hover:text-emerald-400 flex items-center justify-between">
+                        <h4 className="text-xs font-bold text-white group-hover:text-blue-400 flex items-center justify-between">
                           <span>Governance & Leadership</span>
-                          <ArrowRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-emerald-400" />
+                          <ArrowRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-blue-400" />
                         </h4>
                         <p className="text-[11px] text-slate-400 mt-1">Multi-disciplinary team of lead consultants & statisticians.</p>
                       </Link>
@@ -485,11 +485,11 @@ export default function Navbar() {
                       <Link 
                         href="/about#ethics" 
                         onClick={() => setActiveMegaMenu(null)}
-                        className="p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-500/40 block transition-all group"
+                        className="p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-blue-500/40 block transition-all group"
                       >
-                        <h4 className="text-xs font-bold text-white group-hover:text-emerald-400 flex items-center justify-between">
+                        <h4 className="text-xs font-bold text-white group-hover:text-blue-400 flex items-center justify-between">
                           <span>Research Ethics & Safeguards</span>
-                          <ArrowRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-emerald-400" />
+                          <ArrowRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-blue-400" />
                         </h4>
                         <p className="text-[11px] text-slate-400 mt-1">Washington Group sets, child protection, & data privacy.</p>
                       </Link>
@@ -498,7 +498,7 @@ export default function Navbar() {
                 </div>
 
                 <div className="col-span-4 bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3">
-                  <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest block">Regional Coverage</span>
+                  <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest block">Regional Coverage</span>
                   <h4 className="text-sm font-bold text-white">East & Horn of Africa Reach</h4>
                   <p className="text-xs text-slate-300 leading-relaxed">
                     Headquartered at Unipen Plaza, Nairobi, with active field operations in Kenya, Uganda, Tanzania, Rwanda, South Sudan, and Somalia.
@@ -506,7 +506,7 @@ export default function Navbar() {
                   <Link
                     href="/about"
                     onClick={() => setActiveMegaMenu(null)}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:underline pt-2"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-400 hover:underline pt-2"
                   >
                     Read Full Organizational Profile <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
@@ -519,16 +519,17 @@ export default function Navbar() {
             {activeMegaMenu === "portfolio" && (
               <div className="grid grid-cols-12 gap-8 items-start">
                 
+                {/* Main 5 Practice Grid (8 cols) */}
                 <div className="col-span-8 space-y-4">
                   <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
                     <div>
-                      <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest block">Proven History</span>
+                      <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest block">Proven History</span>
                       <h3 className="text-base font-bold text-white">17 Major Development & Research Assignments</h3>
                     </div>
                     <Link 
                       href="/portfolio" 
                       onClick={() => setActiveMegaMenu(null)}
-                      className="text-xs text-emerald-400 hover:underline flex items-center gap-1 font-semibold"
+                      className="text-xs text-blue-400 hover:underline flex items-center gap-1 font-semibold"
                     >
                       Explore All 17 Case Studies <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
@@ -536,19 +537,19 @@ export default function Navbar() {
 
                   <div className="grid grid-cols-3 gap-3">
                     <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1">
-                      <span className="text-xs font-bold text-emerald-400 block font-mono">Disability Rights Fund</span>
+                      <span className="text-xs font-bold text-blue-400 block font-mono">Disability Rights Fund</span>
                       <h4 className="text-xs font-bold text-white">Disability Inclusion Review</h4>
                       <p className="text-[10px] text-slate-400">1,200 households evaluated in Nairobi, Kisumu & Garissa.</p>
                     </div>
 
                     <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1">
-                      <span className="text-xs font-bold text-teal-400 block font-mono">VSO Kenya / DRF</span>
+                      <span className="text-xs font-bold text-blue-400 block font-mono">VSO Kenya / DRF</span>
                       <h4 className="text-xs font-bold text-white">Assistive Tech Baseline</h4>
                       <p className="text-[10px] text-slate-400">Policy barriers and economic empowerment metrics.</p>
                     </div>
 
                     <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1">
-                      <span className="text-xs font-bold text-cyan-400 block font-mono">Regional Donors</span>
+                      <span className="text-xs font-bold text-blue-400 block font-mono">Regional Donors</span>
                       <h4 className="text-xs font-bold text-white">Youth Eco-Livelihoods</h4>
                       <p className="text-[10px] text-slate-400">850 youth enterprises in Kajiado & Machakos counties.</p>
                     </div>
@@ -556,7 +557,7 @@ export default function Navbar() {
                 </div>
 
                 <div className="col-span-4 bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3">
-                  <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest block">Client Partners</span>
+                  <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest block">Client Partners</span>
                   <h4 className="text-sm font-bold text-white">Trusted by International Development Partners</h4>
                   <p className="text-xs text-slate-300 leading-relaxed">
                     UN Agencies, USAID Implementers, County Governments, Disability Rights Fund, VSO, and INGOs.
@@ -564,7 +565,7 @@ export default function Navbar() {
                   <Link
                     href="/portfolio"
                     onClick={() => setActiveMegaMenu(null)}
-                    className="w-full bg-slate-950 hover:bg-slate-800 text-emerald-400 border border-emerald-500/30 font-bold text-xs py-2.5 rounded-xl transition-all flex items-center justify-center gap-2 block text-center"
+                    className="w-full bg-slate-950 hover:bg-slate-800 text-blue-400 border border-blue-500/30 font-bold text-xs py-2.5 rounded-xl transition-all flex items-center justify-center gap-2 block text-center"
                   >
                     View Complete Track Record Matrix
                   </Link>
@@ -580,13 +581,13 @@ export default function Navbar() {
                 <div className="col-span-8 space-y-4">
                   <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
                     <div>
-                      <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest block">Interactive Tools</span>
+                      <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest block">Interactive Tools</span>
                       <h3 className="text-base font-bold text-white">M&E Studio & Empirical Analytics Generators</h3>
                     </div>
                     <Link 
                       href="/studio" 
                       onClick={() => setActiveMegaMenu(null)}
-                      className="text-xs text-emerald-400 hover:underline flex items-center gap-1 font-semibold"
+                      className="text-xs text-blue-400 hover:underline flex items-center gap-1 font-semibold"
                     >
                       Open Full Studio Interface <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
@@ -596,37 +597,37 @@ export default function Navbar() {
                     <Link 
                       href="/studio" 
                       onClick={() => setActiveMegaMenu(null)}
-                      className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-500/40 block transition-all group"
+                      className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-blue-500/40 block transition-all group"
                     >
-                      <Sparkles className="w-4 h-4 text-emerald-400 mb-2" />
-                      <h4 className="text-xs font-bold text-white group-hover:text-emerald-400">LogFrame Generator</h4>
+                      <Sparkles className="w-4 h-4 text-blue-400 mb-2" />
+                      <h4 className="text-xs font-bold text-white group-hover:text-blue-400">LogFrame Generator</h4>
                       <p className="text-[11px] text-slate-400 mt-1">Generates complete Logical Frameworks with PIRS indicators.</p>
                     </Link>
 
                     <Link 
                       href="/studio" 
                       onClick={() => setActiveMegaMenu(null)}
-                      className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-500/40 block transition-all group"
+                      className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-blue-500/40 block transition-all group"
                     >
-                      <Compass className="w-4 h-4 text-teal-400 mb-2" />
-                      <h4 className="text-xs font-bold text-white group-hover:text-emerald-400">Theory of Change</h4>
+                      <Compass className="w-4 h-4 text-blue-400 mb-2" />
+                      <h4 className="text-xs font-bold text-white group-hover:text-blue-400">Theory of Change</h4>
                       <p className="text-[11px] text-slate-400 mt-1">Formulate causal pathways, assumptions, & impact linkages.</p>
                     </Link>
 
                     <Link 
                       href="/resources" 
                       onClick={() => setActiveMegaMenu(null)}
-                      className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-500/40 block transition-all group"
+                      className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-blue-500/40 block transition-all group"
                     >
-                      <Calculator className="w-4 h-4 text-cyan-400 mb-2" />
-                      <h4 className="text-xs font-bold text-white group-hover:text-emerald-400">Sample Size Calculator</h4>
+                      <Calculator className="w-4 h-4 text-blue-400 mb-2" />
+                      <h4 className="text-xs font-bold text-white group-hover:text-blue-400">Sample Size Calculator</h4>
                       <p className="text-[11px] text-slate-400 mt-1">Cochran & Yamane probability sample calculations for field studies.</p>
                     </Link>
                   </div>
                 </div>
 
-                <div className="col-span-4 bg-gradient-to-br from-slate-900 to-emerald-950/60 border border-emerald-500/40 rounded-2xl p-5 space-y-3">
-                  <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest block">Instant AI Generation</span>
+                <div className="col-span-4 bg-gradient-to-br from-slate-900 to-blue-950/60 border border-blue-500/40 rounded-2xl p-5 space-y-3">
+                  <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest block">Instant AI Generation</span>
                   <h4 className="text-sm font-bold text-white">Generate Custom Proposal Frameworks</h4>
                   <p className="text-xs text-slate-300 leading-relaxed">
                     Select your practice area and generate tailored evaluation frameworks ready for proposal inclusion.
@@ -634,7 +635,7 @@ export default function Navbar() {
                   <Link
                     href="/studio"
                     onClick={() => setActiveMegaMenu(null)}
-                    className="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs py-2.5 rounded-xl transition-all shadow flex items-center justify-center gap-2 block text-center"
+                    className="w-full bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs py-2.5 rounded-xl transition-all shadow flex items-center justify-center gap-2 block text-center"
                   >
                     <Sparkles className="w-4 h-4" />
                     Launch Studio Generator

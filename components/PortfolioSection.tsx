@@ -215,7 +215,7 @@ export default function PortfolioSection() {
         
         {/* Header */}
         <MotionSection className="max-w-3xl mx-auto text-center mb-12 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold">
             <FileText className="w-3.5 h-3.5" /> Company Track Record
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
@@ -261,7 +261,7 @@ export default function PortfolioSection() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search client or keyword..."
-              className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+              className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500"
             />
           </div>
 
@@ -363,14 +363,14 @@ export default function PortfolioSection() {
             </button>
 
             <div className="space-y-2">
-              <span className="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-300 text-xs font-semibold border border-emerald-500/20">
+              <span className="px-2.5 py-1 rounded bg-blue-500/10 text-blue-300 text-xs font-semibold border border-blue-500/20">
                 {activeModalProject.categoryLabel}
               </span>
               <h3 className="text-xl font-extrabold text-white pr-8">
                 {activeModalProject.title}
               </h3>
               <div className="text-xs text-slate-300 flex flex-wrap gap-4 pt-1 border-t border-slate-800 mt-2">
-                <span>Contracting Partner: <strong className="text-emerald-400">{activeModalProject.organization}</strong></span>
+                <span>Contracting Partner: <strong className="text-blue-400">{activeModalProject.organization}</strong></span>
                 <span>Timeline: <strong>{activeModalProject.date}</strong></span>
                 <span>Location: <strong>{activeModalProject.location}</strong></span>
               </div>
@@ -382,9 +382,9 @@ export default function PortfolioSection() {
                 <p className="text-slate-300 leading-relaxed">{activeModalProject.description}</p>
               </div>
 
-              <div className="bg-emerald-950/30 p-4 rounded-xl border border-emerald-500/30 space-y-1">
-                <h4 className="font-bold text-emerald-300 uppercase tracking-wider">IARA Delivery Quality & Value</h4>
-                <p className="text-emerald-100 text-xs leading-relaxed">
+              <div className="bg-blue-950/30 p-4 rounded-xl border border-blue-500/30 space-y-1">
+                <h4 className="font-bold text-blue-300 uppercase tracking-wider">IARA Delivery Quality & Value</h4>
+                <p className="text-blue-100 text-xs leading-relaxed">
                   Executed by Inter-Act Research Associates in accordance with empirical data standards, ethical research guidelines, and regional regulatory compliance.
                 </p>
               </div>
@@ -393,7 +393,7 @@ export default function PortfolioSection() {
             <div className="pt-2 flex flex-wrap items-center justify-between gap-3">
               <Link
                 href={`/portfolio/${activeModalProject.id}`}
-                className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs px-5 py-2.5 rounded-xl transition-all shadow-md flex items-center gap-2"
+                className="bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs px-5 py-2.5 rounded-xl transition-all shadow-md flex items-center gap-2"
               >
                 <BookOpen className="w-4 h-4" /> Open Dedicated Full Assignment Page →
               </Link>

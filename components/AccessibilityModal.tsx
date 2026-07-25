@@ -82,8 +82,8 @@ export default function AccessibilityModal({
           title="Accessibility Statement & Keyboard Navigation Guide (Alt + A)"
           aria-label="Open Accessibility Statement and Keyboard Shortcuts"
         >
-          <div className="w-5 h-5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-105 transition-transform">
-            <Accessibility className="w-3.5 h-3.5 text-emerald-400" />
+          <div className="w-5 h-5 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 group-hover:scale-105 transition-transform">
+            <Accessibility className="w-3.5 h-3.5 text-blue-400" />
           </div>
           <span className="truncate">Accessibility</span>
           <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-slate-800 text-slate-400 border border-slate-700 hidden sm:inline">
@@ -107,7 +107,7 @@ export default function AccessibilityModal({
             {/* Header */}
             <div className="p-5 sm:p-6 bg-slate-950 border-b border-slate-800 flex items-center justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                <div className="p-2.5 rounded-xl bg-blue-500/10 border border-blue-500/30 text-blue-400">
                   <Accessibility className="w-6 h-6" />
                 </div>
                 <div>
@@ -115,7 +115,7 @@ export default function AccessibilityModal({
                     <h2 id="accessibility-modal-title" className="text-lg sm:text-xl font-bold text-white tracking-tight">
                       Accessibility & Standards
                     </h2>
-                    <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-blue-500/10 text-blue-400 border border-blue-500/30">
                       WCAG 2.1 AA
                     </span>
                   </div>
@@ -137,7 +137,7 @@ export default function AccessibilityModal({
             {/* Quick Action Bar */}
             <div className="px-6 py-3 bg-slate-900/90 border-b border-slate-800/80 flex flex-wrap items-center justify-between gap-3 text-xs">
               <div className="flex items-center gap-2 text-slate-300">
-                <Sliders className="w-4 h-4 text-emerald-400" />
+                <Sliders className="w-4 h-4 text-blue-400" />
                 <span className="font-medium">Quick Display Preference:</span>
               </div>
               <div className="flex items-center gap-2">
@@ -166,7 +166,7 @@ export default function AccessibilityModal({
                 onClick={() => setActiveTab("shortcuts")}
                 className={`flex-1 py-3 px-4 text-xs font-semibold border-b-2 flex items-center justify-center gap-2 transition-colors ${
                   activeTab === "shortcuts"
-                    ? "border-emerald-500 text-emerald-400 bg-emerald-500/5"
+                    ? "border-blue-500 text-blue-400 bg-blue-500/5"
                     : "border-transparent text-slate-400 hover:text-slate-200"
                 }`}
               >
@@ -178,7 +178,7 @@ export default function AccessibilityModal({
                 onClick={() => setActiveTab("screenreader")}
                 className={`flex-1 py-3 px-4 text-xs font-semibold border-b-2 flex items-center justify-center gap-2 transition-colors ${
                   activeTab === "screenreader"
-                    ? "border-emerald-500 text-emerald-400 bg-emerald-500/5"
+                    ? "border-blue-500 text-blue-400 bg-blue-500/5"
                     : "border-transparent text-slate-400 hover:text-slate-200"
                 }`}
               >
@@ -190,7 +190,7 @@ export default function AccessibilityModal({
                 onClick={() => setActiveTab("compliance")}
                 className={`flex-1 py-3 px-4 text-xs font-semibold border-b-2 flex items-center justify-center gap-2 transition-colors ${
                   activeTab === "compliance"
-                    ? "border-emerald-500 text-emerald-400 bg-emerald-500/5"
+                    ? "border-blue-500 text-blue-400 bg-blue-500/5"
                     : "border-transparent text-slate-400 hover:text-slate-200"
                 }`}
               >
@@ -210,38 +210,38 @@ export default function AccessibilityModal({
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                     <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
                       <span className="text-slate-300 font-medium">Next Interactive Item</span>
-                      <kbd className="px-2 py-1 rounded bg-slate-800 text-emerald-300 border border-slate-700 font-mono text-[11px] font-bold">Tab</kbd>
+                      <kbd className="px-2 py-1 rounded bg-slate-800 text-blue-300 border border-slate-700 font-mono text-[11px] font-bold">Tab</kbd>
                     </div>
 
                     <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
                       <span className="text-slate-300 font-medium">Previous Interactive Item</span>
                       <div className="flex gap-1">
-                        <kbd className="px-1.5 py-1 rounded bg-slate-800 text-emerald-300 border border-slate-700 font-mono text-[11px] font-bold">Shift</kbd>
-                        <kbd className="px-1.5 py-1 rounded bg-slate-800 text-emerald-300 border border-slate-700 font-mono text-[11px] font-bold">Tab</kbd>
+                        <kbd className="px-1.5 py-1 rounded bg-slate-800 text-blue-300 border border-slate-700 font-mono text-[11px] font-bold">Shift</kbd>
+                        <kbd className="px-1.5 py-1 rounded bg-slate-800 text-blue-300 border border-slate-700 font-mono text-[11px] font-bold">Tab</kbd>
                       </div>
                     </div>
 
                     <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
                       <span className="text-slate-300 font-medium">Activate Button / Link</span>
-                      <kbd className="px-2 py-1 rounded bg-slate-800 text-emerald-300 border border-slate-700 font-mono text-[11px] font-bold">Enter / Space</kbd>
+                      <kbd className="px-2 py-1 rounded bg-slate-800 text-blue-300 border border-slate-700 font-mono text-[11px] font-bold">Enter / Space</kbd>
                     </div>
 
                     <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
                       <span className="text-slate-300 font-medium">Close Modal / Menu</span>
-                      <kbd className="px-2 py-1 rounded bg-slate-800 text-emerald-300 border border-slate-700 font-mono text-[11px] font-bold">Esc</kbd>
+                      <kbd className="px-2 py-1 rounded bg-slate-800 text-blue-300 border border-slate-700 font-mono text-[11px] font-bold">Esc</kbd>
                     </div>
 
                     <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
                       <span className="text-slate-300 font-medium">Accessibility Menu</span>
                       <div className="flex gap-1">
-                        <kbd className="px-1.5 py-1 rounded bg-slate-800 text-emerald-300 border border-slate-700 font-mono text-[11px] font-bold">Alt</kbd>
-                        <kbd className="px-1.5 py-1 rounded bg-slate-800 text-emerald-300 border border-slate-700 font-mono text-[11px] font-bold">A</kbd>
+                        <kbd className="px-1.5 py-1 rounded bg-slate-800 text-blue-300 border border-slate-700 font-mono text-[11px] font-bold">Alt</kbd>
+                        <kbd className="px-1.5 py-1 rounded bg-slate-800 text-blue-300 border border-slate-700 font-mono text-[11px] font-bold">A</kbd>
                       </div>
                     </div>
 
                     <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
                       <span className="text-slate-300 font-medium">Scroll Page</span>
-                      <kbd className="px-2 py-1 rounded bg-slate-800 text-emerald-300 border border-slate-700 font-mono text-[11px] font-bold">PageUp / PageDn</kbd>
+                      <kbd className="px-2 py-1 rounded bg-slate-800 text-blue-300 border border-slate-700 font-mono text-[11px] font-bold">PageUp / PageDn</kbd>
                     </div>
                   </div>
                 </div>
@@ -255,7 +255,7 @@ export default function AccessibilityModal({
 
                   <div className="space-y-2.5">
                     <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-start gap-3">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
                       <div>
                         <strong className="text-white block font-semibold mb-0.5">Semantic HTML5 Landmarks</strong>
                         <span className="text-slate-400">Structured using header, main, nav, section, and footer elements for logical screen reader navigation.</span>
@@ -263,7 +263,7 @@ export default function AccessibilityModal({
                     </div>
 
                     <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-start gap-3">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
                       <div>
                         <strong className="text-white block font-semibold mb-0.5">Descriptive ARIA Labels</strong>
                         <span className="text-slate-400">All interactive buttons, modals, accordion filters, and navigation links feature explicit aria-label and aria-expanded attributes.</span>
@@ -271,7 +271,7 @@ export default function AccessibilityModal({
                     </div>
 
                     <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-start gap-3">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
                       <div>
                         <strong className="text-white block font-semibold mb-0.5">Image Alt Texts</strong>
                         <span className="text-slate-400">Infographics, maps, and technical diagrams include non-empty, descriptive alt tags or structured captions.</span>
@@ -287,8 +287,8 @@ export default function AccessibilityModal({
                     Inter-Act Research Associates is dedicated to providing an inclusive digital environment for development partners, donor organizations, government stakeholders, and researchers across East Africa and internationally.
                   </p>
 
-                  <div className="p-4 rounded-xl bg-emerald-950/30 border border-emerald-500/30 space-y-2">
-                    <h4 className="font-bold text-emerald-300 flex items-center gap-2">
+                  <div className="p-4 rounded-xl bg-blue-950/30 border border-blue-500/30 space-y-2">
+                    <h4 className="font-bold text-blue-300 flex items-center gap-2">
                       <Eye className="w-4 h-4" />
                       <span>International Compliance Benchmarks</span>
                     </h4>
@@ -300,7 +300,7 @@ export default function AccessibilityModal({
                   </div>
 
                   <p className="text-slate-400 text-[11px]">
-                    Should you encounter any accessibility barrier while browsing our advisory framework or submitting an RFP, please contact our ICT Accessibility Officer at <a href="mailto:interactresearchassociates@gmail.com" className="text-emerald-400 underline font-semibold">interactresearchassociates@gmail.com</a>.
+                    Should you encounter any accessibility barrier while browsing our advisory framework or submitting an RFP, please contact our ICT Accessibility Officer at <a href="mailto:interactresearchassociates@gmail.com" className="text-blue-400 underline font-semibold">interactresearchassociates@gmail.com</a>.
                   </p>
                 </div>
               )}
@@ -313,7 +313,7 @@ export default function AccessibilityModal({
               </span>
               <button
                 onClick={handleClose}
-                className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-all shadow-md ml-auto"
+                className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition-all shadow-md ml-auto"
               >
                 Close & Return to Page
               </button>

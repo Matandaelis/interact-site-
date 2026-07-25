@@ -25,10 +25,10 @@ export default function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
         {/* Home Link */}
         <Link 
           href="/" 
-          className="inline-flex items-center gap-1.5 hover:text-emerald-400 text-slate-300 font-medium transition-colors group"
+          className="inline-flex items-center gap-1.5 hover:text-blue-400 text-slate-300 font-medium transition-colors group"
           title="Back to Overview"
         >
-          <Home className="w-3.5 h-3.5 text-emerald-400 group-hover:scale-110 transition-transform" />
+          <Home className="w-3.5 h-3.5 text-blue-400 group-hover:scale-110 transition-transform" />
           <span className="hidden sm:inline">Overview</span>
         </Link>
 
@@ -41,14 +41,14 @@ export default function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
               <ChevronRight className="w-3.5 h-3.5 text-slate-600 shrink-0" />
 
               {isLast || !item.href ? (
-                <span className="text-emerald-400 font-semibold inline-flex items-center gap-1 truncate max-w-[200px] sm:max-w-md">
+                <span className="text-blue-400 font-semibold inline-flex items-center gap-1 truncate max-w-[200px] sm:max-w-md">
                   {IconComponent && <IconComponent className="w-3.5 h-3.5 shrink-0" />}
                   <span className="truncate">{item.label}</span>
                 </span>
               ) : (
                 <Link
                   href={item.href}
-                  className="hover:text-emerald-400 text-slate-300 transition-colors inline-flex items-center gap-1 truncate max-w-[150px] sm:max-w-xs"
+                  className="hover:text-blue-400 text-slate-300 transition-colors inline-flex items-center gap-1 truncate max-w-[150px] sm:max-w-xs"
                 >
                   {IconComponent && <IconComponent className="w-3.5 h-3.5 shrink-0" />}
                   <span className="truncate">{item.label}</span>

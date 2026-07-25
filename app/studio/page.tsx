@@ -13,7 +13,7 @@ export default function StudioPage() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="flex-1 flex flex-col min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-emerald-500 selection:text-slate-950">
+    <div className="flex-1 flex flex-col min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-blue-500 selection:text-slate-950">
       <Navbar />
 
       <Breadcrumb items={[{ label: "AI M&E Framework Studio" }]} />
@@ -24,7 +24,7 @@ export default function StudioPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-4">
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div className="space-y-2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold">
                   <Sparkles className="w-3.5 h-3.5" /> AI M&E & Strategic Framework Studio
                 </div>
                 <h1 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
@@ -38,7 +38,7 @@ export default function StudioPage() {
               <div className="flex items-center gap-3">
                 <button
                   onClick={() => setModalOpen(true)}
-                  className="bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-emerald-500/40 text-xs font-bold px-4 py-2.5 rounded-xl transition-all flex items-center gap-2"
+                  className="bg-slate-900 hover:bg-slate-800 text-blue-400 border border-blue-500/40 text-xs font-bold px-4 py-2.5 rounded-xl transition-all flex items-center gap-2"
                 >
                   <FileText className="w-4 h-4" />
                   Request Full Technical Proposal

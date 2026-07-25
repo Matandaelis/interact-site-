@@ -160,7 +160,7 @@ export default function EastAfricaMap({ activeCountry, onSelectCountry }: EastAf
       {/* Map Control Overlay Header */}
       <div className="absolute top-4 left-4 z-10 flex flex-wrap items-center gap-2 bg-slate-950/80 backdrop-blur-md px-3.5 py-2 rounded-xl border border-slate-800 text-xs">
         <span className="flex items-center gap-1.5 font-bold text-white">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse" />
           Interactive Hubs
         </span>
         <span className="text-slate-500">|</span>

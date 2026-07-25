@@ -17,7 +17,7 @@ export default function WhatsAppButton() {
         <div className="w-80 bg-slate-900 border border-slate-700/80 rounded-2xl shadow-2xl p-4 text-slate-100 animate-in fade-in slide-in-from-bottom-3 duration-200">
           <div className="flex items-center justify-between pb-3 border-b border-slate-800">
             <div className="flex items-center gap-2">
-              <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+              <div className="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse" />
               <span className="text-xs font-black text-white uppercase tracking-wider">IARA Urgent Consulting</span>
             </div>
             <button
@@ -34,7 +34,7 @@ export default function WhatsAppButton() {
             <p className="text-slate-200 leading-relaxed font-medium">
               Need immediate technical assistance or field survey support in East Africa? Connect directly with Kennedy S. Okumu & Executive Advisory team.
             </p>
-            <div className="p-2.5 rounded-xl bg-slate-950 border border-slate-800 text-[11px] text-emerald-400 font-mono">
+            <div className="p-2.5 rounded-xl bg-slate-950 border border-slate-800 text-[11px] text-blue-400 font-mono">
               ⚡ Monitored 24/7 for urgent field RFPs
             </div>
           </div>
@@ -45,7 +45,7 @@ export default function WhatsAppButton() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}
-            className="w-full mt-1 py-2.5 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs flex items-center justify-center gap-2 shadow-lg transition-all"
+            className="w-full mt-1 py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs flex items-center justify-center gap-2 shadow-lg transition-all"
           >
             <Send className="w-3.5 h-3.5" />
             <span>Open WhatsApp Chat</span>
@@ -60,7 +60,7 @@ export default function WhatsAppButton() {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative flex items-center gap-2.5 px-4 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs sm:text-sm shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all border border-emerald-400/40"
+          className="group relative flex items-center gap-2.5 px-4 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-black text-xs sm:text-sm shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all border border-blue-400/40"
           aria-label="Message IARA on WhatsApp for urgent field consulting inquiries"
         >
           {/* Pulsing indicator badge */}
@@ -73,7 +73,7 @@ export default function WhatsAppButton() {
           <span className="tracking-tight">Message Us</span>
 
           {/* Quick preview hover badge */}
-          <span className="hidden sm:inline-block text-[10px] bg-emerald-800/80 text-emerald-200 px-2 py-0.5 rounded-full border border-emerald-400/30 font-bold">
+          <span className="hidden sm:inline-block text-[10px] bg-blue-800/80 text-blue-200 px-2 py-0.5 rounded-full border border-blue-400/30 font-bold">
             24/7 Direct
           </span>
         </a>
@@ -86,7 +86,7 @@ export default function WhatsAppButton() {
           aria-label="Toggle WhatsApp consulting details"
           title="Consulting Information"
         >
-          <Sparkles className="w-4 h-4 text-emerald-400" />
+          <Sparkles className="w-4 h-4 text-blue-400" />
         </button>
       </div>
     </div>
