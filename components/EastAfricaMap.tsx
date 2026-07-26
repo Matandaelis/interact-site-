@@ -204,8 +204,8 @@ export default function EastAfricaMap({ activeCountry, onSelectCountry }: EastAf
           className="w-full h-full"
         >
           <Geographies geography={GEO_URL}>
-            {({ geographies }) =>
-              geographies.map((geo) => {
+            {({ geographies }: { geographies: Array<{ rsmKey: string; properties: { name?: string } }> }) =>
+              geographies.map((geo: { rsmKey: string; properties: { name?: string } }) => {
                 const countryName = geo.properties.name || "";
                 const matchedId = getCountryIdFromName(countryName);
                 const isIARACountry = Boolean(matchedId);

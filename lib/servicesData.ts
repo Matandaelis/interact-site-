@@ -1,3 +1,5 @@
+import { specializationServices } from "./specializationData";
+
 export interface ServiceDetail {
   id: string;
   title: string;
@@ -31,7 +33,7 @@ export interface ServiceDetail {
   }[];
 }
 
-export const detailedServices: ServiceDetail[] = [
+const coreServices: ServiceDetail[] = [
   {
     id: "me",
     title: "Monitoring, Evaluation, Reporting & Learning (MERL) & Formative Research",
@@ -497,4 +499,9 @@ export const detailedServices: ServiceDetail[] = [
       }
     ]
   }
+];
+
+export const detailedServices: ServiceDetail[] = [
+  ...coreServices,
+  ...specializationServices
 ];

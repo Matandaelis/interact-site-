@@ -26,7 +26,7 @@ interface HeroProps {
 export default function Hero({ onExploreServices, onOpenStudio, onOpenConsultation }: HeroProps) {
   const stats = [
     { value: "2013", label: "Formed in Nairobi, Kenya", icon: ShieldCheck },
-    { value: "17+", label: "Key Regional Assignments", icon: BarChart3 },
+    { value: "18+", label: "Key Regional Assignments", icon: BarChart3 },
     { value: "4", label: "East Africa Member States", icon: Globe2 },
     { value: "100%", label: "Cap499 Sec 4 Compliant", icon: Award },
   ];

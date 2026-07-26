@@ -140,7 +140,7 @@ export default function TestimonialsSection({ onOpenConsultation }: Testimonials
             </div>
             <div className="space-y-1 border-r border-slate-100 last:border-r-0">
               <div className="text-2xl sm:text-3xl font-extrabold text-blue-900 flex items-center justify-center gap-1">
-                <span>17+</span>
+                <span>18+</span>
                 <CheckCircle2 className="w-5 h-5 text-blue-800" />
               </div>
               <p className="text-xs text-slate-600 font-bold">Major Regional Assignments</p>

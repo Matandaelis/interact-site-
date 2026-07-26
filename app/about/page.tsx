@@ -88,7 +88,7 @@ export default function AboutPage() {
                 <span className="text-xs text-slate-400 uppercase font-semibold">Legal Registration</span>
               </div>
               <div>
-                <span className="block text-2xl sm:text-3xl font-extrabold text-blue-400 font-mono">17+</span>
+                <span className="block text-2xl sm:text-3xl font-extrabold text-blue-400 font-mono">18+</span>
                 <span className="text-xs text-slate-400 uppercase font-semibold">Major Assignments</span>
               </div>
               <div>
@@ -117,12 +117,12 @@ export default function AboutPage() {
               
               <h3 className="text-lg sm:text-xl font-bold text-white pt-2 border-b border-slate-800 pb-2">1. Geographic Mandate and Regional Footprint</h3>
               <p>
-                Our operational reach is designed to address the unique development and socio-economic dynamics of the East African community. From our principal office at <strong>Unipen Plaza, 1st Floor, Room 4, Argwings Kodhek Road, Hurlingham, Nairobi</strong>, we deploy technical experts and local field teams across six core partner nations: <strong>Kenya, Uganda, Tanzania, Rwanda, South Sudan, and Somalia</strong>. This broad regional footprint allows IARA to support sub-national, national, and trans-boundary development projects. Whether working in the high-density urban corridors of Nairobi, Kampala, and Dar es Salaam, or deploying rapid-response teams to the Arid and Semi-Arid Lands (ASALs) of Northern Kenya, Karamoja in Uganda, and Gedo in Somalia, our operations are defined by deep cultural awareness, linguistic proficiency, and field-tested logistics networks.
+                Our operational reach is designed to address the unique development and socio-economic dynamics of the East African community. From our principal office at <strong>Unipen Plaza, 1st Floor, Room 4, Argwings Kodhek Road, Hurlingham, Nairobi</strong>, we deploy technical experts and local field teams across six core partner nations: <strong>Kenya, Uganda, Tanzania, Rwanda, South Sudan, and Somalia</strong>. This broad regional footprint allows IARA to support sub-national, national, and trans-boundary development projects. To see our detailed county-level operations and country maps, explore our <Link href="/regional" className="text-blue-400 hover:underline font-semibold">East Africa regional presence footprint</Link>. Whether working in the high-density urban corridors of Nairobi, Kampala, and Dar es Salaam, or deploying rapid-response teams to the Arid and Semi-Arid Lands (ASALs) of Northern Kenya, Karamoja in Uganda, and Gedo in Somalia, our operations are defined by deep cultural awareness, linguistic proficiency, and field-tested logistics networks.
               </p>
               
               <h3 className="text-lg sm:text-xl font-bold text-white pt-2 border-b border-slate-800 pb-2">2. Core Advisory Pillars and Scientific Oversight</h3>
               <p>
-                To maintain the highest standards of data integrity and analytical rigor, all IARA programs and research assignments are governed by our <strong>Scientific Research Committee</strong>. This internal board consists of senior academicians, statisticians, and sector specialists who peer-review every survey design, sampling methodology, and draft report before delivery to clients. We focus on five core technical pillars:
+                To maintain the highest standards of data integrity and analytical rigor, all IARA programs and research assignments are governed by our <strong>Scientific Research Committee</strong>. This internal board consists of senior academicians, statisticians, and sector specialists who peer-review every survey design, sampling methodology, and draft report before delivery to clients. We focus on five core technical pillars, which are fully described in our <Link href="/services" className="text-blue-400 hover:underline font-semibold">development consulting services catalog</Link>:
               </p>
               <ul className="list-disc pl-5 space-y-3 text-slate-400 text-xs sm:text-sm">
                 <li>
@@ -144,7 +144,7 @@ export default function AboutPage() {
               
               <h3 className="text-lg sm:text-xl font-bold text-white pt-2 border-b border-slate-800 pb-2">3. Institutional Quality Standards (QATM)</h3>
               <p>
-                Our delivery philosophy is structured around a strict quality assurance matrix that guarantees <strong>Delivery, Quality, Timeliness, and Value for Money</strong>. Every project timeline is managed through dynamic milestone trackers, and data validation protocols include real-time GPS tracking and audio-auditing of field interviews. This commitment to transparency and ethical research has made IARA a trusted consulting partner for regional government ministries, international non-governmental organizations (INGOs), and major multilateral donor bodies. We believe that true sustainable development is only possible when built on a foundation of empirical truth and inclusive participation.
+                Our delivery philosophy is structured around a strict quality assurance matrix that guarantees <strong>Delivery, Quality, Timeliness, and Value for Money</strong>. Every project timeline is managed through dynamic milestone trackers, and data validation protocols include real-time GPS tracking and audio-auditing of field interviews. This commitment to transparency and ethical research has made IARA a trusted consulting partner for regional government ministries, international non-governmental organizations (INGOs), and major multilateral donor bodies, as demonstrated throughout our <Link href="/portfolio" className="text-blue-400 hover:underline font-semibold">past assignments track record and case studies catalog</Link>. We believe that true sustainable development is only possible when built on a foundation of empirical truth and inclusive participation.
               </p>
 
               <h3 className="text-lg sm:text-xl font-bold text-white pt-2 border-b border-slate-800 pb-2">4. Legal Registrations, Mailing, and Address Details</h3>

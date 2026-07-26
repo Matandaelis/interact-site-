@@ -180,12 +180,12 @@ export default function ServicesPage() {
 
             <div className="prose prose-invert max-w-none text-slate-300 text-sm sm:text-base space-y-6 leading-relaxed">
               <p>
-                To provide institutional clarity and scientific validity to our clients, <strong>Inter-Act Research Associates (IARA)</strong> implements standardized, rigorous methodologies across all consulting assignments. Under the leadership of <strong>Executive Director Kennedy S. Okumu</strong> and backed by our internal <strong>Scientific Research Committee</strong>, we translate complex qualitative and quantitative indicators into clear, actionable developmental roadmaps.
+                To provide institutional clarity and scientific validity to our clients, <strong>Inter-Act Research Associates (IARA)</strong> implements standardized, rigorous methodologies across all consulting assignments. Under the leadership of <strong>Executive Director Kennedy S. Okumu</strong> (detailed in our <Link href="/about" className="text-blue-400 hover:underline font-semibold">institutional profile and legal history</Link>) and backed by our internal <strong>Scientific Research Committee</strong>, we translate complex qualitative and quantitative indicators into clear, actionable developmental roadmaps.
               </p>
 
               <h3 className="text-lg sm:text-xl font-bold text-white pt-2 border-b border-slate-800 pb-2">1. Monitoring &amp; Evaluation: Triangulation and OECD-DAC Criteria</h3>
               <p>
-                Our Monitoring, Evaluation, Accountability, and Learning (MEAL) services are built on the foundation of <strong>triangulation</strong>—a statistical approach that integrates quantitative household surveys, key informant interviews (KIIs), and focus group discussions (FGDs) to cross-verify findings. IARA&apos;s evaluation frameworks align with the six standard <strong>OECD-DAC criteria</strong>:
+                Our Monitoring, Evaluation, Accountability, and Learning (MEAL) services are built on the foundation of <strong>triangulation</strong>—a statistical approach that integrates quantitative household surveys, key informant interviews (KIIs), and focus group discussions (FGDs) to cross-verify findings, as highlighted throughout our <Link href="/portfolio" className="text-blue-400 hover:underline font-semibold">major regional evaluations track record</Link>. IARA&apos;s evaluation frameworks align with the six standard <strong>OECD-DAC criteria</strong>:
               </p>
               <ul className="list-disc pl-5 space-y-2 text-slate-400 text-xs sm:text-sm">
                 <li>
@@ -210,7 +210,7 @@ export default function ServicesPage() {
 
               <h3 className="text-lg sm:text-xl font-bold text-white pt-2 border-b border-slate-800 pb-2">2. Disability Inclusion Auditing: Aligned with the UN CRPD</h3>
               <p>
-                Disability inclusion and accessibility audits cannot be mere check-the-box exercises. IARA operates with a deep commitment to the <strong>United Nations Convention on the Rights of Persons with Disabilities (UN CRPD)</strong> and local statutory acts (e.g., the Kenya Persons with Disabilities Act). Our audits combine physical assessments of administrative facilities, digital audits of web platforms (focusing on WCAG 2.1 compliance), and qualitative assessments of institutional policy documents. Our recommendations focus on practical adjustments, reasonable accommodation implementation, and staff capacity development to transition organizations toward complete, authentic social inclusion.
+                Disability inclusion and accessibility audits cannot be mere check-the-box exercises. IARA operates with a deep commitment to the <strong>United Nations Convention on the Rights of Persons with Disabilities (UN CRPD)</strong> and local statutory acts (e.g., the Kenya Persons with Disabilities Act). Our audits combine physical assessments of administrative facilities, digital audits of web platforms (focusing on WCAG 2.1 compliance), and qualitative assessments of institutional policy documents (see, for example, our technical <Link href="/portfolio/a18" className="text-blue-400 hover:underline font-semibold">accessibility audits for Call Africa Kenya</Link>). Our recommendations focus on practical adjustments, reasonable accommodation implementation, and staff capacity development to transition organizations toward complete, authentic social inclusion.
               </p>
 
               <h3 className="text-lg sm:text-xl font-bold text-white pt-2 border-b border-slate-800 pb-2">3. Socio-Economic Surveys and Sampling Designs</h3>

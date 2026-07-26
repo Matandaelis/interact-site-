@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { MotionSection, StaggerContainer, StaggerItem } from "@/components/MotionSection";
@@ -33,22 +34,23 @@ interface ServicesSectionProps {
 }
 
 export default function ServicesSection({ onSelectServiceForStudio, onOpenConsultation }: ServicesSectionProps) {
+  const router = useRouter();
   const [selectedService, setSelectedService] = useState<string>("me");
 
   // 12 Key Areas of Expertise from PDF Page 4
   const keyAreas = [
-    { id: 1, title: "Project & Program Management", icon: Briefcase },
-    { id: 2, title: "Research, M&E & Baseline/Online Surveys", icon: BarChart3 },
-    { id: 3, title: "Accessibility Audits & Workplace Compliance", icon: Accessibility },
-    { id: 4, title: "MERL Systems & Technical Support for NGOs/Private Sector", icon: FileCheck2 },
-    { id: 5, title: "Documenting Success Stories (Print, Film, Digital)", icon: Sparkles },
-    { id: 6, title: "Database Development & Real-Time Dashboards", icon: Database },
-    { id: 7, title: "Strategic Planning Development & Monitoring", icon: Compass },
-    { id: 8, title: "Livelihoods Development Programs", icon: Sprout },
-    { id: 9, title: "Entrepreneurship & Life-Skills Training", icon: Flame },
-    { id: 10, title: "Capacity Building & Institutional Strengthening", icon: GraduationCap },
-    { id: 11, title: "Democracy & Devolved Governance", icon: ShieldAlert },
-    { id: 12, title: "Environment, Soil & Natural Resources Management", icon: Network }
+    { id: 1, title: "Project & Program Management", icon: Briefcase, serviceId: "cb", practiceArea: "Capacity Building", slug: "project-program-management" },
+    { id: 2, title: "Research, M&E & Baseline/Online Surveys", icon: BarChart3, serviceId: "me", practiceArea: "Monitoring & Evaluation", slug: "research-me-surveys" },
+    { id: 3, title: "Accessibility Audits & Workplace Compliance", icon: Accessibility, serviceId: "da", practiceArea: "Disability Mainstreaming", slug: "accessibility-audits-compliance" },
+    { id: 4, title: "MERL Systems & Technical Support for NGOs/Private Sector", icon: FileCheck2, serviceId: "me", practiceArea: "Monitoring & Evaluation", slug: "merl-systems-technical-support" },
+    { id: 5, title: "Documenting Success Stories (Print, Film, Digital)", icon: Sparkles, serviceId: "cb", practiceArea: "Capacity Building", slug: "documenting-success-stories" },
+    { id: 6, title: "Database Development & Real-Time Dashboards", icon: Database, serviceId: "me", practiceArea: "Monitoring & Evaluation", slug: "database-development-dashboards" },
+    { id: 7, title: "Strategic Planning Development & Monitoring", icon: Compass, serviceId: "sp", practiceArea: "Strategic Planning", slug: "strategic-planning-monitoring" },
+    { id: 8, title: "Livelihoods Development Programs", icon: Sprout, serviceId: "livelihood", practiceArea: "Livelihoods & Environment", slug: "livelihoods-development-programs" },
+    { id: 9, title: "Entrepreneurship & Life-Skills Training", icon: Flame, serviceId: "livelihood", practiceArea: "Livelihoods & Environment", slug: "entrepreneurship-life-skills" },
+    { id: 10, title: "Capacity Building & Institutional Strengthening", icon: GraduationCap, serviceId: "cb", practiceArea: "Capacity Building", slug: "capacity-building-strengthening" },
+    { id: 11, title: "Democracy & Devolved Governance", icon: ShieldAlert, serviceId: "sp", practiceArea: "Strategic Planning", slug: "democracy-devolved-governance" },
+    { id: 12, title: "Environment, Soil & Natural Resources Management", icon: Network, serviceId: "livelihood", practiceArea: "Livelihoods & Environment", slug: "environment-soil-natural-resources" }
   ];
 
   const services = [
@@ -181,12 +183,40 @@ export default function ServicesSection({ onSelectServiceForStudio, onOpenConsul
               return (
                 <StaggerItem 
                   key={area.id}
-                  className="bg-slate-50 p-3.5 rounded-xl border border-slate-200 flex items-center gap-3 hover:border-blue-300 transition-colors shadow-xs"
+                  className="bg-slate-50 hover:bg-blue-50/20 rounded-xl border border-slate-200 hover:border-blue-500 transition-all shadow-xs flex group/card focus-within:ring-2 focus-within:ring-blue-500"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-blue-900 flex items-center justify-center text-white shrink-0 font-bold text-xs">
-                    {area.id}
-                  </div>
-                  <span className="font-bold text-slate-900">{area.title}</span>
+                  <Link
+                    href={`/services/${area.slug}`}
+                    className="p-4 flex flex-col justify-between text-left h-full w-full focus:outline-none"
+                    aria-label={`View detailed guide for ${area.title}`}
+                  >
+                    <div className="space-y-3 w-full">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-blue-900 flex items-center justify-center text-white shrink-0 font-bold text-xs group-hover/card:bg-blue-800 transition-colors">
+                          {area.id}
+                        </div>
+                        <div className="w-8 h-8 rounded-lg bg-blue-50/80 border border-blue-100 flex items-center justify-center text-blue-900 shrink-0">
+                          <IconComp className="w-4 h-4 text-blue-800" />
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-1">
+                        <span className="font-extrabold text-slate-900 text-xs sm:text-sm leading-snug block group-hover/card:text-blue-900 transition-colors">
+                          {area.title}
+                        </span>
+                        <span className="text-[10px] text-slate-500 font-bold block uppercase tracking-wider">
+                          Pillar: {area.practiceArea}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="w-full mt-4 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[10px] text-blue-900 font-bold group-hover/card:text-blue-800 transition-colors">
+                      <span>Explore details & tools</span>
+                      <span className="flex items-center gap-0.5 transform group-hover/card:translate-x-1 transition-transform">
+                        View full guide &rarr;
+                      </span>
+                    </div>
+                  </Link>
                 </StaggerItem>
               );
             })}
@@ -194,7 +224,7 @@ export default function ServicesSection({ onSelectServiceForStudio, onOpenConsul
         </MotionSection>
 
         {/* Tab Selector for Practice Areas */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
+        <div id="detailed-practices" className="scroll-mt-24 flex flex-wrap justify-center gap-2 mb-10">
           {services.map((service) => {
             const Icon = service.icon;
             const isSelected = selectedService === service.id;

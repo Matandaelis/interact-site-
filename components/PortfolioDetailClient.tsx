@@ -64,7 +64,7 @@ export default function PortfolioDetailClient({ assignment }: PortfolioDetailCli
                 href="/portfolio" 
                 className="text-xs text-slate-400 hover:text-white flex items-center gap-1.5 transition-colors"
               >
-                <ArrowLeft className="w-4 h-4" /> Back to Track Record Catalog (17)
+                <ArrowLeft className="w-4 h-4" /> Back to Track Record Catalog (18)
               </Link>
             </div>
 

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { MotionSection, StaggerContainer, StaggerItem } from "@/components/MotionSection";
+import Link from "next/link";
 import { 
   Building2, 
   ShieldCheck, 
@@ -84,7 +85,7 @@ export default function AboutSection({ onOpenConsultation }: AboutSectionProps) 
               </div>
 
               <p className="text-slate-700 text-sm leading-relaxed">
-                Inter-Act Research Associates (IARA) is registered in Kenya under the <strong className="text-slate-900">Company&apos;s Act (Cap 499 Section 4)</strong>. IARA operates extensively across <strong className="text-slate-900">Kenya, Uganda, Tanzania, and Rwanda</strong> by providing high-quality consultancy services to government institutions, faith-based organizations, private enterprises, and civil society organizations (CSOs).
+                Inter-Act Research Associates (IARA) is registered in Kenya under the <strong className="text-slate-900">Company&apos;s Act (Cap 499 Section 4)</strong>. IARA operates extensively across <strong className="text-slate-900">Kenya, Uganda, Tanzania, and Rwanda</strong> (detailed in our <Link href="/regional" className="text-blue-900 hover:underline font-bold">regional geographic footprint</Link>) by providing high-quality consultancy services to government institutions, faith-based organizations, private enterprises, and civil society organizations (CSOs).
               </p>
 
               <div className="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs">

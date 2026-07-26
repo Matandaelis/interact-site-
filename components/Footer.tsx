@@ -66,7 +66,7 @@ export default function Footer() {
               <li><Link id="footer-nav-home" href="/" className="hover:text-blue-300 transition-colors">Overview / Home</Link></li>
               <li><Link id="footer-nav-about" href="/about" className="hover:text-blue-300 transition-colors">Who We Are</Link></li>
               <li><Link id="footer-nav-services" href="/services" className="hover:text-blue-300 transition-colors">Services & Expertise</Link></li>
-              <li><Link id="footer-nav-portfolio" href="/portfolio" className="hover:text-blue-300 transition-colors">Past Assignments (17)</Link></li>
+              <li><Link id="footer-nav-portfolio" href="/portfolio" className="hover:text-blue-300 transition-colors">Past Assignments (18)</Link></li>
               <li><Link id="footer-nav-regional" href="/regional" className="hover:text-blue-300 transition-colors">Regional Footprint</Link></li>
               <li><Link id="footer-nav-resources" href="/resources" className="hover:text-blue-300 transition-colors">Toolkits & Resources</Link></li>
               <li><Link id="footer-nav-glossary" href="/glossary" className="hover:text-blue-300 transition-colors">M&E & Advisory Glossary</Link></li>
