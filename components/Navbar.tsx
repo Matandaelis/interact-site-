@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
+import AccessibilityModal from "./AccessibilityModal";
 import { 
   Building2, 
   Phone, 
@@ -152,6 +153,7 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-2 sm:gap-3 text-slate-200 shrink-0">
+            <AccessibilityModal variant="minimal" />
             <a 
               href="mailto:interactresearchassociates@gmail.com" 
               className="hidden md:flex items-center gap-1 hover:text-blue-300 transition-colors"
