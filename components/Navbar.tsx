@@ -134,9 +134,9 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 text-slate-900 transition-colors shadow-xs">
+    <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[var(--paper)]/95 text-[var(--ink)] shadow-sm backdrop-blur-md transition-colors">
       {/* Top Direct Contact Bar */}
-      <div className="bg-[#0f2942] text-slate-200 border-b border-slate-800 text-[11px] sm:text-xs py-1.5 px-3 sm:px-6 lg:px-8">
+      <div className="border-b border-white/10 bg-[var(--ink)] px-3 py-2 text-[11px] text-[var(--paper-muted)] sm:px-6 sm:text-xs lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
           
           <div className="flex items-center gap-2 sm:gap-4 text-slate-200 min-w-0">
@@ -160,8 +160,8 @@ export default function Navbar() {
               title="Email Inter-Act Research Associates"
             >
               <Mail className="w-3.5 h-3.5 text-blue-300 shrink-0" />
-              <span className="hidden xl:inline">interactresearchassociates@gmail.com</span>
-              <span className="xl:hidden">Email</span>
+              <span className="hidden lg:inline">interactresearchassociates@gmail.com</span>
+              <span className="lg:hidden">Email</span>
             </a>
             <a 
               href="tel:0702103653" 
@@ -186,7 +186,7 @@ export default function Navbar() {
             className="flex items-center gap-2.5 sm:gap-3 group shrink-0 min-w-0"
             onClick={() => setActiveMegaMenu(null)}
           >
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-900 flex items-center justify-center font-black text-white text-xs sm:text-sm tracking-wider shadow-sm shrink-0">
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-[var(--ink)] text-xs font-black tracking-wider text-white shadow-sm sm:size-10 sm:text-sm">
               IARA
             </div>
             <div className="min-w-0">
@@ -200,7 +200,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav Items with Mega Menu Triggers */}
-          <nav className="hidden xl:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-0.5">
             <Link
               href="/"
               className={`px-3 py-2 rounded-lg text-xs font-bold transition-all ${
@@ -304,7 +304,7 @@ export default function Navbar() {
           </nav>
 
           {/* CTA Buttons (Desktop) */}
-          <div className="hidden xl:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-2">
             <Link
               href="/contact"
               className="bg-blue-900 hover:bg-blue-950 text-white font-extrabold text-xs px-4 py-2.5 rounded-xl shadow-xs transition-all flex items-center gap-1.5 shrink-0"
@@ -315,7 +315,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile & Tablet Toggle Controls */}
-          <div className="xl:hidden flex items-center gap-2">
+          <div className="lg:hidden flex items-center gap-2">
             <Link
               href="/contact"
               className="hidden sm:flex items-center gap-1 bg-blue-900 text-white font-extrabold text-xs px-3 py-2 rounded-xl transition-all shadow-xs"
@@ -344,7 +344,7 @@ export default function Navbar() {
       {/* ========================================================= */}
       {activeMegaMenu && (
         <div 
-          className="hidden xl:block absolute top-full left-0 right-0 bg-slate-950/98 backdrop-blur-xl border-b border-slate-800 shadow-2xl py-8 transition-all animate-in fade-in slide-in-from-top-2 duration-200 z-50"
+          className="hidden lg:block absolute top-full left-0 right-0 bg-slate-950/98 backdrop-blur-xl border-b border-slate-800 shadow-2xl py-8 transition-all animate-in fade-in slide-in-from-top-2 duration-200 z-50"
           onMouseEnter={() => {
             if (timeoutRef.current) clearTimeout(timeoutRef.current);
           }}
@@ -657,7 +657,7 @@ export default function Navbar() {
           {/* Backdrop Overlay */}
           <div 
             id="mobile-menu-backdrop"
-            className="xl:hidden fixed inset-0 top-0 bg-slate-900/40 backdrop-blur-xs z-40 transition-opacity"
+            className="lg:hidden fixed inset-0 top-0 bg-slate-900/40 backdrop-blur-xs z-40 transition-opacity"
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
@@ -665,7 +665,7 @@ export default function Navbar() {
           {/* Drawer Body Anchored Directly Under Sticky Header */}
           <div 
             id="mobile-navigation-drawer"
-            className="xl:hidden absolute top-full left-0 right-0 z-50 bg-white border-t border-slate-200 shadow-xl overflow-y-auto max-h-[calc(100vh-80px)] animate-in fade-in slide-in-from-top-2 duration-200 text-slate-900"
+            className="lg:hidden absolute top-full left-0 right-0 z-50 bg-white border-t border-slate-200 shadow-xl overflow-y-auto max-h-[calc(100vh-80px)] animate-in fade-in slide-in-from-top-2 duration-200 text-slate-900"
           >
             <div className="p-4 sm:p-6 space-y-4 max-w-lg mx-auto w-full">
               

@@ -3,151 +3,60 @@
 import React from "react";
 import Link from "next/link";
 import AccessibilityModal from "./AccessibilityModal";
-import { 
-  Building2, 
-  MapPin, 
-  Mail, 
-  Phone, 
-  Globe2, 
-  ArrowUp,
-  ShieldCheck,
-  UserCheck,
-  Scale,
-  FileText
-} from "lucide-react";
+import { ArrowUp, Building2, Globe2, Mail, MapPin, Phone, ShieldCheck, UserCheck } from "lucide-react";
+
+const links = [
+  ["Overview", "/"], ["About IARA", "/about"], ["Services", "/services"],
+  ["Selected work", "/portfolio"], ["Regional presence", "/regional"], ["Resources", "/resources"], ["Contact / RFP", "/contact"],
+];
 
 export default function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <footer id="main-footer" className="bg-[#0f2942] text-slate-300 border-t border-slate-800 text-xs sm:text-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
-          
-          {/* Brand Info */}
-          <div className="lg:col-span-2 space-y-4">
-            <Link id="footer-logo-link" href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center font-black text-white text-base shadow-md">
-                IARA
-              </div>
-              <div>
-                <span className="font-extrabold text-lg text-white block">
-                  INTER-ACT <span className="text-blue-300">RESEARCH</span>
-                </span>
-                <span className="text-[10px] font-bold text-blue-200 tracking-wider uppercase block">
-                  Associates • Formed 2013
-                </span>
-              </div>
+    <footer id="main-footer" className="border-t border-[var(--line)] bg-[var(--navy)] text-[var(--paper-muted)]">
+      <div className="corporate-container py-16 lg:py-20">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1.25fr_1.15fr]">
+          <div className="flex flex-col gap-5">
+            <Link id="footer-logo-link" href="/" className="flex items-center gap-3 text-white">
+              <span className="flex size-11 items-center justify-center rounded-lg bg-[var(--coral)] text-sm font-black tracking-wide">IARA</span>
+              <span><strong className="block text-lg tracking-tight">INTER-ACT RESEARCH</strong><small className="block text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--coral-soft)]">Associates · Nairobi</small></span>
             </Link>
-
-            <p className="text-slate-300 leading-relaxed text-xs">
-              Registered in Kenya under Cap 499 Section 4 as a non-partisan, non-profit consulting company providing technical expertise in project management, M&E, disability mainstreaming, capacity building, and strategic planning across East Africa.
-            </p>
-
-            <blockquote className="text-[11px] italic text-blue-200 border-l-2 border-blue-400 pl-3 py-1">
-              &ldquo;Doing good through practical solutions to transform lives.&rdquo;
-            </blockquote>
-
-            <div className="flex items-center gap-2 text-blue-300 font-semibold text-xs pt-1">
-              <ShieldCheck className="w-4 h-4 text-blue-400" />
-              <span>Evidence-Based Research & Technical Advisory</span>
-            </div>
+            <p className="max-w-sm text-sm leading-7 text-[var(--paper-muted)]">Independent research and development advisory for organizations working toward measurable, inclusive change across East Africa.</p>
+            <div className="flex items-center gap-2 text-sm font-semibold text-[var(--coral-soft)]"><ShieldCheck className="size-4" /> Evidence-led. Locally grounded.</div>
           </div>
 
-          {/* Page Navigation */}
-          <div className="space-y-3">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider">
-              Quick Navigation
-            </h4>
-            <ul className="space-y-2 text-slate-300 text-xs">
-              <li><Link id="footer-nav-home" href="/" className="hover:text-blue-300 transition-colors">Overview / Home</Link></li>
-              <li><Link id="footer-nav-about" href="/about" className="hover:text-blue-300 transition-colors">Who We Are</Link></li>
-              <li><Link id="footer-nav-services" href="/services" className="hover:text-blue-300 transition-colors">Services & Expertise</Link></li>
-              <li><Link id="footer-nav-portfolio" href="/portfolio" className="hover:text-blue-300 transition-colors">Past Assignments (18)</Link></li>
-              <li><Link id="footer-nav-regional" href="/regional" className="hover:text-blue-300 transition-colors">Regional Footprint</Link></li>
-              <li><Link id="footer-nav-resources" href="/resources" className="hover:text-blue-300 transition-colors">Toolkits & Resources</Link></li>
-              <li><Link id="footer-nav-glossary" href="/glossary" className="hover:text-blue-300 transition-colors">M&E & Advisory Glossary</Link></li>
-              <li><Link id="footer-nav-contact" href="/contact" className="hover:text-blue-300 transition-colors">Request RFP / Contact</Link></li>
-            </ul>
-          </div>
-
-          {/* Official Address */}
-          <div className="space-y-3">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider">
-              Headquarters
-            </h4>
-            <ul className="space-y-2.5 text-slate-300 text-xs">
-              <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-                <span>
-                  <strong>Location:</strong> Argwings Kodhek Road, Unipen Plaza (Hurlinghum), 1st Floor Room No. 4, Nairobi, Kenya
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Building2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-                <span>
-                  <strong>Postal Address:</strong> P.O. BOX 59913-00200 / 7218-00200, Nairobi, Kenya
-                </span>
-              </li>
-              <li className="flex items-center gap-2 text-slate-300 pt-1">
-                <Globe2 className="w-4 h-4 text-blue-400 shrink-0" />
-                <span>Coverage: Kenya 🇰🇪 • Uganda 🇺🇬 • Tanzania 🇹🇿 • Rwanda 🇷🇼</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Direct Executive Contact */}
-          <div className="space-y-3">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider">
-              Executive Direct
-            </h4>
-            <div className="space-y-2.5 text-slate-300 text-xs">
-              <div className="flex items-start gap-2">
-                <UserCheck className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-                <span>
-                  <strong className="text-white">Kennedy S. Okumu</strong><br />
-                  Executive Director
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-blue-400 shrink-0" />
-                <a id="footer-phone" href="tel:0702103653" className="hover:text-white font-bold text-blue-300">
-                  0702103653 / +254 702 103 653
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-blue-400 shrink-0" />
-                <a id="footer-email" href="mailto:interactresearchassociates@gmail.com" className="hover:text-white break-all font-medium text-slate-200">
-                  interactresearchassociates@gmail.com
-                </a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-slate-700/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-400 text-xs">
           <div>
-            © {new Date().getFullYear()} Inter-Act Research Associates (IARA). All rights reserved. Registered under Cap 499 Section 4.
+            <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-white">Explore</h2>
+            <nav aria-label="Footer navigation" className="flex flex-col items-start gap-3 text-sm">
+              {links.map(([label, href]) => <Link key={href} id={`footer-link-${href.slice(1) || "home"}`} href={href} className="transition-colors hover:text-[var(--coral-soft)]">{label}</Link>)}
+            </nav>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
-            <AccessibilityModal />
-            <button
-              id="footer-back-to-top"
-              onClick={scrollToTop}
-              className="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 flex items-center gap-1.5 transition-colors border border-slate-700 font-semibold"
-            >
-              <ArrowUp className="w-4 h-4 text-blue-400" />
-              <span>Back to Top</span>
-            </button>
+          <div>
+            <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-white">Nairobi office</h2>
+            <div className="flex flex-col gap-4 text-sm leading-6">
+              <p className="flex gap-3"><MapPin className="mt-1 size-4 shrink-0 text-[var(--coral-soft)]" /><span>Unipen Plaza, Argwings Kodhek Road<br />Hurlingham, Nairobi, Kenya</span></p>
+              <p className="flex gap-3"><Building2 className="mt-1 size-4 shrink-0 text-[var(--coral-soft)]" /><span>P.O. Box 59913–00200<br />Registered under Cap 499 Section 4</span></p>
+              <p className="flex gap-3"><Globe2 className="mt-1 size-4 shrink-0 text-[var(--coral-soft)]" /><span>Kenya · Uganda · Tanzania · Rwanda</span></p>
+            </div>
+          </div>
+
+          <div>
+            <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-white">Start a conversation</h2>
+            <div className="flex flex-col gap-4 text-sm">
+              <p className="flex gap-3"><UserCheck className="mt-1 size-4 shrink-0 text-[var(--coral-soft)]" /><span><strong className="block text-white">Kennedy S. Okumu</strong>Executive Director</span></p>
+              <a id="footer-phone" href="tel:0702103653" className="flex items-center gap-3 hover:text-white"><Phone className="size-4 text-[var(--coral-soft)]" />0702 103 653</a>
+              <a id="footer-email" href="mailto:interactresearchassociates@gmail.com" className="flex items-start gap-3 break-all hover:text-white"><Mail className="mt-1 size-4 shrink-0 text-[var(--coral-soft)]" />interactresearchassociates@gmail.com</a>
+              <Link href="/contact" className="mt-1 inline-flex min-h-11 items-center justify-center rounded-md bg-[var(--coral)] px-4 text-sm font-bold text-white transition-colors hover:bg-[var(--coral-deep)]">Request an RFP</Link>
+            </div>
           </div>
         </div>
 
+        <div className="mt-14 flex flex-col gap-4 border-t border-white/15 pt-6 text-xs text-[var(--paper-muted)] sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Inter-Act Research Associates. All rights reserved.</p>
+          <div className="flex items-center gap-4"><AccessibilityModal /><button id="footer-back-to-top" onClick={scrollToTop} className="inline-flex min-h-11 items-center gap-2 rounded-md px-3 transition-colors hover:bg-white/10 hover:text-white"><ArrowUp className="size-4 text-[var(--coral-soft)]" /> Back to top</button></div>
+        </div>
       </div>
     </footer>
   );
