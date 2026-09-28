@@ -25,12 +25,14 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     };
   }
 
-  const title = `${service.title} | Inter-Act Research Associates (IARA)`;
+  const title = `${service.shortTitle} in East Africa | Inter-Act Research Associates`;
   const description = service.heroSummary || service.tagline || (service.overview && service.overview[0]) || "Inter-Act Research Associates consultancy service.";
+  const canonicalUrl = `https://interactresearch.org/services/${service.id}`;
 
   return {
     title,
     description,
+    authors: [{ name: "Inter-Act Research Associates" }],
     keywords: [
       service.shortTitle,
       service.badge,
@@ -45,7 +47,15 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
       description,
       type: "article",
       siteName: "Inter-Act Research Associates",
-      url: `https://interactresearch.org/services/${service.id}`,
+      url: canonicalUrl,
+      images: [
+        {
+          url: "https://interactresearch.org/images/services-workshop.png",
+          width: 1600,
+          height: 900,
+          alt: `${service.shortTitle} consulting services in East Africa`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
@@ -53,9 +63,55 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
       description,
     },
     alternates: {
-      canonical: `https://interactresearch.org/services/${service.id}`,
+      canonical: canonicalUrl,
     },
   };
+}
+
+function ServiceStructuredData({ service }: { service: (typeof detailedServices)[number] }) {
+  const url = `https://interactresearch.org/services/${service.id}`;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.heroSummary,
+    url,
+    serviceType: service.shortTitle,
+    areaServed: ["Kenya", "Uganda", "Tanzania", "Rwanda", "South Sudan", "Somalia"].map((name) => ({
+      "@type": "Country",
+      name,
+    })),
+    provider: {
+      "@type": "Organization",
+      name: "Inter-Act Research Associates",
+      url: "https://interactresearch.org",
+      areaServed: "East Africa",
+    },
+    audience: {
+      "@type": "Audience",
+      audienceType: "Development organizations, public institutions, NGOs, and international donors",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: `${service.shortTitle} deliverables`,
+      itemListElement: service.coreCapabilities.map((capability, index) => ({
+        "@type": "Offer",
+        position: index + 1,
+        itemOffered: {
+          "@type": "Service",
+          name: capability.title,
+          description: capability.description,
+        },
+      })),
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+    />
+  );
 }
 
 export default async function ServiceDetailPage({ params }: ServicePageProps) {
@@ -66,6 +122,11 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
     notFound();
   }
 
-  return <ServiceDetailClient service={service} />;
+  return (
+    <>
+      <ServiceStructuredData service={service} />
+      <ServiceDetailClient service={service} />
+    </>
+  );
 }
 
