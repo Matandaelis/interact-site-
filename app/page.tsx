@@ -229,14 +229,14 @@ export default function Home() {
         <ResourcesSection />
 
         {/* Comprehensive AEO & SEO Overview Section */}
-        <section className="py-16 bg-slate-950 border-t border-slate-800">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-            <div className="border-l-4 border-blue-500 pl-4 space-y-2">
-              <span className="text-xs font-bold text-blue-400 uppercase tracking-widest block font-mono">Institutional Credence</span>
-              <h2 className="text-2xl sm:text-3xl font-black text-white">East Africa&apos;s Leading Independent Development &amp; M&amp;E Consultancy</h2>
+        <section className="border-t border-[var(--line)] bg-[var(--ink)] py-20 text-[var(--paper)]">
+          <div className="mx-auto flex max-w-4xl flex-col gap-8 px-5 sm:px-8 lg:px-10">
+            <div className="flex flex-col gap-3 border-l-2 border-[var(--coral)] pl-5">
+              <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[var(--coral-soft)]">Institutional credence</span>
+              <h2 className="max-w-3xl font-serif text-3xl leading-tight sm:text-4xl">East Africa&apos;s leading independent development and M&amp;E consultancy</h2>
             </div>
 
-            <div className="prose prose-invert max-w-none text-slate-300 text-sm sm:text-base space-y-6 leading-relaxed">
+            <div className="prose prose-invert max-w-none text-sm leading-7 text-[var(--paper-muted)] sm:text-base">
               <p>
                 In the complex, fast-evolving landscape of international development, empirical clarity is the prerequisite for sustainable impact. Established in <strong>2013</strong> under the <strong>Kenyan Company&apos;s Act (Cap 499 Section 4)</strong>, <strong>Inter-Act Research Associates (IARA)</strong> has built a stellar track record as an independent, non-partisan development advisory and social research firm. Headquartered at <strong>Unipen Plaza, 1st Floor, Room 4, Argwings Kodhek Road, Hurlingham, Nairobi</strong>, our operations are led by <strong>Executive Director Kennedy S. Okumu</strong> and guided by our elite <strong>Scientific Research Committee</strong>.
               </p>
