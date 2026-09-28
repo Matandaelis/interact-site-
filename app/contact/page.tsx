@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ConsultationForm from "@/components/ConsultationForm";
@@ -23,7 +24,7 @@ export default function ContactPage() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Inter-Act Research Associates Official Headquarters",
-    "image": "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=80&w=800",
+    "image": "https://interactresearch.org/images/home-research-team.png",
     "telephone": "+254702103653",
     "email": "interactresearchassociates@gmail.com",
     "address": {
@@ -60,6 +61,10 @@ export default function ContactPage() {
       <main className="flex-1">
         {/* Page Hero Header */}
         <section className="bg-slate-900/80 border-b border-slate-800 py-16 sm:py-20 relative overflow-hidden">
+          <div className="absolute inset-y-0 right-0 hidden w-2/5 lg:block">
+            <Image src="/images/home-research-team.png" alt="IARA technical team in consultation" fill sizes="(max-width: 1024px) 0vw, 40vw" className="object-cover opacity-40" />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/75 to-transparent" />
+          </div>
           <div className="absolute inset-0 bg-gradient-to-r from-blue-950/20 via-slate-950/80 to-blue-950/20 pointer-events-none" />
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">

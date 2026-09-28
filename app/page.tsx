@@ -35,7 +35,7 @@ export default function Home() {
     "@type": "Organization",
     "name": "Inter-Act Research Associates",
     "url": "https://interactresearch.org",
-    "logo": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=200",
+    "logo": "https://interactresearch.org/images/home-research-team.png",
     "foundingDate": "2013",
     "founders": [
       {

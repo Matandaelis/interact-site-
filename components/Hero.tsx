@@ -97,7 +97,7 @@ export default function Hero({ onExploreServices, onOpenStudio, onOpenConsultati
           <div className="absolute inset-x-8 top-8 overflow-hidden rounded-[2rem] border border-white/20 bg-[#153f59] shadow-2xl shadow-black/25 lg:inset-x-4 lg:top-4">
             <div className="relative aspect-[4/5] overflow-hidden opacity-90">
               <Image
-                src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=85&w=1000"
+                src="/images/home-research-team.png"
                 alt="Research colleagues collaborating around a table"
                 fill
                 priority

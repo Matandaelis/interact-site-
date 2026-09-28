@@ -32,7 +32,7 @@ export default function AboutPage() {
     "provider": {
       "@type": "LocalBusiness",
       "name": "Inter-Act Research Associates",
-      "image": "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=80&w=800",
+      "image": "/images/regional-east-africa.png",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Argwings Kodhek Road, Unipen Plaza, 1st Floor Room No. 4, Hurlingham",
@@ -171,7 +171,7 @@ export default function AboutPage() {
               <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500/50 transition-all shadow-xl group">
                 <div className="relative h-56 w-full overflow-hidden bg-slate-950">
                   <Image 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800"
+                    src="/images/about-fieldwork.png"
                     alt="Kennedy S. Okumu - Executive Director, Inter-Act Research Associates"
                     referrerPolicy="no-referrer"
                     fill
@@ -204,7 +204,7 @@ export default function AboutPage() {
               <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500/50 transition-all shadow-xl group">
                 <div className="relative h-56 w-full overflow-hidden bg-slate-950">
                   <Image 
-                    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800"
+                    src="/images/services-workshop.png"
                     alt="Scientific Research Committee members in session"
                     referrerPolicy="no-referrer"
                     fill
@@ -236,7 +236,7 @@ export default function AboutPage() {
               <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500/50 transition-all shadow-xl group">
                 <div className="relative h-56 w-full overflow-hidden bg-slate-950">
                   <Image 
-                    src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=80&w=800"
+                    src="/images/regional-east-africa.png"
                     alt="IARA Associate Consultants & Field Enumerators in Kenya"
                     referrerPolicy="no-referrer"
                     fill
