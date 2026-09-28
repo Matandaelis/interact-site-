@@ -3,18 +3,14 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { 
-  ArrowRight, 
-  BarChart3, 
-  Target, 
-  CheckCircle2, 
-  Award, 
-  Layers, 
-  Users2, 
+import {
+  ArrowUpRight,
+  BarChart3,
+  Check,
   Globe2,
-  Sparkles,
+  Layers3,
   ShieldCheck,
-  Building2
+  Users2,
 } from "lucide-react";
 
 interface HeroProps {
@@ -23,169 +19,125 @@ interface HeroProps {
   onOpenConsultation: () => void;
 }
 
+const capabilities = [
+  "Monitoring & evaluation",
+  "Applied social research",
+  "Inclusive development",
+];
+
+const figures = [
+  { value: "2013", label: "Established in Nairobi" },
+  { value: "04", label: "East African markets" },
+  { value: "18+", label: "Regional assignments" },
+];
+
 export default function Hero({ onExploreServices, onOpenStudio, onOpenConsultation }: HeroProps) {
-  const stats = [
-    { value: "2013", label: "Formed in Nairobi, Kenya", icon: ShieldCheck },
-    { value: "18+", label: "Key Regional Assignments", icon: BarChart3 },
-    { value: "4", label: "East Africa Member States", icon: Globe2 },
-    { value: "100%", label: "Cap499 Sec 4 Compliant", icon: Award },
-  ];
-
-  const highlights = [
-    "Project & Program M&E",
-    "Disability Mainstreaming & Accessibility Audits",
-    "Institutional Capacity Building",
-    "Strategic Planning & Governance",
-    "Social & Formative Research Surveys"
-  ];
-
   return (
-    <section id="hero-section" className="relative bg-slate-50 text-slate-900 pt-10 pb-16 md:pt-14 md:pb-24 overflow-hidden border-b border-slate-200">
-      {/* Background Corporate Pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,_var(--tw-gradient-stops))] from-blue-50/60 via-slate-50 to-white pointer-events-none" />
-      <div className="absolute top-1/4 right-10 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl pointer-events-none" />
+    <section id="hero-section" className="relative isolate overflow-hidden bg-[var(--ink)] text-[var(--paper)]">
+      <div className="pointer-events-none absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(255,255,255,.09)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.09)_1px,transparent_1px)] [background-size:72px_72px]" />
+      <div className="pointer-events-none absolute -right-40 top-16 size-[34rem] rounded-full border border-[var(--coral)]/40 md:size-[48rem]" />
+      <div className="pointer-events-none absolute -right-28 top-36 size-[27rem] rounded-full border border-[var(--coral)]/20 md:size-[41rem]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
-          {/* Left Column: Headline & Official Profile */}
-          <motion.div 
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="lg:col-span-7 space-y-6 text-left"
-          >
-            
-            {/* Corporate Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-900 text-xs sm:text-sm font-bold shadow-sm">
-              <span className="w-2.5 h-2.5 rounded-full bg-blue-700 animate-pulse" />
-              <span>Registered Consulting Firm (Cap 499 Section 4) • Formed 2013</span>
-            </div>
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-12 px-5 pb-16 pt-12 sm:px-8 md:pb-24 md:pt-16 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:gap-20 lg:px-10 lg:pt-20">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: [0.21, 0.47, 0.32, 0.98] }}
+          className="relative z-10 flex flex-col gap-7"
+        >
+          <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--coral-soft)]">
+            <span className="h-px w-10 bg-[var(--coral)]" />
+            Independent development intelligence
+          </div>
 
-            {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.12]">
-              INTER-ACT RESEARCH ASSOCIATES <span className="text-blue-900">(IARA)</span>
-            </h1>
+          <h1 className="max-w-3xl font-serif text-[clamp(3.4rem,8vw,7.6rem)] leading-[0.88] tracking-[-0.055em] text-[var(--paper)]">
+            Evidence that <em className="text-[var(--coral-soft)]">moves</em> people forward.
+          </h1>
 
-            {/* Subheadline & Philosophy */}
-            <p className="text-base sm:text-lg text-slate-700 max-w-2xl font-normal leading-relaxed">
-              Delivering technical consulting, monitoring, evaluation, and research expertise across <strong className="text-slate-900 font-semibold">Kenya, Uganda, Tanzania, and Rwanda</strong>. Guided by our corporate mission: <em className="text-blue-900 font-medium">&ldquo;Doing good through practical solutions to transform lives.&rdquo;</em>
-            </p>
+          <p className="max-w-xl text-base leading-7 text-[var(--paper-muted)] md:text-lg">
+            Inter-Act Research Associates turns complex questions into practical decisions through rigorous research, monitoring, evaluation, and inclusive advisory work across East Africa.
+          </p>
 
-            {/* Practice Highlights */}
-            <div className="flex flex-wrap gap-2 pt-1">
-              {highlights.map((item, idx) => (
-                <span 
-                  key={idx}
-                  className="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-semibold text-slate-800 flex items-center gap-1.5 shadow-xs"
-                >
-                  <CheckCircle2 className="w-3.5 h-3.5 text-blue-800" />
-                  {item}
-                </span>
-              ))}
-            </div>
+          <div className="flex flex-wrap gap-x-6 gap-y-3 border-y border-white/15 py-4 text-sm text-[var(--paper-muted)]">
+            {capabilities.map((capability) => (
+              <span key={capability} className="flex items-center gap-2">
+                <Check className="size-4 text-[var(--coral-soft)]" aria-hidden="true" />
+                {capability}
+              </span>
+            ))}
+          </div>
 
-            {/* Corporate Action Buttons */}
-            <div className="pt-2 flex flex-col sm:flex-row gap-3 sm:items-center">
-              <button
-                onClick={onOpenConsultation}
-                className="bg-blue-900 hover:bg-blue-950 text-white font-extrabold text-sm px-6 py-3.5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2.5 group"
-              >
-                <Building2 className="w-5 h-5 text-blue-200" />
-                Request Proposal / RFP
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <button
+              id="hero-request-proposal"
+              type="button"
+              onClick={onOpenConsultation}
+              className="inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[var(--coral)] px-6 text-sm font-bold text-white transition-colors hover:bg-[var(--coral-deep)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--coral-soft)]"
+            >
+              Start a conversation
+              <ArrowUpRight className="size-4" aria-hidden="true" />
+            </button>
+            <button
+              id="hero-explore-services"
+              type="button"
+              onClick={onExploreServices}
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/25 px-6 text-sm font-semibold text-[var(--paper)] transition-colors hover:border-[var(--coral-soft)] hover:text-[var(--coral-soft)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--coral-soft)]"
+            >
+              Explore our practice
+            </button>
+          </div>
+        </motion.div>
 
-              <button
-                onClick={onExploreServices}
-                className="bg-white hover:bg-slate-100 text-slate-900 border border-slate-300 font-bold text-sm px-6 py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 shadow-xs"
-              >
-                <Layers className="w-4 h-4 text-blue-800" />
-                Explore 12 Practice Areas
-              </button>
-            </div>
-
-          </motion.div>
-
-          {/* Right Column: Corporate Summary Card */}
-          <motion.div 
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="lg:col-span-5"
-          >
-            <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-xl relative overflow-hidden space-y-5">
-              <div className="absolute top-0 left-0 right-0 h-1.5 bg-blue-900" />
-              
-              <div className="flex justify-between items-center pb-3 border-b border-slate-100">
-                <div>
-                  <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                    <Award className="w-5 h-5 text-blue-800" />
-                    Institutional Credentials
-                  </h3>
-                  <p className="text-xs text-slate-500">Non-Partisan, Non-Profit Consulting Firm</p>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.12, ease: [0.21, 0.47, 0.32, 0.98] }}
+          className="relative min-h-[27rem] lg:min-h-[39rem]"
+        >
+          <div className="absolute inset-x-8 top-8 overflow-hidden rounded-[2rem] border border-white/20 bg-[#153f59] shadow-2xl shadow-black/25 lg:inset-x-4 lg:top-4">
+            <div className="relative aspect-[4/5] overflow-hidden opacity-90">
+              <Image
+                src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=85&w=1000"
+                alt="Research colleagues collaborating around a table"
+                fill
+                priority
+                referrerPolicy="no-referrer"
+                className="object-cover grayscale-[35%] mix-blend-luminosity"
+                sizes="(max-width: 1024px) 90vw, 42vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)] via-[var(--ink)]/10 to-transparent" />
+              <div className="absolute inset-0 bg-[var(--coral)]/10 mix-blend-color" />
+              <div className="absolute bottom-0 left-0 right-0 flex flex-col gap-5 p-6 md:p-8">
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--coral-soft)]">
+                  <span className="size-2 rounded-full bg-[var(--coral)]" />
+                  Nairobi · East Africa
                 </div>
-                <span className="px-2.5 py-1 rounded bg-blue-50 text-blue-900 text-xs font-bold border border-blue-200">
-                  Est. 2013
-                </span>
+                <p className="max-w-xs font-serif text-2xl leading-tight text-[var(--paper)] md:text-3xl">Research is only useful when it reaches the room where decisions happen.</p>
               </div>
-
-              {/* Featured Image: Black African Research Consultants */}
-              <div className="relative h-44 w-full rounded-xl overflow-hidden border border-slate-200 group">
-                <Image 
-                  src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=80&w=800" 
-                  alt="IARA African research consultants and M&E associates in session"
-                  referrerPolicy="no-referrer"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 1024px) 100vw, 400px"
-                  priority
-                  placeholder="blur"
-                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMzAwIDIwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2YxZjVmOSIvPjwvc3ZnPg=="
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
-                <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-semibold text-white">
-                  <span className="flex items-center gap-1.5 bg-slate-900/90 px-2.5 py-1 rounded-lg border border-slate-700 text-white backdrop-blur-sm">
-                    <Users2 className="w-3.5 h-3.5 text-blue-300" />
-                    IARA Field Research Associates
-                  </span>
-                  <span className="bg-slate-900/90 px-2 py-0.5 rounded text-slate-200 text-[10px]">Nairobi, Kenya</span>
-                </div>
-              </div>
-
-              {/* Core Operational Approach */}
-              <div className="space-y-3 text-xs">
-                <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-1.5">
-                  <span className="font-bold text-blue-900 uppercase tracking-wider block">
-                    Core Operational Approach
-                  </span>
-                  <p className="text-slate-700 leading-relaxed">
-                    Our actions and decisions are guided by empirical data generated through applied research, systematic monitoring, and rigorous evaluation to support development partners in making informed decisions.
-                  </p>
-                </div>
-
-                {/* Key Metrics Grid */}
-                <div className="grid grid-cols-2 gap-2.5 pt-1">
-                  {stats.map((stat, idx) => {
-                    const IconComp = stat.icon;
-                    return (
-                      <div key={idx} className="bg-slate-50 p-3 rounded-xl border border-slate-200 text-left space-y-1">
-                        <div className="flex items-center justify-between text-blue-900">
-                          <span className="text-lg font-extrabold">{stat.value}</span>
-                          <IconComp className="w-4 h-4 text-blue-800" />
-                        </div>
-                        <span className="text-[11px] text-slate-600 font-medium block leading-tight">
-                          {stat.label}
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
             </div>
-          </motion.div>
+          </div>
 
+          <div className="absolute -bottom-2 left-0 grid w-[calc(100%-2rem)] grid-cols-3 rounded-2xl border border-[var(--ink-soft)] bg-[var(--paper)] p-3 text-[var(--ink)] shadow-xl sm:left-4 lg:-left-8 lg:bottom-8 lg:w-[calc(100%+1rem)] lg:p-4">
+            {figures.map((figure, index) => (
+              <div key={figure.label} className={`flex flex-col gap-1 px-3 py-1 ${index > 0 ? "border-l border-[var(--ink)]/15" : ""}`}>
+                <span className="font-serif text-2xl leading-none md:text-3xl">{figure.value}</span>
+                <span className="text-[10px] font-semibold uppercase leading-tight tracking-[0.08em] text-[var(--ink-muted)] md:text-[11px]">{figure.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="absolute right-0 top-0 hidden translate-x-1/4 -translate-y-1/4 rounded-full bg-[var(--coral)] p-4 text-white shadow-lg lg:block">
+            <Globe2 className="size-6" aria-hidden="true" />
+          </div>
+        </motion.div>
+      </div>
+
+      <div className="relative mx-auto flex max-w-7xl flex-col gap-6 border-t border-white/15 px-5 py-5 text-xs text-[var(--paper-muted)] sm:px-8 md:flex-row md:items-center md:justify-between lg:px-10">
+        <span className="flex items-center gap-2"><ShieldCheck className="size-4 text-[var(--coral-soft)]" aria-hidden="true" /> Registered under Kenya&apos;s Companies Act, Cap 499</span>
+        <div className="flex items-center gap-5 uppercase tracking-[0.14em] text-[10px]">
+          <span className="flex items-center gap-2"><BarChart3 className="size-3.5" aria-hidden="true" /> MERL</span>
+          <span className="flex items-center gap-2"><Layers3 className="size-3.5" aria-hidden="true" /> Advisory</span>
+          <span className="flex items-center gap-2"><Users2 className="size-3.5" aria-hidden="true" /> Inclusion</span>
         </div>
       </div>
     </section>
