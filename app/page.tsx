@@ -103,7 +103,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex-1 flex flex-col min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-blue-500 selection:text-slate-950">
+    <div className="flex-1 flex flex-col min-h-screen bg-[var(--paper)] text-[var(--ink)] font-sans selection:bg-[var(--coral)] selection:text-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdHome) }}
@@ -114,7 +114,11 @@ export default function Home() {
       />
       <Navbar />
 
-      <main className="flex-1">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-[var(--coral)] focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-white">
+        Skip to main content
+      </a>
+
+      <main id="main-content" className="flex-1">
         {/* Main Hero Section */}
         <Hero 
           onExploreServices={() => {
@@ -129,68 +133,68 @@ export default function Home() {
         />
 
         {/* Quick Multi-Page Route Grid Portal */}
-        <section className="py-12 bg-slate-900/90 border-y border-slate-800">
+        <section className="border-y border-[var(--line)] bg-[#ebe5da] py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-8 space-y-2">
-              <span className="text-xs font-bold text-blue-400 uppercase tracking-widest">Portal Directory</span>
-              <h2 className="text-xl sm:text-2xl font-extrabold text-white">Explore Inter-Act Research Associates</h2>
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--coral-deep)]">Corporate profile</span>
+              <h2 className="text-xl font-bold tracking-tight text-[var(--ink)] sm:text-2xl">Explore Inter-Act Research Associates</h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <Link 
                 href="/about"
-                className="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-blue-500/50 transition-all group space-y-2"
+                className="group flex flex-col gap-3 rounded-xl border border-[var(--line)] bg-[var(--paper)] p-5 transition-colors hover:border-[var(--coral)] hover:shadow-md"
               >
-                <div className="w-9 h-9 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400">
+                <div className="flex size-10 items-center justify-center rounded-lg border border-[var(--coral)]/30 bg-[var(--coral)]/10 text-[var(--coral-deep)]">
                   <Building2 className="w-4 h-4" />
                 </div>
-                <h3 className="font-bold text-white text-sm group-hover:text-blue-400 transition-colors flex items-center justify-between">
+                <h3 className="flex items-center justify-between text-sm font-bold text-[var(--ink)] transition-colors group-hover:text-[var(--coral-deep)]">
                   Who We Are
                   <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </h3>
-                <p className="text-slate-400 text-xs">Formed 2013, Cap499 Cap registration, leadership & governance structure.</p>
+                <p className="text-xs leading-5 text-[var(--ink-muted)]">Formed 2013, Cap499 Cap registration, leadership & governance structure.</p>
               </Link>
 
               <Link 
                 href="/services"
-                className="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-blue-500/50 transition-all group space-y-2"
+                className="group flex flex-col gap-3 rounded-xl border border-[var(--line)] bg-[var(--paper)] p-5 transition-colors hover:border-[var(--coral)] hover:shadow-md"
               >
-                <div className="w-9 h-9 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400">
+                <div className="flex size-10 items-center justify-center rounded-lg border border-[var(--coral)]/30 bg-[var(--coral)]/10 text-[var(--coral-deep)]">
                   <Layers className="w-4 h-4" />
                 </div>
-                <h3 className="font-bold text-white text-sm group-hover:text-blue-400 transition-colors flex items-center justify-between">
+                <h3 className="flex items-center justify-between text-sm font-bold text-[var(--ink)] transition-colors group-hover:text-[var(--coral-deep)]">
                   Services & Pillars
                   <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </h3>
-                <p className="text-slate-400 text-xs">M&E, Disability Mainstreaming, Proposal Writing, Capacity Assessments.</p>
+                <p className="text-xs leading-5 text-[var(--ink-muted)]">M&E, Disability Mainstreaming, Proposal Writing, Capacity Assessments.</p>
               </Link>
 
               <Link 
                 href="/portfolio"
-                className="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-blue-500/50 transition-all group space-y-2"
+                className="group flex flex-col gap-3 rounded-xl border border-[var(--line)] bg-[var(--paper)] p-5 transition-colors hover:border-[var(--coral)] hover:shadow-md"
               >
-                <div className="w-9 h-9 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400">
+                <div className="flex size-10 items-center justify-center rounded-lg border border-[var(--coral)]/30 bg-[var(--coral)]/10 text-[var(--coral-deep)]">
                   <BarChart3 className="w-4 h-4" />
                 </div>
-                <h3 className="font-bold text-white text-sm group-hover:text-blue-400 transition-colors flex items-center justify-between">
+                <h3 className="flex items-center justify-between text-sm font-bold text-[var(--ink)] transition-colors group-hover:text-[var(--coral-deep)]">
                   Past Assignments (18)
                   <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </h3>
-                <p className="text-slate-400 text-xs">USAID, UN Women, DRF, VSO, Government Ministry consulting track record.</p>
+                <p className="text-xs leading-5 text-[var(--ink-muted)]">USAID, UN Women, DRF, VSO, Government Ministry consulting track record.</p>
               </Link>
 
               <Link 
                 href="/studio"
-                className="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-blue-500/50 transition-all group space-y-2"
+                className="group flex flex-col gap-3 rounded-xl border border-[var(--line)] bg-[var(--paper)] p-5 transition-colors hover:border-[var(--coral)] hover:shadow-md"
               >
-                <div className="w-9 h-9 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400">
+                <div className="flex size-10 items-center justify-center rounded-lg border border-[var(--coral)]/30 bg-[var(--coral)]/10 text-[var(--coral-deep)]">
                   <Sparkles className="w-4 h-4" />
                 </div>
-                <h3 className="font-bold text-white text-sm group-hover:text-blue-400 transition-colors flex items-center justify-between">
+                <h3 className="flex items-center justify-between text-sm font-bold text-[var(--ink)] transition-colors group-hover:text-[var(--coral-deep)]">
                   AI M&E Studio
                   <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </h3>
-                <p className="text-slate-400 text-xs">Generate Theory of Change, Indicator Matrix, and Risk Registers.</p>
+                <p className="text-xs leading-5 text-[var(--ink-muted)]">Generate Theory of Change, Indicator Matrix, and Risk Registers.</p>
               </Link>
             </div>
           </div>
