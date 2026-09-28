@@ -7,6 +7,7 @@ import ResourcesSection from "@/components/ResourcesSection";
 import ConsultationForm from "@/components/ConsultationForm";
 import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
+import Image from "next/image";
 import { BookOpenCheck, FileText, Download, Sparkles } from "lucide-react";
 
 export default function ResourcesPage() {
@@ -37,6 +38,10 @@ export default function ResourcesPage() {
       <main className="flex-1">
         {/* Page Hero Header */}
         <section className="bg-slate-900/80 border-b border-slate-800 py-16 sm:py-20 relative overflow-hidden">
+          <div className="absolute inset-y-0 right-0 hidden w-2/5 lg:block">
+            <Image src="/images/resources-publication.png" alt="IARA research publications and field notes" fill sizes="(max-width: 1024px) 0vw, 40vw" className="object-cover opacity-45" />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/70 to-transparent" />
+          </div>
           <div className="absolute inset-0 bg-gradient-to-r from-blue-950/20 via-slate-950/80 to-blue-950/20 pointer-events-none" />
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">

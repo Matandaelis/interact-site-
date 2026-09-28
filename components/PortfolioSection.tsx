@@ -282,13 +282,13 @@ export default function PortfolioSection() {
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredAssignments.map((assignment, idx) => {
             const stockImages = [
-              { url: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800", alt: "Black African accessibility audit specialist in field assessment" },
-              { url: "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=80&w=800", alt: "Black African field enumerators and community stakeholders" },
-              { url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800", alt: "Black African research consultants analyzing project evaluation data" },
-              { url: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800", alt: "Black African research committee and field supervisors in workshop" },
-              { url: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800", alt: "Black African community stakeholders in capacity building session" },
-              { url: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800", alt: "Black African youth and community agricultural enterprise" },
-              { url: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80&w=800", alt: "Black African county delegates in participatory budget consultation" },
+              { url: "/images/about-fieldwork.png", alt: "Black African accessibility audit specialist in field assessment" },
+              { url: "/images/home-research-team.png", alt: "Black African field enumerators and community stakeholders" },
+              { url: "/images/services-workshop.png", alt: "Black African research consultants analyzing project evaluation data" },
+              { url: "/images/regional-east-africa.png", alt: "Black African research committee and field supervisors in workshop" },
+              { url: "/images/services-workshop.png", alt: "Black African community stakeholders in capacity building session" },
+              { url: "/images/resources-publication.png", alt: "Black African youth and community agricultural enterprise" },
+              { url: "/images/regional-east-africa.png", alt: "Black African county delegates in participatory budget consultation" },
             ];
             const imgObj = stockImages[idx % stockImages.length];
 
