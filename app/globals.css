@@ -2,73 +2,90 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ========================================================= */
-/* CORPORATE LIGHT THEME WITH NAVY BLUE ACCENTS               */
-/* ========================================================= */
-
 :root {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8fafc;
-  --bg-card: #ffffff;
-  --text-main: #0f172a;
-  --text-muted: #334155;
-  --text-subtle: #64748b;
-  --border-color: #e2e8f0;
-  --brand-navy: #0f2942;
-  --brand-navy-accent: #1e40af;
+  --paper: #f4efe6;
+  --paper-muted: #c9d4d5;
+  --ink: #0d2b3a;
+  --ink-soft: #17485b;
+  --ink-muted: #536873;
+  --coral: #d96850;
+  --coral-deep: #bd4e3d;
+  --coral-soft: #f0a08b;
+  --line: #d9d2c7;
+}
+
+* {
+  border-color: var(--line);
+}
+
+html {
+  background: var(--paper);
 }
 
 body {
-  background-color: #f8fafc;
-  color: #0f172a;
+  background: var(--paper);
+  color: var(--ink);
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-  transition: background-color 0.15s ease, color 0.15s ease;
+  text-rendering: optimizeLegibility;
 }
 
-/* Custom Scrollbar */
+::selection {
+  background: var(--coral);
+  color: white;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: var(--paper);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 4px;
+  background: #b9b1a6;
+  border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: var(--coral);
 }
 
-/* Base Form Control Styles */
 input,
 select,
 textarea {
-  background-color: #ffffff;
-  color: #0f172a;
-  border-color: #cbd5e1;
+  background: white;
+  color: var(--ink);
+  border-color: var(--line);
 }
 
 input:focus,
 select:focus,
 textarea:focus {
-  border-color: #1e40af;
+  border-color: var(--coral);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(30, 64, 175, 0.15);
+  box-shadow: 0 0 0 3px rgba(217, 104, 80, 0.18);
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: #94a3b8;
+  color: #8b9698;
 }
 
-/* Focus outline accessibility */
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #1e40af;
-  outline-offset: 2px;
+  outline: 2px solid var(--coral);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
