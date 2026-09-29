@@ -55,4 +55,30 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--coral); outline
   .corporate-container { @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10; }
   .eyebrow { @apply text-xs font-bold uppercase tracking-[0.18em] text-[var(--coral-deep)]; }
   .section-title { @apply font-serif text-3xl leading-tight tracking-[-0.02em] text-[var(--ink)] sm:text-4xl lg:text-5xl; }
+  .page-hero { @apply border-b border-[var(--line)] bg-[var(--ink)] text-[var(--paper)] py-16 sm:py-24; }
+  .paper-section { @apply border-b border-[var(--line)] bg-[var(--paper)] py-16 sm:py-24; }
+  .muted-section { @apply border-b border-[var(--line)] bg-[var(--paper-muted)] py-16 sm:py-24; }
+  .dark-section { @apply border-b border-[var(--ink-soft)] bg-[var(--ink)] py-16 text-[var(--paper)] sm:py-24; }
+}
+
+/* Compatibility layer for legacy page classes while the shared system is rolled through every route. */
+@layer utilities {
+  .bg-slate-900, .bg-slate-950, .bg-blue-950 { background-color: var(--ink) !important; }
+  .bg-slate-800, .bg-slate-850, .bg-blue-900 { background-color: var(--ink-soft) !important; }
+  .bg-slate-100, .bg-slate-50, .bg-blue-50 { background-color: var(--paper-muted) !important; }
+  .text-slate-900, .text-slate-950, .text-blue-950, .text-blue-900 { color: var(--ink) !important; }
+  .text-slate-800, .text-slate-700, .text-slate-600, .text-slate-500, .text-blue-800, .text-blue-700 { color: var(--ink-muted) !important; }
+  .text-slate-300, .text-slate-200, .text-slate-100, .text-blue-300, .text-blue-200 { color: var(--paper-muted) !important; }
+  .text-blue-400, .text-blue-500, .text-blue-600 { color: var(--coral) !important; }
+  .bg-blue-600, .bg-blue-700, .bg-blue-800 { background-color: var(--coral) !important; }
+  .border-blue-200, .border-blue-300, .border-blue-700, .border-slate-700, .border-slate-800 { border-color: var(--line) !important; }
+  .hover\\:text-blue-900:hover, .hover\\:text-blue-800:hover, .hover\\:text-blue-700:hover { color: var(--coral-deep) !important; }
+  .hover\\:bg-blue-800:hover, .hover\\:bg-blue-700:hover { background-color: var(--coral-deep) !important; }
+}
+
+@media (max-width: 1023px) {
+  .corporate-container { padding-left: 1.25rem; padding-right: 1.25rem; }
+}
+@media (max-width: 640px) {
+  .corporate-container { padding-left: 1rem; padding-right: 1rem; }
 }

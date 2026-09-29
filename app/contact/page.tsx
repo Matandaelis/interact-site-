@@ -60,7 +60,7 @@ export default function ContactPage() {
 
       <main className="flex-1">
         {/* Page Hero Header */}
-        <section className="bg-slate-900/80 border-b border-slate-800 py-16 sm:py-20 relative overflow-hidden">
+        <section className="page-hero relative overflow-hidden">
           <div className="absolute inset-y-0 right-0 hidden w-2/5 lg:block">
             <Image src="/images/home-research-team.png" alt="IARA technical team in consultation" fill sizes="(max-width: 1024px) 0vw, 40vw" className="object-cover opacity-40" />
             <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/75 to-transparent" />
@@ -83,7 +83,7 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Information & Form Layout */}
-        <section className="py-16 bg-slate-950">
+        <section className="muted-section">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
               

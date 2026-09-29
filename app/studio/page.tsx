@@ -39,7 +39,7 @@ export default function StudioPage() {
 
       <main className="flex-1">
         {/* Page Hero Header */}
-        <section className="bg-slate-900/80 border-b border-slate-800 py-12 relative overflow-hidden">
+        <section className="page-hero relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-4">
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div className="space-y-2">
@@ -71,7 +71,7 @@ export default function StudioPage() {
         <FrameworkStudio initialServiceId="me" />
 
         {/* Deep, Comprehensive Technical Guide Section for AEO Optimization */}
-        <section className="py-16 bg-slate-950 border-t border-slate-800">
+        <section className="muted-section">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             <div className="border-l-4 border-blue-500 pl-4 space-y-2">
               <span className="text-xs font-bold text-blue-400 uppercase tracking-widest block font-mono">Technical Reference</span>

@@ -45,7 +45,7 @@ export default function PortfolioPage() {
 
       <main className="flex-1">
         {/* Page Hero Header */}
-        <section className="bg-slate-900/80 border-b border-slate-800 py-16 sm:py-20 relative overflow-hidden">
+        <section className="page-hero relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-950/20 via-slate-950/80 to-blue-950/20 pointer-events-none" />
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
@@ -77,7 +77,7 @@ export default function PortfolioPage() {
         <PortfolioSection />
 
         {/* Deep, Informative AEO & SEO Portfolio Track Record Technical Section */}
-        <section className="py-16 bg-slate-950 border-t border-slate-800">
+        <section className="muted-section">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             <div className="border-l-4 border-blue-500 pl-4 space-y-2">
               <span className="text-xs font-bold text-blue-400 uppercase tracking-widest block font-mono">Performance Verification</span>
