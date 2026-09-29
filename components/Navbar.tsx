@@ -134,7 +134,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[var(--paper)]/95 text-[var(--ink)] shadow-sm backdrop-blur-md transition-colors">
+    <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[var(--paper)] text-[var(--ink)] shadow-sm transition-colors">
       {/* Top Direct Contact Bar */}
       <div className="border-b border-white/10 bg-[var(--ink)] px-3 py-2 text-[11px] text-[var(--paper-muted)] sm:px-6 sm:text-xs lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
@@ -327,7 +327,7 @@ export default function Navbar() {
             <button
               id="mobile-hamburger-btn"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-xl bg-[var(--paper-muted)] text-[var(--ink)] hover:bg-[var(--paper-muted)] border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-900/50 min-w-[44px] min-h-[44px] flex items-center justify-center transition-colors shadow-xs"
+              className="p-2.5 rounded-xl bg-[var(--paper-muted)] text-[var(--ink)] hover:bg-[var(--paper-muted)] border border-[var(--line)] focus:outline-none focus:ring-2 focus:ring-[var(--coral)]/50 min-w-[44px] min-h-[44px] flex items-center justify-center transition-colors shadow-xs"
               aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-navigation-drawer"
@@ -344,7 +344,7 @@ export default function Navbar() {
       {/* ========================================================= */}
       {activeMegaMenu && (
         <div 
-          className="hidden lg:block absolute top-full left-0 right-0 bg-[var(--ink)]/98 backdrop-blur-xl border-b border-[var(--line)] shadow-2xl py-8 transition-all animate-in fade-in slide-in-from-top-2 duration-200 z-50"
+          className="hidden lg:block absolute top-full left-0 right-0 bg-[var(--ink)] border-b border-[var(--line)] shadow-2xl py-8 transition-all animate-in fade-in slide-in-from-top-2 duration-200 z-50"
           onMouseEnter={() => {
             if (timeoutRef.current) clearTimeout(timeoutRef.current);
           }}
@@ -405,7 +405,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Right Callout Card (4 cols) */}
-                <div className="col-span-4 bg-gradient-to-br from-slate-900 via-slate-900 to-[var(--coral-deep)]/20 border border-[var(--line)] rounded-2xl p-5 space-y-4 shadow-xl">
+                <div className="col-span-4 bg-gradient-to-br from-[var(--ink)] via-[var(--ink)] to-[var(--coral-deep)]/20 border border-[var(--line)] rounded-2xl p-5 space-y-4 shadow-xl">
                   <div className="space-y-2">
                     <span className="inline-flex items-center gap-1.5 text-[10px] font-bold text-[var(--coral)] uppercase tracking-widest bg-white/10 px-2.5 py-1 rounded-full border border-[var(--coral)]/20">
                       <Sparkles className="w-3 h-3" /> Practice Studio Generator
@@ -429,7 +429,7 @@ export default function Navbar() {
                     <Link
                       href="/contact"
                       onClick={() => setActiveMegaMenu(null)}
-                      className="w-full bg-[var(--ink)] hover:bg-slate-800 text-[var(--paper-muted)] border border-[var(--line)] font-semibold text-xs py-2.5 rounded-xl transition-all flex items-center justify-center gap-2 block text-center"
+                      className="w-full bg-[var(--ink)] hover:bg-[var(--coral-deep)] text-[var(--paper-muted)] border border-[var(--line)] font-semibold text-xs py-2.5 rounded-xl transition-all flex items-center justify-center gap-2 block text-center"
                     >
                       <FileText className="w-3.5 h-3.5" />
                       Submit Technical RFP
@@ -565,7 +565,7 @@ export default function Navbar() {
                   <Link
                     href="/portfolio"
                     onClick={() => setActiveMegaMenu(null)}
-                    className="w-full bg-[var(--ink)] hover:bg-slate-800 text-[var(--coral)] border border-[var(--coral)]/30 font-bold text-xs py-2.5 rounded-xl transition-all flex items-center justify-center gap-2 block text-center"
+                    className="w-full bg-[var(--ink)] hover:bg-[var(--coral-deep)] text-[var(--coral)] border border-[var(--coral)]/30 font-bold text-xs py-2.5 rounded-xl transition-all flex items-center justify-center gap-2 block text-center"
                   >
                     View Complete Track Record Matrix
                   </Link>
@@ -626,7 +626,7 @@ export default function Navbar() {
                   </div>
                 </div>
 
-                <div className="col-span-4 bg-gradient-to-br from-slate-900 to-[var(--coral-deep)]/25 border border-blue-500/40 rounded-2xl p-5 space-y-3">
+                <div className="col-span-4 bg-gradient-to-br from-[var(--ink)] to-[var(--coral-deep)]/25 border border-[var(--coral)]/40 rounded-2xl p-5 space-y-3">
                   <span className="text-[10px] font-bold text-[var(--coral)] uppercase tracking-widest block">Instant AI Generation</span>
                   <h4 className="text-sm font-bold text-white">Generate Custom Proposal Frameworks</h4>
                   <p className="text-xs text-[var(--paper-muted)] leading-relaxed">
@@ -657,7 +657,7 @@ export default function Navbar() {
           {/* Backdrop Overlay */}
           <div 
             id="mobile-menu-backdrop"
-            className="lg:hidden fixed inset-0 top-0 bg-[var(--ink-soft)]/40 backdrop-blur-xs z-40 transition-opacity"
+            className="lg:hidden fixed inset-0 top-0 bg-[var(--ink-soft)]/85 z-40 transition-opacity"
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
@@ -681,7 +681,7 @@ export default function Navbar() {
                     <Sparkles className="w-5 h-5 text-[var(--coral-soft)]" />
                   </div>
                   <div>
-                    <span className="text-xs font-extrabold text-[var(--coral-deep)] block group-hover:text-blue-950 transition-colors">
+                    <span className="text-xs font-extrabold text-[var(--coral-deep)] block group-hover:text-[var(--coral-deep)] transition-colors">
                       M&E Studio AI Builder
                     </span>
                     <span className="text-[11px] text-[var(--coral-deep)] font-bold block">
@@ -746,7 +746,7 @@ export default function Navbar() {
                             key={pa.id}
                             href={pa.href}
                             onClick={() => setMobileMenuOpen(false)}
-                            className="p-2.5 rounded-lg bg-[var(--paper-muted)] border border-[var(--line)] text-xs font-bold text-[var(--ink)] hover:text-[var(--coral-deep)] hover:border-blue-300 flex items-center justify-between gap-2 transition-all"
+                            className="p-2.5 rounded-lg bg-[var(--paper-muted)] border border-[var(--line)] text-xs font-bold text-[var(--ink)] hover:text-[var(--coral-deep)] hover:border-[var(--coral)] flex items-center justify-between gap-2 transition-all"
                           >
                             <div className="flex items-center gap-2.5 min-w-0">
                               <IconComp className="w-4 h-4 text-[var(--coral-deep)] shrink-0" />
