@@ -61,7 +61,36 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--coral); outline
   .dark-section { @apply border-b border-[var(--ink-soft)] bg-[var(--ink)] py-16 text-[var(--paper)] sm:py-24; }
 }
 
-/* Compatibility layer for legacy page classes while the shared system is rolled through every route. */
+/* Shared visual contract: legacy utilities resolve to the same institutional palette everywhere. */
+@layer utilities {
+  :root {
+    --brand-bg: var(--paper);
+    --brand-surface: var(--paper-muted);
+    --brand-ink: var(--ink);
+    --brand-muted: var(--ink-muted);
+    --brand-dark: var(--ink);
+    --brand-accent: var(--coral);
+    --brand-accent-strong: var(--coral-deep);
+    --brand-border: var(--line);
+  }
+
+  .bg-white, .bg-gray-50, .bg-gray-100, .bg-slate-50, .bg-slate-100, .bg-blue-50 { background-color: var(--brand-surface) !important; }
+  .bg-gray-900, .bg-gray-950, .bg-slate-900, .bg-slate-950, .bg-blue-950 { background-color: var(--brand-dark) !important; }
+  .bg-gray-800, .bg-slate-800, .bg-blue-900 { background-color: var(--ink-soft) !important; }
+  .text-gray-950, .text-gray-900, .text-slate-950, .text-slate-900, .text-blue-950, .text-blue-900 { color: var(--brand-ink) !important; }
+  .text-gray-800, .text-gray-700, .text-gray-600, .text-slate-800, .text-slate-700, .text-slate-600, .text-slate-500, .text-blue-800, .text-blue-700 { color: var(--brand-muted) !important; }
+  .text-gray-300, .text-gray-200, .text-gray-100, .text-slate-300, .text-slate-200, .text-slate-100, .text-blue-300, .text-blue-200 { color: var(--paper-muted) !important; }
+  .text-blue-400, .text-blue-500, .text-blue-600, .text-indigo-400, .text-indigo-500 { color: var(--brand-accent) !important; }
+  .bg-blue-500, .bg-blue-600, .bg-blue-700, .bg-indigo-600 { background-color: var(--brand-accent) !important; }
+  .border-gray-100, .border-gray-200, .border-gray-300, .border-slate-200, .border-slate-700, .border-slate-800, .border-blue-200, .border-blue-300, .border-blue-700 { border-color: var(--brand-border) !important; }
+  .rounded-lg, .rounded-xl, .rounded-2xl { border-radius: 0.75rem; }
+  .shadow-lg, .shadow-xl, .shadow-2xl { box-shadow: 0 18px 45px rgba(17, 36, 53, 0.12) !important; }
+  .hover\\:bg-blue-700:hover, .hover\\:bg-blue-800:hover, .hover\\:bg-indigo-700:hover { background-color: var(--brand-accent-strong) !important; }
+  .hover\\:text-blue-700:hover, .hover\\:text-blue-800:hover, .hover\\:text-blue-900:hover { color: var(--brand-accent-strong) !important; }
+  .hover\\:bg-gray-50:hover, .hover\\:bg-slate-100:hover { background-color: var(--brand-surface) !important; }
+}
+
+/* Compatibility aliases remain intentionally small; components should use semantic tokens going forward. */
 @layer utilities {
   .bg-slate-900, .bg-slate-950, .bg-blue-950 { background-color: var(--ink) !important; }
   .bg-slate-800, .bg-slate-850, .bg-blue-900 { background-color: var(--ink-soft) !important; }
