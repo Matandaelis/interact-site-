@@ -27,11 +27,11 @@ import {
 } from "lucide-react";
 
 const serviceImageMap: Record<string, { src: string; alt: string }> = {
-  me: { src: "/images/services-workshop.png", alt: "Research consultants reviewing monitoring and evaluation findings" },
-  da: { src: "/images/about-fieldwork.png", alt: "Field researchers conducting an inclusive community assessment" },
-  cb: { src: "/images/services-workshop.png", alt: "Professionals participating in institutional capacity building" },
-  sp: { src: "/images/regional-east-africa.png", alt: "Leadership team planning a regional development strategy" },
-  livelihood: { src: "/images/resources-publication.png", alt: "Community partners working on sustainable livelihoods" },
+  me: { src: "/images/service-merl.png", alt: "Research consultants reviewing monitoring and evaluation findings" },
+  da: { src: "/images/service-data-assessment.png", alt: "Field researchers conducting an inclusive community assessment" },
+  cb: { src: "/images/service-capacity.png", alt: "Professionals participating in institutional capacity building" },
+  sp: { src: "/images/service-strategy.png", alt: "Leadership team planning a regional development strategy" },
+  livelihood: { src: "/images/service-livelihoods.png", alt: "Community partners working on sustainable livelihoods" },
 };
 
 const iconMap: Record<string, React.ElementType> = {
