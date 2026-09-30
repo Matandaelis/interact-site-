@@ -15,7 +15,8 @@ import {
   Users, 
   Award, 
   Scale, 
-  BookOpen, 
+  BookOpen,
+  Phone, 
   PhoneCall, 
   FileText,
   ArrowRight,
@@ -194,7 +195,7 @@ export default function AboutPage() {
                     Over 15 years of technical leadership in baseline evaluations, organizational capacity assessments, disability inclusion audits, and project management in East Africa.
                   </p>
                   <div className="pt-2 border-t border-slate-800 text-xs text-slate-400 space-y-1">
-                    <div>📞 0702103653 / +254 702 103 653</div>
+                    <div className="flex items-center gap-2"><Phone className="h-4 w-4 text-[var(--coral)]" aria-hidden="true" />0702103653 / +254 702 103 653</div>
                     <div className="truncate text-blue-400">✉️ interactresearchassociates@gmail.com</div>
                   </div>
                 </div>
