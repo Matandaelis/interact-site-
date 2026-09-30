@@ -23,7 +23,8 @@ import {
   Layers, 
   BookOpen,
   ArrowRight,
-  ChevronRight
+  ChevronRight,
+  MapPin
 } from "lucide-react";
 
 const serviceImageMap: Record<string, { src: string; alt: string }> = {
@@ -53,7 +54,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
   const serviceImage = serviceImageMap[service.id] || serviceImageMap.me;
 
   return (
-    <div className="flex-1 flex flex-col min-h-screen bg-[var(--paper)] text-[var(--ink)] font-sans selection:bg-[var(--coral)] selection:text-[var(--ink)]">
+    <div className="flex-1 flex flex-col min-h-screen bg-[var(--paper)] text-[var(--ink)] font-[family-name:var(--font-lato)] selection:bg-[var(--coral)] selection:text-white">
       <ScrollProgressBar />
       <Navbar />
 
@@ -84,7 +85,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               </Link>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-black text-[var(--ink)] tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-5xl font-[family-name:var(--font-playfair)] font-bold text-[var(--ink)] tracking-tight leading-tight">
               {service.title}
             </h1>
 
@@ -102,7 +103,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
                 onClick={() => setModalOpen(true)}
-                className="bg-[var(--coral)] hover:bg-[var(--coral-deep)] text-[var(--ink)] font-extrabold text-xs px-6 py-3.5 rounded-xl transition-all shadow-lg flex items-center gap-2"
+                className="rounded-full bg-[var(--coral)] px-6 py-3 text-sm font-bold text-white shadow-sm transition-all hover:bg-[var(--coral-deep)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--coral)] focus-visible:ring-offset-2 flex items-center gap-2"
               >
                 <FileText className="w-4 h-4" />
                 Request RFP / Proposal for {service.shortTitle}
@@ -110,7 +111,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
 
               <Link
                 href="/studio"
-                className="bg-[var(--paper-muted)] hover:bg-[var(--paper)] text-[var(--coral-deep)] border border-[var(--coral)]/40 font-bold text-xs px-6 py-3.5 rounded-xl transition-all flex items-center gap-2"
+                className="rounded-full border border-slate-400 bg-transparent px-6 py-3 text-sm font-bold text-[var(--ink)] transition-all hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--coral)] focus-visible:ring-offset-2 flex items-center gap-2"
               >
                 <Sparkles className="w-4 h-4" />
                 Generate Framework in Studio
@@ -223,7 +224,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                             <span className="bg-[var(--paper)] px-2.5 py-0.5 rounded border border-[var(--line)]">{cs.year}</span>
                           </div>
                           <h3 className="text-base font-bold text-[var(--ink)]">{cs.title}</h3>
-                          <span className="text-[11px] text-[var(--ink-muted)] block font-mono">📍 {cs.location}</span>
+                          <span className="text-[11px] text-[var(--ink-muted)] block font-mono"><MapPin className="mr-1 inline-block h-3 w-3" aria-hidden="true" />{cs.location}</span>
                           <p className="text-xs text-[var(--ink-muted)] leading-relaxed pt-2 border-t border-[var(--line)]">
                             {cs.summary}
                           </p>

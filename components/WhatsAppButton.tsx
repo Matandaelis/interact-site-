@@ -35,7 +35,7 @@ export default function WhatsAppButton() {
               Need immediate technical assistance or field survey support in East Africa? Connect directly with Kennedy S. Okumu & Executive Advisory team.
             </p>
             <div className="p-2.5 rounded-xl bg-slate-950 border border-slate-800 text-[11px] text-blue-400 font-mono">
-              ⚡ Monitored 24/7 for urgent field RFPs
+              Monitored 24/7 for urgent field RFPs
             </div>
           </div>
 

@@ -1,7 +1,22 @@
 import type { Metadata } from "next";
+import { Playfair_Display, Lato } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import "./globals.css";
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  display: "swap",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const lato = Lato({
+  variable: "--font-lato",
+  display: "swap",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Inter-Act Research Associates | Business Management, M&E & Strategic Advisory",
@@ -15,8 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className="antialiased bg-slate-50 text-slate-900 min-h-screen flex flex-col" suppressHydrationWarning>
+    <html lang="en" className={`scroll-smooth ${playfair.variable} ${lato.variable}`} suppressHydrationWarning>
+      <body className="antialiased bg-[#0D2230] text-slate-50 font-[family-name:var(--font-lato)] min-h-screen flex flex-col" suppressHydrationWarning>
         <script
           dangerouslySetInnerHTML={{
             __html: `
