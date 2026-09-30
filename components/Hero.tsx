@@ -47,15 +47,15 @@ export default function Hero({ onExploreServices, onOpenStudio, onOpenConsultati
         >
           <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--coral-soft)]">
             <span className="h-px w-10 bg-[var(--coral)]" />
-            Independent development intelligence
+            Independent Development Intelligence
           </div>
 
           <h1 className="max-w-3xl font-serif text-[clamp(3.4rem,8vw,7.6rem)] leading-[0.88] tracking-[-0.055em] text-[var(--paper)]">
-            Evidence that <em className="text-[var(--coral-soft)]">moves</em> people forward.
+            Development Consulting in East Africa that <em className="text-[var(--coral-soft)] italic">moves</em> people forward.
           </h1>
 
           <p className="max-w-xl text-base leading-7 text-[var(--paper-muted)] md:text-lg">
-            Inter-Act Research Associates turns complex questions into practical decisions through rigorous research, monitoring, evaluation, and inclusive advisory work across East Africa.
+            Inter-Act Research Associates provides Development Consulting in East Africa, combining rigorous research, practical advisory, and inclusive evidence systems for public institutions, NGOs, and international development partners.
           </p>
 
           <div className="flex flex-wrap gap-x-6 gap-y-3 border-y border-white/15 py-4 text-sm text-[var(--paper-muted)]">
