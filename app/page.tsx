@@ -13,6 +13,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ResourcesSection from "@/components/ResourcesSection";
 import ConsultationForm from "@/components/ConsultationForm";
 import Link from "next/link";
+import Script from "next/script";
 import { 
   Building2, 
   Layers, 
@@ -53,6 +54,49 @@ export default function Home() {
       "https://twitter.com/IAR_Associates",
       "https://linkedin.com/company/inter-act-research-associates"
     ]
+  };
+
+  const jsonLdProfessionalService = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://interactresearch.org/#professional-service",
+    "name": "Inter-Act Research Associates",
+    "alternateName": "IARA",
+    "description": "Development consulting in East Africa, delivered through independent development intelligence, monitoring and evaluation, applied social research, and inclusive development advisory.",
+    "url": "https://interactresearch.org",
+    "telephone": "+254702103653",
+    "email": "interactresearchassociates@gmail.com",
+    "image": "https://interactresearch.org/images/home-research-team.png",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Unipen Plaza 1st Floor Room 4, Argwings Kodhek Road",
+      "addressLocality": "Nairobi",
+      "addressCountry": "KE"
+    },
+    "areaServed": ["Kenya", "Tanzania", "Uganda", "Rwanda"].map((name) => ({ "@type": "Country", name })),
+    "knowsAbout": [
+      "Development Consulting in East Africa",
+      "Monitoring & Evaluation (M&E) Specialists Nairobi",
+      "Independent Development Intelligence",
+      "Methodological Reference Guidelines & Lexicon Standards",
+      "Applied Social Research",
+      "Inclusive Development"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "East Africa development consulting services",
+      "itemListElement": [
+        "Development Consulting",
+        "Monitoring & Evaluation (M&E)",
+        "Applied Social Research",
+        "Inclusive Development"
+      ].map((name, index) => ({
+        "@type": "Offer",
+        "position": index + 1,
+        "itemOffered": { "@type": "Service", name }
+      }))
+    }
   };
 
   const jsonLdFaq = {
@@ -104,11 +148,18 @@ export default function Home() {
 
   return (
     <div className="flex-1 flex flex-col min-h-screen bg-[var(--paper)] text-[var(--ink)] font-sans selection:bg-[var(--coral)] selection:text-white">
-      <script
+      <Script
+        id="organization-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdHome) }}
       />
-      <script
+      <Script
+        id="professional-service-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdProfessionalService) }}
+      />
+      <Script
+        id="homepage-faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
       />
